@@ -1,0 +1,43 @@
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/material.scss';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
+
+ion-content {
+    --ion-background-color:#F9FBFC;
+    ion-text{
+        text-align: center;
+        h1{
+            margin: 0;
+            padding-top: 30px;
+            padding-left: 85px;
+            padding-bottom: 25px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            color: #203680;
+        }
+    }
+    ion-list{
+        .titles{
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: #203680;
+        }
+        ion-item{
+            text-align: center;
+            ion-label{
+                font-family: 'Montserrat', sans-serif;
+                font-size: 16px;
+            }
+        }
+    }
+    ion-button{
+        margin-top: 20px;
+    }
+}

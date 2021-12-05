@@ -1,0 +1,7 @@
+{
+  "name": "calculator-welquer-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

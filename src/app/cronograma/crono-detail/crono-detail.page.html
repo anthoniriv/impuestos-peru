@@ -1,0 +1,21 @@
+<ion-content>
+  <div style="display: flex;flex-direction: row;">
+    <ion-back-button text="" defaultHref="/cronograma"></ion-back-button>
+    <ion-text *ngIf="dataLoaded==true">
+      <h1>{{rucNumber}}</h1>
+    </ion-text>
+  </div>
+    <ion-list>
+      <div class="titles">
+        <ion-text>PERIODO</ion-text>
+        <ion-text>FECHA</ion-text>
+      </div>
+      <ion-item lines="none" *ngFor="let ruc of rucs">
+        <ion-label>{{ruc.PERIODO}}</ion-label>
+        <ion-label>{{ruc.FECHA}}</ion-label>
+      </ion-item>
+    </ion-list>
+      <ion-button *ngIf="savedRuc===false" expand="block" (click)="openModal()">
+        Guardar
+      </ion-button>
+</ion-content>

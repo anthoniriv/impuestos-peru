@@ -1,0 +1,37 @@
+ion-content{
+  --ion-background-color:#F9FBFC;
+  --padding-top:46px;
+  ion-text{
+    h1{
+      text-align: center;
+      font-size: 19px;
+      font-weight: bold;
+      color: #22377D;
+      font-family: 'Montserrat', sans-serif;
+    }
+    p{
+      margin-top: 54px;
+      font-size: 19px;
+      padding-left: 20px;
+      font-weight: bold;
+      color: black;
+      font-family: 'Montserrat', sans-serif;
+    }
+  }
+  ion-button{
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .info-button{
+    --border-radius: 28px;
+  }
+  ion-img{
+    padding-top: 50px;
+    max-width: 70%;
+    float: right;
+  }
+}
