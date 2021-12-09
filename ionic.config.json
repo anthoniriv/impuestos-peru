@@ -1,7 +1,10 @@
 {
   "name": "calculator-welquer-app",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
   },
   "type": "angular"
 }

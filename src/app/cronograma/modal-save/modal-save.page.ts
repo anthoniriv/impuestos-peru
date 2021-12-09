@@ -47,6 +47,6 @@ export class ModalSavePage implements OnInit {
     this.saveDataService.addData(data);
     this.modalCtrl.dismiss();
     //Router to cronograma
-    this.router.navigate(['/cronograma']);
+    this.router.navigate(['/inicio']);
   }
 }

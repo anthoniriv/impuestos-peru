@@ -1,18 +1,20 @@
 ion-content{
     --background: #203680;
-    --padding-bottom: 32px;
+    --padding-bottom: 24px;
     --padding-top: 32px;
     .labels{
         font-family: 'Montserrat', sans-serif;
         font-size: 26px;
         font-weight: bold;
         color: #fff;
-        margin-left:80px;
+        margin-left:60px;
     }
     .inputs{
         background: #fff;
         max-width: 80% !important;
         margin-left: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
         margin-right: auto;
         border-radius: 10px;
         text-align: center;
@@ -20,7 +22,7 @@ ion-content{
         font-family: 'Montserrat', sans-serif;
     }
     .btn-save{
-        margin-top: 32px;
+        margin-top: 12px;
         margin-left: 120px;
     }
 }

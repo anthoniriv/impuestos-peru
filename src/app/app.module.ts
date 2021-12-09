@@ -9,6 +9,10 @@ import { IonicStorageModule } from '@ionic/storage-angular';
 import {Drivers} from '@ionic/storage'
 import * as CordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import {SplashScreen} from '@ionic-native/splash-screen/ngx';
+import {StatusBar} from '@ionic-native/status-bar/ngx';
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -16,7 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     name: '__mydb',
     driverOrder: [CordovaSQLiteDriver._driver,Drivers.IndexedDB, Drivers.LocalStorage]
   }), BrowserAnimationsModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}, SplashScreen, StatusBar],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

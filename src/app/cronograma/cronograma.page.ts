@@ -24,11 +24,8 @@ export class CronogramaPage implements OnInit {
    }
 
   ngOnInit() {
-    this.getRucs();
-  }
-
-  ionViewWillEnter(){
     this.loadData();
+    this.loadDataInterval();
   }
   
   getRucs(){
@@ -38,6 +35,13 @@ export class CronogramaPage implements OnInit {
   //Reload loadData function to get the new data
   ionViewDidEnter(){
     this.loadData();
+  }
+
+  //Function to use loadData function every 60 seconds
+  loadDataInterval(){
+    setInterval(() => {
+      this.loadData();
+    }, 20000);
   }
 
   async loadData(){

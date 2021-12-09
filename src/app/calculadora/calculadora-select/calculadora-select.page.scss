@@ -1,0 +1,124 @@
+ion-content{
+    --ion-background-color: #f4f5f8;
+    --padding-top: 64px;
+    ion-text{
+        color: #203680;
+        h1{
+            margin: 0;
+            padding: 0;
+            padding-left: 26px;
+            font-size: 26px;
+            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+        }
+        h2{
+            padding-left: 26px;
+            font-size: 15px;
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+        }
+    }
+    .selections{
+        padding-top: 20px;
+        margin-left: -20px;
+        padding-bottom: 50px;
+        .categoria{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: center;
+            justify-content: space-evenly;
+            ion-text{
+                color: #203680;
+                h3{
+                    margin: 0;
+                    padding: 0;
+                    font-size: 15px;
+                    font-weight: bold;
+                    font-family: 'Montserrat', sans-serif;
+                    text-transform: uppercase;
+                }
+            }
+        }
+        .categoria2{
+            padding-left: 30px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: center;
+            justify-content: space-evenly;
+            ion-text{
+                color: #203680;
+                h3{
+                    margin: 0;
+                    padding: 0;
+                    font-size: 15px;
+                    font-weight: bold;
+                    font-family: 'Montserrat', sans-serif;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+    .calculadoras-1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .calculadora-unica{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            height: 150px;
+            padding-top: 20px;
+            background-color: #203680;
+            border-radius: 25px;
+            margin-bottom: 35px;
+            ion-icon{
+                color: white;
+                width: 50px;
+                height: 50px;
+            }
+            ion-text{
+                h3{
+                    font-size: 15px;
+                    font-weight: bold;
+                    font-family: 'Montserrat', sans-serif;
+                    text-transform: uppercase;
+                    color: white;
+                    text-align: center;
+                }
+            }
+        }
+        .calculadora-anual{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            height: 150px;
+            padding-top: 20px;
+            background-color: #203680;
+            border-radius: 25px;
+            ion-icon{
+                color: white;
+                width: 50px;
+                height: 50px;
+            }
+            ion-text{
+                h3{
+                    font-size: 15px;
+                    font-weight: bold;
+                    font-family: 'Montserrat', sans-serif;
+                    text-transform: uppercase;
+                    color: white;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

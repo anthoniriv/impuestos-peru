@@ -31,6 +31,22 @@ const routes: Routes = [
   {
     path: 'calculadora-select',
     loadChildren: () => import('./calculadora/calculadora-select/calculadora-select.module').then( m => m.CalculadoraSelectPageModule)
+  },
+  {
+    path: 'calc-unica',
+    loadChildren: () => import('./calculadora/calc-unica/calc-unica.module').then( m => m.CalcUnicaPageModule)
+  },
+  {
+    path: 'calc-anual1',
+    loadChildren: () => import('./calculadora/calc-anual1/calc-anual1.module').then( m => m.CalcAnual1PageModule)
+  },
+  {
+    path: 'calc-anual2',
+    loadChildren: () => import('./calculadora/calc-anual2/calc-anual2.module').then( m => m.CalcAnual2PageModule)
+  },
+  {
+    path: 'calc-cuarta',
+    loadChildren: () => import('./calculadora/calc-cuarta/calc-cuarta.module').then( m => m.CalcCuartaPageModule)
   }
 ];
 

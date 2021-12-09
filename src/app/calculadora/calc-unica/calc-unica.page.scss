@@ -1,0 +1,15 @@
+ion-content{
+    --ion-background-color: #f4f5f8;
+    .main{
+        ion-input{
+            width: 80%;
+            --border-color: var(--ion-color-danger, #f1453d);
+            --background: white;
+            font-size: 23px;
+            color: #4D4D4D;
+            border-radius: 25px !important;
+            padding-left: 25px !important;
+            border : solid 2px #20368038;
+        }
+    }
+}
