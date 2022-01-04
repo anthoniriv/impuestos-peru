@@ -15,7 +15,8 @@ export class CalcUnicaPage implements OnInit {
   isTouchedIgv:boolean = false;
   isTouchedTotal:boolean = false;
 
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit() {
     this.clearAll();
@@ -150,4 +151,8 @@ export class CalcUnicaPage implements OnInit {
     this.venta=valorBase;
   }
 
+  //Function to reset
+  reset(){
+    this.clearAll();
+  }
 }

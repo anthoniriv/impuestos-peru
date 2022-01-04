@@ -4,13 +4,10 @@
   <div class="selections">
     <div class="categoria">
       <ion-text><h3>Tercera<br>Categoría</h3></ion-text>
-      <ion-toggle color="primary"></ion-toggle>
+      <ion-toggle 
+      [disabled]="disabled"
+      (ionChange)="categoria_cambiada($event)" [(ngModel)]="categorias" color="primary"></ion-toggle>
       <ion-text><h3>Cuarta<br>Categoría</h3></ion-text>
-    </div>
-    <div class="categoria2">
-      <ion-text><h3>Servicio</h3></ion-text>
-      <ion-toggle color="primary"></ion-toggle>
-      <ion-text><h3>Productos</h3></ion-text>
     </div>
     <!-- <div class="categoria">
       <ion-text><h3>Tercera Categoría</h3></ion-text>
@@ -18,30 +15,30 @@
       <ion-text><h3>Cuarta Categoría</h3></ion-text>
     </div> -->
   </div>
-  <div class="calculadoras-1">
-    <div class="calculadora-unica">
+  <div *ngIf="categorias==false" class="calculadoras-1">
+    <div *ngIf="categorias==false" class="calculadora-unica" [routerLink]="['calc-unic']">
       <ion-icon name="calculator"></ion-icon>
       <ion-text><h3>Calculadora<br>Unica</h3></ion-text>
     </div>
-    <div class="calculadora-anual">
+    <div *ngIf="tipotercera==false" class="calculadora-anual" [routerLink]="['calc-anual1']">
       <ion-icon name="calculator"></ion-icon>
-      <ion-text><h3>Calculadora<br>Anual</h3></ion-text>
-    </div>
-  </div>
-  <!-- <div class="calculadoras-1">
-    <div class="calculadora-unica">
-      <ion-icon name="calculator"></ion-icon>
-      <ion-text><h3>Calculadora<br>Unica</h3></ion-text>
-    </div>
-    <div class="calculadora-anual">
-      <ion-icon name="calculator"></ion-icon>
-      <ion-text><h3>Calculadora<br>Anual</h3></ion-text>
+      <ion-text><h3>Calculadora<br>Mensual</h3></ion-text>
     </div>
   </div>
   <div class="calculadoras-1">
+    <!-- <div class="calculadora-unica" [routerLink]="['calc-unic']">
+      <ion-icon name="calculator"></ion-icon>
+      <ion-text><h3>Calculadora<br>Unica</h3></ion-text>
+    </div> -->
+    <div *ngIf="tipotercera==true" class="calculadora-anual" [routerLink]="['calc-anual2']">
+      <ion-icon name="calculator"></ion-icon>
+      <ion-text><h3>Calculadora<br>Mensual</h3></ion-text>
+    </div>
+  </div>
+  <div *ngIf="categorias==true" class="calculadoras-1" [routerLink]="['calc-cuarta']">
     <div class="calculadora-unica">
       <ion-icon name="calculator"></ion-icon>
       <ion-text><h3>Calculadora<br>Unica</h3></ion-text>
     </div>
-  </div> -->
+  </div>
 </ion-content>

@@ -29,6 +29,15 @@ ion-content{
   .info-button{
     --border-radius: 28px;
   }
+  ion-text{
+    .info{
+      margin-top: 2px;
+      margin-left: 12px;
+      font-size: 10px;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+    }
+  }
   ion-img{
     padding-top: 50px;
     max-width: 50%;

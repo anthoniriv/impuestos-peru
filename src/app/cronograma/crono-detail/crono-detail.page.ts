@@ -36,7 +36,7 @@ export class CronoDetailPage implements OnInit {
     },
     {
       "PERIODO":"ABRIL ",
-      "FECHA": " de Marzo"
+      "FECHA": " de Abril"
     },
     {
       "PERIODO":"MAYO ",
@@ -74,7 +74,7 @@ export class CronoDetailPage implements OnInit {
 
   constructor(
    private activateRoute: ActivatedRoute,
-   private cronoService: CronoServiceService,
+  //  private cronoService: CronoServiceService,
    private modalController: ModalController,
     private saveDataService: SaveDataService
   ) {
@@ -172,145 +172,145 @@ export class CronoDetailPage implements OnInit {
   //Function to us plusString function into all FECHA values of fechas array depending on the last digit of rucHERE.ruc
   editFechaAll(){
     this.getLastDigit();
-    if(this.getLastDigit()=="1"){
-      this.fechas[0].FECHA=this.plusString('16', " de Enero");
-      this.fechas[1].FECHA=this.plusString('15', " de Febrero");
-      this.fechas[2].FECHA=this.plusString('14', " de Marzo");
-      this.fechas[3].FECHA=this.plusString('13', " de Abril");
-      this.fechas[4].FECHA=this.plusString('12', " de Mayo");
-      this.fechas[5].FECHA=this.plusString('11', " de Junio");
-      this.fechas[6].FECHA=this.plusString('10', " de Julio");
-      this.fechas[7].FECHA=this.plusString('09', " de Agosto");
-      this.fechas[8].FECHA=this.plusString('08', " de Setiembre");
-      this.fechas[9].FECHA=this.plusString('07', " de Octubre");
-      this.fechas[10].FECHA=this.plusString('06', " de Noviembre");
-      this.fechas[11].FECHA=this.plusString('05', " de Diciembre");
+    if(this.getLastDigit()=="0"){
+      this.fechas[0].FECHA=this.plusString('12', " de Febrero");
+      this.fechas[1].FECHA=this.plusString('12', " de Marzo");
+      this.fechas[2].FECHA=this.plusString('16', " de Abril");
+      this.fechas[3].FECHA=this.plusString('14', " de Mayo");
+      this.fechas[4].FECHA=this.plusString('14', " de Junio");
+      this.fechas[5].FECHA=this.plusString('14', " de Julio");
+      this.fechas[6].FECHA=this.plusString('13', " de Agosto");
+      this.fechas[7].FECHA=this.plusString('14', " de Setiembre");
+      this.fechas[8].FECHA=this.plusString('15', " de Octubre");
+      this.fechas[9].FECHA=this.plusString('15', " de Noviembre");
+      this.fechas[10].FECHA=this.plusString('15', " de Diciembre");
+      this.fechas[11].FECHA=this.plusString('14', " de Enero");
     }
     else if(this.getLastDigit()=="2"){
-      this.fechas[0].FECHA=this.plusString('15', " de Enero");
-      this.fechas[1].FECHA=this.plusString('14', " de Febrero");
-      this.fechas[2].FECHA=this.plusString('13', " de Marzo");
-      this.fechas[3].FECHA=this.plusString('12', " de Abril");
-      this.fechas[4].FECHA=this.plusString('11', " de Mayo");
-      this.fechas[5].FECHA=this.plusString('10', " de Junio");
-      this.fechas[6].FECHA=this.plusString('09', " de Julio");
-      this.fechas[7].FECHA=this.plusString('08', " de Agosto");
-      this.fechas[8].FECHA=this.plusString('07', " de Setiembre");
-      this.fechas[9].FECHA=this.plusString('06', " de Octubre");
-      this.fechas[10].FECHA=this.plusString('05', " de Noviembre");
-      this.fechas[11].FECHA=this.plusString('04', " de Diciembre");
+      this.fechas[0].FECHA=this.plusString('16', " de Febrero");
+      this.fechas[1].FECHA=this.plusString('16', " de Marzo");
+      this.fechas[2].FECHA=this.plusString('20', " de Abril");
+      this.fechas[3].FECHA=this.plusString('18', " de Mayo");
+      this.fechas[4].FECHA=this.plusString('16', " de Junio");
+      this.fechas[5].FECHA=this.plusString('16', " de Julio");
+      this.fechas[6].FECHA=this.plusString('17', " de Agosto");
+      this.fechas[7].FECHA=this.plusString('16', " de Setiembre");
+      this.fechas[8].FECHA=this.plusString('19', " de Octubre");
+      this.fechas[9].FECHA=this.plusString('17', " de Noviembre");
+      this.fechas[10].FECHA=this.plusString('17', " de Diciembre");
+      this.fechas[11].FECHA=this.plusString('18', " de Enero");
     }
     else if(this.getLastDigit()=="3"){
-      this.fechas[0].FECHA=this.plusString('14', " de Enero");
-      this.fechas[1].FECHA=this.plusString('13', " de Febrero");
-      this.fechas[2].FECHA=this.plusString('12', " de Marzo");
-      this.fechas[3].FECHA=this.plusString('11', " de Abril");
-      this.fechas[4].FECHA=this.plusString('10', " de Mayo");
-      this.fechas[5].FECHA=this.plusString('09', " de Junio");
-      this.fechas[6].FECHA=this.plusString('08', " de Julio");
-      this.fechas[7].FECHA=this.plusString('07', " de Agosto");
-      this.fechas[8].FECHA=this.plusString('06', " de Setiembre");
-      this.fechas[9].FECHA=this.plusString('05', " de Octubre");
-      this.fechas[10].FECHA=this.plusString('04', " de Noviembre");
-      this.fechas[11].FECHA=this.plusString('03', " de Diciembre");
+      this.fechas[0].FECHA=this.plusString('16', " de Febrero");
+      this.fechas[1].FECHA=this.plusString('16', " de Marzo");
+      this.fechas[2].FECHA=this.plusString('20', " de Abril");
+      this.fechas[3].FECHA=this.plusString('18', " de Mayo");
+      this.fechas[4].FECHA=this.plusString('16', " de Junio");
+      this.fechas[5].FECHA=this.plusString('16', " de Julio");
+      this.fechas[6].FECHA=this.plusString('17', " de Agosto");
+      this.fechas[7].FECHA=this.plusString('16', " de Setiembre");
+      this.fechas[8].FECHA=this.plusString('19', " de Octubre");
+      this.fechas[9].FECHA=this.plusString('17', " de Noviembre");
+      this.fechas[10].FECHA=this.plusString('17', " de Diciembre");
+      this.fechas[11].FECHA=this.plusString('18', " de Enero");
     }
     else if(this.getLastDigit()=="4"){
-      this.fechas[0].FECHA=this.plusString('13', " de Enero");
-      this.fechas[1].FECHA=this.plusString('12', " de Febrero");
-      this.fechas[2].FECHA=this.plusString('11', " de Marzo");
-      this.fechas[3].FECHA=this.plusString('10', " de Abril");
-      this.fechas[4].FECHA=this.plusString('09', " de Mayo");
-      this.fechas[5].FECHA=this.plusString('08', " de Junio");
-      this.fechas[6].FECHA=this.plusString('07', " de Julio");
-      this.fechas[7].FECHA=this.plusString('06', " de Agosto");
-      this.fechas[8].FECHA=this.plusString('05', " de Setiembre");
-      this.fechas[9].FECHA=this.plusString('04', " de Octubre");
-      this.fechas[10].FECHA=this.plusString('03', " de Noviembre");
-      this.fechas[11].FECHA=this.plusString('02', " de Diciembre");
+      this.fechas[0].FECHA=this.plusString('17', " de Febrero");
+      this.fechas[1].FECHA=this.plusString('17', " de Marzo");
+      this.fechas[2].FECHA=this.plusString('21', " de Abril");
+      this.fechas[3].FECHA=this.plusString('19', " de Mayo");
+      this.fechas[4].FECHA=this.plusString('17', " de Junio");
+      this.fechas[5].FECHA=this.plusString('19', " de Julio");
+      this.fechas[6].FECHA=this.plusString('18', " de Agosto");
+      this.fechas[7].FECHA=this.plusString('17', " de Setiembre");
+      this.fechas[8].FECHA=this.plusString('20', " de Octubre");
+      this.fechas[9].FECHA=this.plusString('18', " de Noviembre");
+      this.fechas[10].FECHA=this.plusString('20', " de Diciembre");
+      this.fechas[11].FECHA=this.plusString('19', " de Enero");
     }
     else if(this.getLastDigit()=="5"){
-      this.fechas[0].FECHA=this.plusString('12', " de Enero");
-      this.fechas[1].FECHA=this.plusString('11', " de Febrero");
-      this.fechas[2].FECHA=this.plusString('10', " de Marzo");
-      this.fechas[3].FECHA=this.plusString('09', " de Abril");
-      this.fechas[4].FECHA=this.plusString('08', " de Mayo");
-      this.fechas[5].FECHA=this.plusString('07', " de Junio");
-      this.fechas[6].FECHA=this.plusString('06', " de Julio");
-      this.fechas[7].FECHA=this.plusString('05', " de Agosto");
-      this.fechas[8].FECHA=this.plusString('04', " de Setiembre");
-      this.fechas[9].FECHA=this.plusString('03', " de Octubre");
-      this.fechas[10].FECHA=this.plusString('02', " de Noviembre");
-      this.fechas[11].FECHA=this.plusString('01', " de Diciembre");
+      this.fechas[0].FECHA=this.plusString('17', " de Febrero");
+      this.fechas[1].FECHA=this.plusString('17', " de Marzo");
+      this.fechas[2].FECHA=this.plusString('21', " de Abril");
+      this.fechas[3].FECHA=this.plusString('19', " de Mayo");
+      this.fechas[4].FECHA=this.plusString('17', " de Junio");
+      this.fechas[5].FECHA=this.plusString('19', " de Julio");
+      this.fechas[6].FECHA=this.plusString('18', " de Agosto");
+      this.fechas[7].FECHA=this.plusString('17', " de Setiembre");
+      this.fechas[8].FECHA=this.plusString('20', " de Octubre");
+      this.fechas[9].FECHA=this.plusString('18', " de Noviembre");
+      this.fechas[10].FECHA=this.plusString('20', " de Diciembre");
+      this.fechas[11].FECHA=this.plusString('19', " de Enero");
     }
     else if(this.getLastDigit()=="6"){
-      this.fechas[0].FECHA=this.plusString('11', " de Enero");
-      this.fechas[1].FECHA=this.plusString('10', " de Febrero");
-      this.fechas[2].FECHA=this.plusString('09', " de Marzo");
-      this.fechas[3].FECHA=this.plusString('08', " de Abril");
-      this.fechas[4].FECHA=this.plusString('07', " de Mayo");
-      this.fechas[5].FECHA=this.plusString('06', " de Junio");
-      this.fechas[6].FECHA=this.plusString('05', " de Julio");
-      this.fechas[7].FECHA=this.plusString('04', " de Agosto");
-      this.fechas[8].FECHA=this.plusString('03', " de Setiembre");
-      this.fechas[9].FECHA=this.plusString('02', " de Octubre");
-      this.fechas[10].FECHA=this.plusString('01', " de Noviembre");
-      this.fechas[11].FECHA=this.plusString('00', " de Diciembre");
+      this.fechas[0].FECHA=this.plusString('18', " de Febrero");
+      this.fechas[1].FECHA=this.plusString('18', " de Marzo");
+      this.fechas[2].FECHA=this.plusString('22', " de Abril");
+      this.fechas[3].FECHA=this.plusString('20', " de Mayo");
+      this.fechas[4].FECHA=this.plusString('18', " de Junio");
+      this.fechas[5].FECHA=this.plusString('20', " de Julio");
+      this.fechas[6].FECHA=this.plusString('19', " de Agosto");
+      this.fechas[7].FECHA=this.plusString('20', " de Setiembre");
+      this.fechas[8].FECHA=this.plusString('21', " de Octubre");
+      this.fechas[9].FECHA=this.plusString('19', " de Noviembre");
+      this.fechas[10].FECHA=this.plusString('21', " de Diciembre");
+      this.fechas[11].FECHA=this.plusString('20', " de Enero");
     }
     else if(this.getLastDigit()=="7"){
-      this.fechas[0].FECHA=this.plusString('10', " de Enero");
-      this.fechas[1].FECHA=this.plusString('09', " de Febrero");
-      this.fechas[2].FECHA=this.plusString('08', " de Marzo");
-      this.fechas[3].FECHA=this.plusString('07', " de Abril");
-      this.fechas[4].FECHA=this.plusString('06', " de Mayo");
-      this.fechas[5].FECHA=this.plusString('05', " de Junio");
-      this.fechas[6].FECHA=this.plusString('04', " de Julio");
-      this.fechas[7].FECHA=this.plusString('03', " de Agosto");
-      this.fechas[8].FECHA=this.plusString('02', " de Setiembre");
-      this.fechas[9].FECHA=this.plusString('01', " de Octubre");
-      this.fechas[10].FECHA=this.plusString('00', " de Noviembre");
-      this.fechas[11].FECHA=this.plusString('99', " de Diciembre");
+      this.fechas[0].FECHA=this.plusString('18', " de Febrero");
+      this.fechas[1].FECHA=this.plusString('18', " de Marzo");
+      this.fechas[2].FECHA=this.plusString('22', " de Abril");
+      this.fechas[3].FECHA=this.plusString('20', " de Mayo");
+      this.fechas[4].FECHA=this.plusString('18', " de Junio");
+      this.fechas[5].FECHA=this.plusString('20', " de Julio");
+      this.fechas[6].FECHA=this.plusString('19', " de Agosto");
+      this.fechas[7].FECHA=this.plusString('20', " de Setiembre");
+      this.fechas[8].FECHA=this.plusString('21', " de Octubre");
+      this.fechas[9].FECHA=this.plusString('19', " de Noviembre");
+      this.fechas[10].FECHA=this.plusString('21', " de Diciembre");
+      this.fechas[11].FECHA=this.plusString('20', " de Enero");
     }
     else if(this.getLastDigit()=="8"){
-      this.fechas[0].FECHA=this.plusString('09', " de Enero");
-      this.fechas[1].FECHA=this.plusString('08', " de Febrero");
-      this.fechas[2].FECHA=this.plusString('07', " de Marzo");
-      this.fechas[3].FECHA=this.plusString('06', " de Abril");
-      this.fechas[4].FECHA=this.plusString('05', " de Mayo");
-      this.fechas[5].FECHA=this.plusString('04', " de Junio");
-      this.fechas[6].FECHA=this.plusString('03', " de Julio");
-      this.fechas[7].FECHA=this.plusString('02', " de Agosto");
-      this.fechas[8].FECHA=this.plusString('01', " de Setiembre");
-      this.fechas[9].FECHA=this.plusString('00', " de Octubre");
-      this.fechas[10].FECHA=this.plusString('99', " de Noviembre");
-      this.fechas[11].FECHA=this.plusString('98', " de Diciembre");
+      this.fechas[0].FECHA=this.plusString('19', " de Febrero");
+      this.fechas[1].FECHA=this.plusString('19', " de Marzo");
+      this.fechas[2].FECHA=this.plusString('23', " de Abril");
+      this.fechas[3].FECHA=this.plusString('21', " de Mayo");
+      this.fechas[4].FECHA=this.plusString('21', " de Junio");
+      this.fechas[5].FECHA=this.plusString('21', " de Julio");
+      this.fechas[6].FECHA=this.plusString('20', " de Agosto");
+      this.fechas[7].FECHA=this.plusString('21', " de Setiembre");
+      this.fechas[8].FECHA=this.plusString('22', " de Octubre");
+      this.fechas[9].FECHA=this.plusString('22', " de Noviembre");
+      this.fechas[10].FECHA=this.plusString('22', " de Diciembre");
+      this.fechas[11].FECHA=this.plusString('21', " de Enero");
     }
     else if(this.getLastDigit()=="9"){
-      this.fechas[0].FECHA=this.plusString('08', " de Enero");
-      this.fechas[1].FECHA=this.plusString('07', " de Febrero");
-      this.fechas[2].FECHA=this.plusString('06', " de Marzo");
-      this.fechas[3].FECHA=this.plusString('05', " de Abril");
-      this.fechas[4].FECHA=this.plusString('04', " de Mayo");
-      this.fechas[5].FECHA=this.plusString('03', " de Junio");
-      this.fechas[6].FECHA=this.plusString('02', " de Julio");
-      this.fechas[7].FECHA=this.plusString('01', " de Agosto");
-      this.fechas[8].FECHA=this.plusString('00', " de Setiembre");
-      this.fechas[9].FECHA=this.plusString('99', " de Octubre");
-      this.fechas[10].FECHA=this.plusString('98', " de Noviembre");
-      this.fechas[11].FECHA=this.plusString('97', " de Diciembre");
+      this.fechas[0].FECHA=this.plusString('19', " de Febrero");
+      this.fechas[1].FECHA=this.plusString('19', " de Marzo");
+      this.fechas[2].FECHA=this.plusString('23', " de Abril");
+      this.fechas[3].FECHA=this.plusString('21', " de Mayo");
+      this.fechas[4].FECHA=this.plusString('21', " de Junio");
+      this.fechas[5].FECHA=this.plusString('21', " de Julio");
+      this.fechas[6].FECHA=this.plusString('20', " de Agosto");
+      this.fechas[7].FECHA=this.plusString('21', " de Setiembre");
+      this.fechas[8].FECHA=this.plusString('22', " de Octubre");
+      this.fechas[9].FECHA=this.plusString('22', " de Noviembre");
+      this.fechas[10].FECHA=this.plusString('22', " de Diciembre");
+      this.fechas[11].FECHA=this.plusString('21', " de Enero");
     }
-    else if(this.getLastDigit()=="0"){
-      this.fechas[0].FECHA=this.plusString('07', " de Enero");
-      this.fechas[1].FECHA=this.plusString('06', " de Febrero");
-      this.fechas[2].FECHA=this.plusString('05', " de Marzo");
-      this.fechas[3].FECHA=this.plusString('04', " de Abril");
-      this.fechas[4].FECHA=this.plusString('03', " de Mayo");
-      this.fechas[5].FECHA=this.plusString('02', " de Junio");
-      this.fechas[6].FECHA=this.plusString('01', " de Julio");
-      this.fechas[7].FECHA=this.plusString('00', " de Agosto");
-      this.fechas[8].FECHA=this.plusString('99', " de Setiembre");
-      this.fechas[9].FECHA=this.plusString('98', " de Octubre");
-      this.fechas[10].FECHA=this.plusString('97', " de Noviembre");
-      this.fechas[11].FECHA=this.plusString('96', " de Diciembre");
+    else if(this.getLastDigit()=="1"){
+      this.fechas[0].FECHA=this.plusString('15', " de Febrero");
+      this.fechas[1].FECHA=this.plusString('15', " de Marzo");
+      this.fechas[2].FECHA=this.plusString('19', " de Abril");
+      this.fechas[3].FECHA=this.plusString('17', " de Mayo");
+      this.fechas[4].FECHA=this.plusString('15', " de Junio");
+      this.fechas[5].FECHA=this.plusString('15', " de Julio");
+      this.fechas[6].FECHA=this.plusString('16', " de Agosto");
+      this.fechas[7].FECHA=this.plusString('15', " de Setiembre");
+      this.fechas[8].FECHA=this.plusString('18', " de Octubre");
+      this.fechas[9].FECHA=this.plusString('16', " de Noviembre");
+      this.fechas[10].FECHA=this.plusString('16', " de Diciembre");
+      this.fechas[11].FECHA=this.plusString('17', " de Enero");
     }
   }
 }
