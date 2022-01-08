@@ -15,6 +15,9 @@ export class CalcCuartaPage implements OnInit {
   isTouchedIgv:boolean = false;
   isTouchedTotal:boolean = false;
 
+  checked1:any;
+  checked2:any;
+
   constructor() { }
 
   ngOnInit() {
@@ -127,6 +130,9 @@ export class CalcCuartaPage implements OnInit {
     this.igv = igv;
   }
 
+  changeIGV(){
+    this.igv=0;
+  }
   calcTotal(){
     var total = this.venta - this.igv;
     this.total = total.toString();
@@ -150,5 +156,82 @@ export class CalcCuartaPage implements OnInit {
     this.venta=valorBase;
   }
 
+  cuartaCheck(e){
+    var checkbox = e.target;
+    this.checked1 = checkbox.checked;
+    if(this.checked1){
+      if(this.venta>1500){
+        this.changeIGV();
+        this.calcTotal();
+      }
+      if(this.venta<1500){
+        this.changeIGV();
+        this.calcTotal();
+      }
+      console.log("Estoy en true");
+    }
+    if(this.checked2 == true && this.checked1 == true){
+      this.calcIgv();
+      this.calcTotal();
+    }
+    if(this.checked2 == false && this.checked1 == true){
+      if(this.venta>1500){
+        this.changeIGV();
+        this.calcTotal();
+      }
+      if(this.venta<1500){
+        this.changeIGV();
+        this.calcTotal();
+      }
+    }
+    if(this.checked2 == false && this.checked1 == false){
+      if(this.venta>1500){
+        this.calcIgv();
+        this.calcTotal();
+      }
+      if(this.venta<1500){
+        this.changeIGV();
+        this.calcTotal();
+      }
+    }
+    if(this.checked1==false){
+      if(this.venta>1500){
+        this.calcIgv();
+        this.calcTotal();
+      }
+      if(this.venta<1500){
+        this.changeIGV();
+        this.calcTotal();
+      }
+    }
+  }
 
+  superarCheck(e){
+    var checkbox = e.target;
+    this.checked2 = checkbox.checked;
+    if(this.checked2){
+      this.calcIgv();
+      this.calcTotal();
+    }
+    if(this.checked2 == true && this.checked1 == true){
+      console.log("Estamos en true y true");
+    }
+    if(this.checked2 == false && this.checked1 == true){
+      console.log("Estamos en false y true");
+    }
+    if(this.checked2 == false && this.checked1 == false){
+      if(this.venta>1500){
+        this.calcIgv();
+        this.calcTotal();
+      }
+      if(this.venta<1500){
+        this.changeIGV();
+        this.calcTotal();
+      }
+    }
+    if(this.checked2==false){
+      this.changeIGV();
+      this.calcTotal();
+    }
+  }
 }

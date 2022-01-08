@@ -40,9 +40,13 @@
     [value]="total"
     disabled="true"
     ></ion-input>
-    <ion-item>
-      <ion-label>Supere mi valor</ion-label>
-      <ion-checkbox slot="end" color="primary"></ion-checkbox>
+    <ion-item lines="none">
+      <ion-label>Hice mi suspension de renta cuarta.</ion-label>
+      <ion-checkbox slot="end" color="primary" (ionChange)="cuartaCheck($event)"></ion-checkbox>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Supere los 32000.</ion-label>
+      <ion-checkbox slot="end" color="primary" (ionChange)="superarCheck($event)"></ion-checkbox>
     </ion-item>
   </div>
 </ion-content>
