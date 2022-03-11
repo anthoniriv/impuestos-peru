@@ -1,17 +1,12 @@
 <ion-content>
-  <ion-text>
-    <h1>CALCULADORA</h1>
-  </ion-text>
-  <ion-text>
-  </ion-text>
+  <h1 class="title">CALCULADORA</h1>
+  <h2 class="sub_title">Calcula tus impuestos a pagar</h2>
   <div class="main">
-    <ion-text>
-      <h2>Sub Total </h2>
-    </ion-text>
-    <ion-item lines="none">
+    <h2 class="labels">Sub Total </h2>
+    <ion-item class="inputs" lines="none">
       <ion-label
       position="start"
-      style="z-index: 1;margin-left: 1rem;margin-top: -11px;"
+      style="z-index: 1;margin-left: 1rem;"
       >S/</ion-label>
       <ion-input
       position="floating"
@@ -22,13 +17,11 @@
       [value]="venta"
       ></ion-input>
     </ion-item>
-    <ion-text>
-      <h2>IGV</h2>
-    </ion-text>
-    <ion-item lines="none">
+    <h2 class="labels">IGV</h2>
+    <ion-item class="inputs" lines="none">
       <ion-label
       position="start"
-      style="z-index: 1;margin-left: 1rem;margin-top: -11px;"
+      style="z-index: 1;margin-left: 1rem;"
       >S/</ion-label>
       <ion-input 
       position="floating"
@@ -39,13 +32,11 @@
       [value]="igv"
       ></ion-input>
     </ion-item>
-    <ion-text>
-      <h2>Total de Ventas</h2>
-    </ion-text>
-    <ion-item lines="none">
+    <h2 class="labels">Total de Ventas</h2>
+    <ion-item class="inputs" lines="none">
       <ion-label
       position="start"
-      style="z-index: 1;margin-left: 1rem;margin-top: -11px;"
+      style="z-index: 1;margin-left: 1rem;"
       >S/</ion-label>
       <ion-input 
       id="input-total"
@@ -57,5 +48,5 @@
       ></ion-input>
     </ion-item>
   </div>
-  <ion-button  expand="block" (click)="reset()">Reinicar</ion-button>
+  <ion-button class="button"  expand="block" (click)="reset()">Reinicar</ion-button>
 </ion-content>

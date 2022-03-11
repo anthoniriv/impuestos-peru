@@ -1,73 +1,61 @@
-ion-content{
+ion-item{
+    --background: rgba(32, 54, 128, 0);
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.178));
+}
+.main{
+    background: url('https://i.imgur.com/pSkiAUw.png') 0 0/100% 100% no-repeat;
     --ion-background-color: #f4f5f8;
-    --padding-top: 64px;
-    ion-text{
-        color: #203680;
-        h1{
-            margin: 0;
-            padding: 0;
-            padding-left: 26px;
-            font-size: 26px;
-            font-weight: bold;
-            font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
-        }
-        h2{
-            padding-top: 20px;
-            padding-left: 26px;
-            font-size: 15px;
-            font-weight: 500;
-            font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
-        }
+    .title{
+        color: #fff;
+        padding-top: 105px;
+        padding-bottom: 210px;
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
     }
-    .main{
-        padding-bottom: 25px !important;
+    .sub_title{
+        color: #03335e;
+        text-align: center;
+        margin-top: 20px;
+        padding-bottom: 20px;
+        font-size: 19px;
+        font-weight: 500;
+        font-family: 'Montserrat', sans-serif;
+    }
+}
+.content{
+    --background: url('https://i.imgur.com/3PWAV5h.png') 0 0/100% 100% no-repeat;
+    .labels{
+        margin: 0;
+        color: #03335e;
+        font-size: 16px;
+        padding-left: 45px;
+        font-weight: 400;
+    }
+    .inputs{
+        width: 90%;
+        margin: auto;
+        margin-bottom: 15px;
         ion-input{
-            width: 80%;
             --border-color: var(--ion-color-danger, #f1453d);
             --background: white;
             font-size: 23px;
             color: #4D4D4D;
-            border-radius: 25px !important;
-            margin-bottom: 25px !important;
-            border : solid 2px #20368038;
+            border-radius: 18px !important;
             padding-left: 35px !important;
             margin-left: -40px !important;
+            // margin-bottom: 10px !important;
+            border : solid 2px #20368038;
             z-index: 0;
         }
     }
-    .main2{
-        padding-bottom: 25px !important;
-        ion-input{
-            width: 80%;
-            --border-color: var(--ion-color-danger, #f1453d);
-            --background: white;
-            font-size: 23px;
-            color: #4D4D4D;
-            border-radius: 25px !important;
-            margin-bottom: 25px !important;
-            border : solid 2px #20368038;
-            padding-left: 35px !important;
-            margin-left: -40px !important;
-            z-index: 0;
-            
-        }
-    }
-    .main3{
-        padding-bottom: 25px !important;
-        ion-input{
-            width: 80%;
-            --border-color: var(--ion-color-danger, #f1453d);
-            --background: white;
-            font-size: 23px;
-            color: #4D4D4D;
-            border-radius: 25px !important;
-            margin-bottom: 25px !important;
-            border : solid 2px #20368038;
-            padding-left: 35px !important;
-            margin-left: -40px !important;
-            z-index: 0;
-        }
+    .button{
+        margin-top: 20px !important;
+        margin-bottom: 20px !important;
+        margin: auto;
+        width: 80%;
+        --background: linear-gradient(90deg, #0D2B56, #005AA3) !important;
     }
 }

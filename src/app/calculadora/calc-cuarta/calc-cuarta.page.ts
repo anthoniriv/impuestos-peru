@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-calc-cuarta',
   templateUrl: './calc-cuarta.page.html',
   styleUrls: ['./calc-cuarta.page.scss'],
 })
 export class CalcCuartaPage implements OnInit {
-  
+
   venta:any;
   igv:any;
   total:any;
@@ -18,7 +17,8 @@ export class CalcCuartaPage implements OnInit {
   checked1:any;
   checked2:any;
 
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit() {
     this.clearAll();

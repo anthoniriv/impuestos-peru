@@ -35,6 +35,8 @@
     "@ionic/storage-angular": "^3.0.6",
     "@swimlane/ngx-datatable": "^20.0.0",
     "cordova-sqlite-storage": "^6.0.0",
+    "currency-thousand-separator": "^1.0.0",
+    "format-thousands": "^2.0.0",
     "localforage-cordovasqlitedriver": "^1.8.0",
     "number-to-spanish-words": "^1.1.0",
     "rxjs": "~6.6.0",

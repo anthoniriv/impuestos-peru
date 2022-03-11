@@ -15,8 +15,7 @@ export class CalcUnicaPage implements OnInit {
   isTouchedIgv:boolean = false;
   isTouchedTotal:boolean = false;
 
-  constructor(
-  ) { }
+  constructor() { }
 
   ngOnInit() {
     this.clearAll();
