@@ -108,12 +108,12 @@
     style="z-index: 1;margin-left: 1rem;"
     >S/</ion-label>
   <ion-input
-  id="input-credt"
-  (ionFocus)="focusInputCredt('input-credt')" 
-  (ionBlur)="unfocusInputCredt('input-credt')"
-  (input)="getCredtMes($event.target.value)"
+  id="input-credtTot"
+  (ionFocus)="focusInputCredtTot('input-credtTot')" 
+  (ionBlur)="unfocusInputCredtTot('input-credtTot')"
+  (input)="calcTotalMesAnterior2($event.target.value)"
   placeholder="0"
-  [value]="total_mesanterior"
+  [value]="total_mesanteriorTot"
   ></ion-input>
   </ion-item>
   <h2 class="labels">IGV a Pagar</h2>
@@ -128,7 +128,7 @@
   disabled="true"
   ></ion-input>
   </ion-item>
-  <ion-item lines="none">
+  <div class="selector-tipo">
     <ion-label>Tipo de Regimen</ion-label>
     <ion-select [value]="selected" interface="action-sheet" okText="Okay" cancelText="Dismiss" (ionChange)="regimenChange($event)">
       <ion-select-option value="default"></ion-select-option>
@@ -136,8 +136,8 @@
       <ion-select-option value="RMT">Régimen MYPE Tributario</ion-select-option>
       <ion-select-option value="RG">Régimen General</ion-select-option>
     </ion-select>
-  </ion-item>
-  <ion-item lines="none">
+  </div>
+  <ion-item style="padding-left: 30px;font-size: 24px;color: #03335e;" lines="none">
     <ion-label>{{regimen}}</ion-label>
   </ion-item>
   <ion-button class="button"  expand="block" (click)="reiniciar()">Reinicar</ion-button>

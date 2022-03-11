@@ -10,7 +10,7 @@ ion-item{
         padding-top: 105px;
         padding-bottom: 210px;
         text-align: center;
-        font-size: 30px;
+        font-size: 28px;
         font-weight: bold;
         font-family: 'Montserrat', sans-serif;
         text-transform: uppercase;
@@ -50,6 +50,20 @@ ion-item{
             border : solid 2px #20368038;
             z-index: 0;
         }
+    }
+    .selector-tipo{
+        width: 80%;
+        margin: auto;
+        margin-top: 25px;
+        padding-left: 10px;
+        padding-right: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 12px;
+        color: #fff;
+        background: linear-gradient(90deg, #0D2B56, #005AA3);
     }
     .button{
         margin-top: 20px !important;

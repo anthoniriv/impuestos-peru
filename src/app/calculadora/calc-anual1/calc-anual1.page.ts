@@ -17,6 +17,7 @@ export class CalcAnual1Page implements OnInit {
   total_compras:any;
 
   credito_mesanterior:any;
+  total_mesanteriorTot:any;
 
   igv_pagar:any;
   renta_factor:any;
@@ -34,6 +35,7 @@ export class CalcAnual1Page implements OnInit {
 
   isTouchedCompras:boolean = false;
   isTouchedCredt:boolean = false;
+  isTouchedtotal_mesanteriorTot:boolean = false;
 
   options =  [
     {
@@ -62,6 +64,7 @@ export class CalcAnual1Page implements OnInit {
     this.creditofiscal="";
     this.total_compras="";
     this.credito_mesanterior="";
+    this.total_mesanteriorTot="";
   }
 
   getVenta(valor:any) {
@@ -102,14 +105,40 @@ export class CalcAnual1Page implements OnInit {
       console.log("Estoy calculando en credmes");
       this.credito_mesanterior = parseFloat(valor);
       this.calcIgvPagar();
-      //Conditional to check if venta is NaN
+      this.calcTotalMesAnterior1();
       if(isNaN(this.credito_mesanterior)){
         this.credito_mesanterior = "";
+        this.total_mesanteriorTot = "";
       }
       console.log(this.credito_mesanterior);
     }
   }
 
+  calcTotalMesAnterior1(){
+    if(this.isTouchedCredt=true){
+      console.log('Total numero mes anterior')
+      var numTotal = (this.credito_mesanterior*100)/18;
+      numTotal=this.round(numTotal);
+      this.total_mesanteriorTot = numTotal;
+      console.log(this.total_mesanteriorTot);
+    }
+  }
+
+  calcTotalMesAnterior2(valor:any){
+    if(this.isTouchedtotal_mesanteriorTot=true){
+      console.log('Total numero mes anterior')
+      this.total_mesanteriorTot = parseFloat(valor);
+      var numIGV = this.total_mesanteriorTot*0.18;
+      numIGV=this.round(numIGV);
+      this.credito_mesanterior = numIGV;
+      this.calcIgvPagar();
+      if(isNaN(this.total_mesanteriorTot)){
+        this.credito_mesanterior = "";
+        this.total_mesanteriorTot = "";
+      }
+      console.log(this.credito_mesanterior);
+    }
+  }
   getIgv(valor:any) {
     if(this.isTouchedIgv=true){
       console.log("Estoy calculando en igv");
@@ -184,6 +213,16 @@ export class CalcAnual1Page implements OnInit {
     document.getElementById(`${input}`).style.border = "solid 2px #203680";
   }
 
+  focusInputCredtTot(input:any){
+    this.isTouchedTotal = false;
+    this.isTouchedVenta = false;
+    this.isTouchedIgv = false;
+    this.isTouchedCompras = false;
+    this.isTouchedCredt = false;
+    this.isTouchedtotal_mesanteriorTot = true;
+    document.getElementById(`${input}`).style.border = "solid 2px #203680";
+  }
+
   unfocusInputVenta(input:any){
     this.isTouchedVenta = false;
     console.log(`${this.isTouchedVenta} es falso ahora`);
@@ -209,6 +248,12 @@ export class CalcAnual1Page implements OnInit {
     this.isTouchedCredt = false;
     document.getElementById(`${input}`).style.border = "solid 1px #20368038";
   }
+
+  unfocusInputCredtTot(input:any){
+    this.total_mesanteriorTot = false;
+    document.getElementById(`${input}`).style.border = "solid 1px #20368038";
+  }
+
   //Calculator Functions
   calcIgv(){
     var igv = this.venta * 0.18;
@@ -270,11 +315,14 @@ export class CalcAnual1Page implements OnInit {
     this.creditofiscal = "";
     this.total_compras = "";
     this.igv_pagar = "";
+    this.credito_mesanterior = "";
+    this.total_mesanteriorTot = "";
     this.isTouchedVenta = false;
     this.isTouchedIgv = false;
     this.isTouchedTotal = false;
     this.isTouchedCompras = false;
     this.isTouchedCredt = false;
+    this.isTouchedtotal_mesanteriorTot = false;
     this.selected = "default";
   }
 
