@@ -1,24 +1,16 @@
 ion-content{
+    --background: url('https://i.imgur.com/dWLz6MG.jpg') 0 0/100% 100% no-repeat;
     --ion-background-color:#F9FBFC;
     .top{
         padding: 0px;
-        ion-text{
+        .title{
             text-align: center;
-            h1{
-                margin: 0;
-                padding-top: 40px;
-                font-family: 'Montserrat', sans-serif;
-                font-weight: bold;
-                color: #203680;
-            }
-            h2{
-                margin: 0;
-                font-size: 15px;
-                font-family: 'Montserrat', sans-serif;
-                font-weight: 400;
-                color: #203680;
-                padding-bottom: 35px;
-            }
+            font-size: 30px;
+            padding-top: 110px;
+            padding-bottom: 220px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            color: #fff;
         }
         ion-item {
             --padding-end: 0px;
@@ -30,6 +22,17 @@ ion-content{
           }
     }
     .down{
+        padding-top: 20px;
+        .acordion{
+            width: 80%;
+            border-radius: 12px;
+            // background: linear-gradient(90deg, #0D2B56, #005AA3);
+            --ion-background-color: linear-gradient(90deg, #0D2B56, #005AA3);
+        }
+        .contenido{
+            --ion-background-color: #fff;
+            background: #fff;
+        }
         ion-text{
             text-align: center;
             h1{

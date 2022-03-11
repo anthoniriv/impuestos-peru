@@ -21,5 +21,8 @@ import {StatusBar} from '@ionic-native/status-bar/ngx';
   }), BrowserAnimationsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}, SplashScreen, StatusBar],
   bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ]
 })
 export class AppModule {}

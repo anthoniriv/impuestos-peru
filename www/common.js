@@ -486,52 +486,194 @@ class TakeUntilSubscriber extends _innerSubscribe__WEBPACK_IMPORTED_MODULE_0__.S
 
 /***/ }),
 
-/***/ 8232:
-/*!***************************************************!*\
-  !*** ./src/app/services/crono-service.service.ts ***!
-  \***************************************************/
+/***/ 5378:
+/*!***********************************************************!*\
+  !*** ./src/app/calculadora/calc-unica/calc-unica.page.ts ***!
+  \***********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "CronoServiceService": () => (/* binding */ CronoServiceService)
+/* harmony export */   "CalcUnicaPage": () => (/* binding */ CalcUnicaPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _raw_loader_calc_unica_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./calc-unica.page.html */ 8736);
+/* harmony import */ var _calc_unica_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./calc-unica.page.scss */ 6922);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
 
 
-let CronoServiceService = class CronoServiceService {
+
+
+let CalcUnicaPage = class CalcUnicaPage {
     constructor() {
-        this.rucSaved = [
-            {
-                rucNumber: '20602708731',
-                rucName: 'JUAN PEREZ',
+        this.isTouchedVenta = false;
+        this.isTouchedIgv = false;
+        this.isTouchedTotal = false;
+    }
+    ngOnInit() {
+        this.clearAll();
+    }
+    //Use clearall function to clear all the values in the calculator
+    //Function to clear all the values
+    clearAll() {
+        this.venta = "";
+        this.igv = "";
+        this.total = "";
+    }
+    //Get Data Functions
+    getVenta(valor) {
+        if (this.isTouchedVenta = true) {
+            console.log("Estoy calculando en venta");
+            this.venta = parseFloat(valor);
+            this.calcIgv();
+            this.calcTotal();
+            //Conditional to check if venta is NaN
+            if (isNaN(this.venta)) {
+                this.igv = "";
+                this.total = "";
+                this.venta = "";
             }
-        ];
+            console.log(this.venta);
+        }
     }
-    getRUCS() {
-        return [...this.rucSaved];
+    getIgv(valor) {
+        if (this.isTouchedIgv = true) {
+            console.log("Estoy calculando en igv");
+            this.igv = parseFloat(valor);
+            this.calcularValorBase2();
+            this.calcTotal();
+            //Conditional to check if venta is NaN
+            if (isNaN(this.igv)) {
+                this.venta = "";
+                this.total = "";
+                this.igv = "";
+            }
+            console.log(this.igv);
+        }
     }
-    getRucHere(rucID) {
-        return Object.assign({}, this.rucSaved.find(ruc => {
-            return ruc.rucNumber === rucID;
-        }));
+    getTotal(valor) {
+        if (this.isTouchedTotal = true) {
+            console.log("Estoy calculando en total");
+            this.total = parseFloat(valor);
+            this.calcularValorBase();
+            this.calcIgv();
+            //Conditional to check if venta is NaN
+            if (isNaN(this.total)) {
+                this.venta = "";
+                this.igv = "";
+                this.total = "";
+            }
+            console.log(this.total);
+        }
     }
-    deleteRUC(rucID) {
-        this.rucSaved = this.rucSaved.filter(ruc => {
-            return ruc.rucNumber !== rucID;
-        });
+    //Change Color Functions
+    focusInputVenta(input) {
+        this.isTouchedIgv = false;
+        this.isTouchedTotal = false;
+        this.isTouchedVenta = true;
+        console.log(`${this.isTouchedVenta} es verdadero ahora`);
+        document.getElementById(`${input}`).style.border = "solid 2px #203680";
+    }
+    focusInputIgv(input) {
+        this.isTouchedIgv = true;
+        this.isTouchedTotal = false;
+        this.isTouchedVenta = false;
+        console.log(`${this.isTouchedIgv} es verdadero ahora`);
+        document.getElementById(`${input}`).style.border = "solid 2px #203680";
+    }
+    focusInputTotal(input) {
+        this.isTouchedTotal = true;
+        this.isTouchedVenta = false;
+        this.isTouchedIgv = false;
+        console.log(`${this.isTouchedTotal} es verdadero ahora`);
+        document.getElementById(`${input}`).style.border = "solid 2px #203680";
+    }
+    unfocusInputVenta(input) {
+        this.isTouchedVenta = false;
+        console.log(`${this.isTouchedVenta} es falso ahora`);
+        document.getElementById(`${input}`).style.border = "solid 1px #20368038";
+    }
+    unfocusInputIgv(input) {
+        this.isTouchedIgv = false;
+        console.log(`${this.isTouchedVenta} es falso ahora`);
+        document.getElementById(`${input}`).style.border = "solid 1px #20368038";
+    }
+    unfocusInputTotal(input) {
+        this.isTouchedTotal = false;
+        console.log(`${this.isTouchedVenta} es falso ahora`);
+        document.getElementById(`${input}`).style.border = "solid 1px #20368038";
+    }
+    //Calculator Functions
+    calcIgv() {
+        var igv = this.venta * 0.18;
+        igv = this.round(igv);
+        this.igv = igv;
+    }
+    calcTotal() {
+        var total = this.venta + this.igv;
+        this.total = total.toString();
+        // this.total = this.venta += this.igv;
+    }
+    calcularValorBase() {
+        var valorBase = this.total / 1.18;
+        valorBase = this.round(valorBase);
+        this.venta = valorBase.toString();
+    }
+    //Function to round the values witouth using toFixed
+    round(value) {
+        return Math.round(value * 100) / 100;
+    }
+    calcularValorBase2() {
+        var valorBase = 100 * this.igv / 18;
+        valorBase = this.round(valorBase);
+        this.venta = valorBase;
+    }
+    //Function to reset
+    reset() {
+        this.clearAll();
     }
 };
-CronoServiceService.ctorParameters = () => [];
-CronoServiceService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Injectable)({
-        providedIn: 'root'
+CalcUnicaPage.ctorParameters = () => [];
+CalcUnicaPage = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Component)({
+        selector: 'app-calc-unica',
+        template: _raw_loader_calc_unica_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
+        styles: [_calc_unica_page_scss__WEBPACK_IMPORTED_MODULE_1__.default]
     })
-], CronoServiceService);
+], CalcUnicaPage);
 
 
+
+/***/ }),
+
+/***/ 6922:
+/*!*************************************************************!*\
+  !*** ./src/app/calculadora/calc-unica/calc-unica.page.scss ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("ion-content {\n  --ion-background-color: #f4f5f8;\n  --padding-top: 64px;\n}\nion-content ion-text {\n  color: #203680;\n}\nion-content ion-text h1 {\n  margin: 0;\n  padding: 0;\n  padding-left: 26px;\n  font-size: 26px;\n  font-weight: bold;\n  font-family: \"Montserrat\", sans-serif;\n  text-transform: uppercase;\n}\nion-content ion-text h2 {\n  margin-top: 20px;\n  padding-left: 26px;\n  font-size: 15px;\n  font-weight: 500;\n  font-family: \"Montserrat\", sans-serif;\n  text-transform: uppercase;\n}\nion-content .main ion-input {\n  width: 80%;\n  --border-color: var(--ion-color-danger, #f1453d);\n  --background: white;\n  font-size: 23px;\n  color: #4D4D4D;\n  border-radius: 25px !important;\n  padding-left: 35px !important;\n  margin-left: -40px !important;\n  margin-bottom: 25px !important;\n  border: solid 2px #20368038;\n  z-index: 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNhbGMtdW5pY2EucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksK0JBQUE7RUFDQSxtQkFBQTtBQUNKO0FBQUk7RUFDSSxjQUFBO0FBRVI7QUFEUTtFQUNJLFNBQUE7RUFDQSxVQUFBO0VBQ0Esa0JBQUE7RUFDQSxlQUFBO0VBQ0EsaUJBQUE7RUFDQSxxQ0FBQTtFQUNBLHlCQUFBO0FBR1o7QUFEUTtFQUNJLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxxQ0FBQTtFQUNBLHlCQUFBO0FBR1o7QUFDUTtFQUNJLFVBQUE7RUFDQSxnREFBQTtFQUNBLG1CQUFBO0VBRUEsZUFBQTtFQUNBLGNBQUE7RUFDQSw4QkFBQTtFQUNBLDZCQUFBO0VBQ0EsNkJBQUE7RUFDQSw4QkFBQTtFQUNBLDJCQUFBO0VBQ0EsVUFBQTtBQUFaIiwiZmlsZSI6ImNhbGMtdW5pY2EucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWNvbnRlbnR7XHJcbiAgICAtLWlvbi1iYWNrZ3JvdW5kLWNvbG9yOiAjZjRmNWY4O1xyXG4gICAgLS1wYWRkaW5nLXRvcDogNjRweDtcclxuICAgIGlvbi10ZXh0e1xyXG4gICAgICAgIGNvbG9yOiAjMjAzNjgwO1xyXG4gICAgICAgIGgxe1xyXG4gICAgICAgICAgICBtYXJnaW46IDA7XHJcbiAgICAgICAgICAgIHBhZGRpbmc6IDA7XHJcbiAgICAgICAgICAgIHBhZGRpbmctbGVmdDogMjZweDtcclxuICAgICAgICAgICAgZm9udC1zaXplOiAyNnB4O1xyXG4gICAgICAgICAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgICAgICAgICAgZm9udC1mYW1pbHk6ICdNb250c2VycmF0Jywgc2Fucy1zZXJpZjtcclxuICAgICAgICAgICAgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTtcclxuICAgICAgICB9XHJcbiAgICAgICAgaDJ7XHJcbiAgICAgICAgICAgIG1hcmdpbi10b3A6IDIwcHg7XHJcbiAgICAgICAgICAgIHBhZGRpbmctbGVmdDogMjZweDtcclxuICAgICAgICAgICAgZm9udC1zaXplOiAxNXB4O1xyXG4gICAgICAgICAgICBmb250LXdlaWdodDogNTAwO1xyXG4gICAgICAgICAgICBmb250LWZhbWlseTogJ01vbnRzZXJyYXQnLCBzYW5zLXNlcmlmO1xyXG4gICAgICAgICAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuICAgIC5tYWlue1xyXG4gICAgICAgIGlvbi1pbnB1dHtcclxuICAgICAgICAgICAgd2lkdGg6IDgwJTtcclxuICAgICAgICAgICAgLS1ib3JkZXItY29sb3I6IHZhcigtLWlvbi1jb2xvci1kYW5nZXIsICNmMTQ1M2QpO1xyXG4gICAgICAgICAgICAtLWJhY2tncm91bmQ6IHdoaXRlO1xyXG4gICAgICAgICAgICBcclxuICAgICAgICAgICAgZm9udC1zaXplOiAyM3B4O1xyXG4gICAgICAgICAgICBjb2xvcjogIzRENEQ0RDtcclxuICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMjVweCAhaW1wb3J0YW50O1xyXG4gICAgICAgICAgICBwYWRkaW5nLWxlZnQ6IDM1cHggIWltcG9ydGFudDtcclxuICAgICAgICAgICAgbWFyZ2luLWxlZnQ6IC00MHB4ICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgICAgIG1hcmdpbi1ib3R0b206IDI1cHggIWltcG9ydGFudDtcclxuICAgICAgICAgICAgYm9yZGVyIDogc29saWQgMnB4ICMyMDM2ODAzODtcclxuICAgICAgICAgICAgei1pbmRleDogMDtcclxuICAgICAgICB9XHJcbiAgICB9XHJcbn0iXX0= */");
+
+/***/ }),
+
+/***/ 8736:
+/*!***************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/calculadora/calc-unica/calc-unica.page.html ***!
+  \***************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\n  <ion-text>\n    <h1>CALCULADORA</h1>\n  </ion-text>\n  <ion-text>\n  </ion-text>\n  <div class=\"main\">\n    <ion-text>\n      <h2>Sub Total </h2>\n    </ion-text>\n    <ion-item lines=\"none\">\n      <ion-label\n      position=\"start\"\n      style=\"z-index: 1;margin-left: 1rem;margin-top: -11px;\"\n      >S/</ion-label>\n      <ion-input\n      position=\"floating\"\n      id=\"input-venta\"\n      (ionFocus)=\"focusInputVenta('input-venta')\" \n      (ionBlur)=\"unfocusInputVenta('input-venta')\"\n      (input)=\"getVenta($event.target.value)\"\n      [value]=\"venta\"\n      ></ion-input>\n    </ion-item>\n    <ion-text>\n      <h2>IGV</h2>\n    </ion-text>\n    <ion-item lines=\"none\">\n      <ion-label\n      position=\"start\"\n      style=\"z-index: 1;margin-left: 1rem;margin-top: -11px;\"\n      >S/</ion-label>\n      <ion-input \n      position=\"floating\"\n      id=\"input-igv\"\n      (ionFocus)=\"focusInputIgv('input-igv')\" \n      (ionBlur)=\"unfocusInputIgv('input-igv')\"\n      (input)='getIgv($event.target.value)'\n      [value]=\"igv\"\n      ></ion-input>\n    </ion-item>\n    <ion-text>\n      <h2>Total de Ventas</h2>\n    </ion-text>\n    <ion-item lines=\"none\">\n      <ion-label\n      position=\"start\"\n      style=\"z-index: 1;margin-left: 1rem;margin-top: -11px;\"\n      >S/</ion-label>\n      <ion-input \n      id=\"input-total\"\n      position=\"floating\"\n      (ionFocus)=\"focusInputTotal('input-total')\" \n      (ionBlur)=\"unfocusInputTotal('input-total')\"\n      (input)='getTotal($event.target.value)'\n      [value]=\"total\"\n      ></ion-input>\n    </ion-item>\n  </div>\n  <ion-button  expand=\"block\" (click)=\"reset()\">Reinicar</ion-button>\n</ion-content>\n");
 
 /***/ })
 

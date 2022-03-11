@@ -12315,6 +12315,55 @@ MaterialModule = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
 
 /***/ }),
 
+/***/ 8232:
+/*!***************************************************!*\
+  !*** ./src/app/services/crono-service.service.ts ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CronoServiceService": () => (/* binding */ CronoServiceService)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 7716);
+
+
+let CronoServiceService = class CronoServiceService {
+    constructor() {
+        this.rucSaved = [
+            {
+                rucNumber: '20602708731',
+                rucName: 'JUAN PEREZ',
+            }
+        ];
+    }
+    getRUCS() {
+        return [...this.rucSaved];
+    }
+    getRucHere(rucID) {
+        return Object.assign({}, this.rucSaved.find(ruc => {
+            return ruc.rucNumber === rucID;
+        }));
+    }
+    deleteRUC(rucID) {
+        this.rucSaved = this.rucSaved.filter(ruc => {
+            return ruc.rucNumber !== rucID;
+        });
+    }
+};
+CronoServiceService.ctorParameters = () => [];
+CronoServiceService = (0,tslib__WEBPACK_IMPORTED_MODULE_0__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_1__.Injectable)({
+        providedIn: 'root'
+    })
+], CronoServiceService);
+
+
+
+/***/ }),
+
 /***/ 1565:
 /*!*************************************************!*\
   !*** ./src/app/cronograma/cronograma.page.scss ***!
@@ -12341,7 +12390,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\n  <section class=\"top\">\n    <ion-text>\n      <h1>CRONOGRAMA</h1>\n    </ion-text>\n    <ion-text>\n      <h2>Lorem Ipsum Lorem Ipsum Lorem Ipsum</h2>\n    </ion-text>\n    <!-- <ion-item class=\"ion-no-padding\">\n      <ion-label position=\"floating\">Buscar</ion-label>\n      <ion-input\n        type=\"tel\"\n        maxlength=\"11\"\n        inputmode=\"numeric\"\n        required=\"true\"\n        (keyup.enter)=\"generaraCronograma(cronograma)\"\n        placeholder=\"Introduce tu N° de RUC\"\n        [(ngModel)]=\"cronograma\"\n        enterkeyhint=\"done\"\n      ></ion-input>\n    </ion-item> -->\n    <ion-searchbar\n        type=\"tel\"\n        maxlength=\"11\"\n        inputmode=\"numeric\"\n        required=\"true\"\n        (keyup.enter)=\"generaraCronograma(cronograma)\"\n        placeholder=\"Introduce tu N° de RUC\"\n        [(ngModel)]=\"cronograma\"\n        enterkeyhint=\"done\"\n    ></ion-searchbar>\n  </section>\n  <section class=\"down\">\n    <ion-text>\n      <h1>RUC GUARDADOS</h1>\n    </ion-text>\n    <ion-list>\n      <ion-item lines=\"none\" *ngFor=\"let ruc of listRucs; let i=index\" >\n        <ion-label [routerLink]=\"['/cronograma', ruc.rucNumber]\">{{ruc.rucName}}</ion-label>\n        <ion-buttons slot=\"end\">\n          <ion-button \n            (click)=\"removeItem(i)\"\n          >\n            <ion-icon slot=\"icon-only\" name=\"trash\"></ion-icon>\n          </ion-button>\n        </ion-buttons>\n      </ion-item>\n        <!-- <ion-item-options side=\"end\">\n          <ion-item-option color=\"primary\" (click)=\"removeItem(i)\">\n            <ion-icon slot=\"icon-only\" name=\"trash\"></ion-icon>\n          </ion-item-option>\n        </ion-item-options> -->\n    </ion-list>\n  </section>\n</ion-content>\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\n  <section class=\"top\">\n    <ion-text>\n      <h1>CRONOGRAMA</h1>\n    </ion-text>\n    <ion-text>\n    </ion-text>\n    <!-- <ion-item class=\"ion-no-padding\">\n      <ion-label position=\"floating\">Buscar</ion-label>\n      <ion-input\n        type=\"tel\"\n        maxlength=\"11\"\n        inputmode=\"numeric\"\n        required=\"true\"\n        (keyup.enter)=\"generaraCronograma(cronograma)\"\n        placeholder=\"Introduce tu N° de RUC\"\n        [(ngModel)]=\"cronograma\"\n        enterkeyhint=\"done\"\n      ></ion-input>\n    </ion-item> -->\n    <ion-searchbar\n        type=\"tel\"\n        maxlength=\"11\"\n        inputmode=\"numeric\"\n        required=\"true\"\n        (keyup.enter)=\"generaraCronograma(cronograma)\"\n        placeholder=\"Introduce tu N° de RUC\"\n        [(ngModel)]=\"cronograma\"\n        enterkeyhint=\"done\"\n    ></ion-searchbar>\n  </section>\n  <section class=\"down\">\n    <ion-text>\n      <h1>RUC GUARDADOS</h1>\n    </ion-text>\n    <ion-list>\n      <ion-item lines=\"none\" *ngFor=\"let ruc of listRucs; let i=index\" >\n        <ion-label [routerLink]=\"['/cronograma', ruc.rucNumber]\">{{ruc.rucName}}</ion-label>\n        <ion-buttons slot=\"end\">\n          <ion-button \n            (click)=\"removeItem(i)\"\n          >\n            <ion-icon slot=\"icon-only\" name=\"trash\"></ion-icon>\n          </ion-button>\n        </ion-buttons>\n      </ion-item>\n        <!-- <ion-item-options side=\"end\">\n          <ion-item-option color=\"primary\" (click)=\"removeItem(i)\">\n            <ion-icon slot=\"icon-only\" name=\"trash\"></ion-icon>\n          </ion-item-option>\n        </ion-item-options> -->\n    </ion-list>\n  </section>\n</ion-content>\n");
 
 /***/ })
 

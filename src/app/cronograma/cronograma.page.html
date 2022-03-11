@@ -1,24 +1,9 @@
 <ion-content>
   <section class="top">
-    <ion-text>
-      <h1>CRONOGRAMA</h1>
-    </ion-text>
-    <ion-text>
-    </ion-text>
-    <!-- <ion-item class="ion-no-padding">
-      <ion-label position="floating">Buscar</ion-label>
-      <ion-input
-        type="tel"
-        maxlength="11"
-        inputmode="numeric"
-        required="true"
-        (keyup.enter)="generaraCronograma(cronograma)"
-        placeholder="Introduce tu N° de RUC"
-        [(ngModel)]="cronograma"
-        enterkeyhint="done"
-      ></ion-input>
-    </ion-item> -->
+      <h1 class="title">CRONOGRAMA</h1>
     <ion-searchbar
+        color="light"
+        style="width: 80%;margin: auto;color: #203680;"
         type="tel"
         maxlength="11"
         inputmode="numeric"
@@ -30,7 +15,7 @@
     ></ion-searchbar>
   </section>
   <section class="down">
-    <ion-text>
+    <!-- <ion-text>
       <h1>RUC GUARDADOS</h1>
     </ion-text>
     <ion-list>
@@ -44,11 +29,26 @@
           </ion-button>
         </ion-buttons>
       </ion-item>
-        <!-- <ion-item-options side="end">
-          <ion-item-option color="primary" (click)="removeItem(i)">
-            <ion-icon slot="icon-only" name="trash"></ion-icon>
-          </ion-item-option>
-        </ion-item-options> -->
-    </ion-list>
+    </ion-list> -->
+      <ion-accordion-group>
+        <ion-accordion class="acordion">
+          <ion-item slot="header">
+            <ion-label style="color:#fff;">RUC GUARDADOS</ion-label>
+          </ion-item>
+      
+          <ion-list slot="content">
+            <ion-item class="contenido" lines="none" *ngFor="let ruc of listRucs; let i=index">
+              <ion-label [routerLink]="['/cronograma', ruc.rucNumber]">{{ruc.rucName}}</ion-label>
+              <ion-buttons slot="end">
+                <ion-button 
+                  (click)="removeItem(i)"
+                >
+                  <ion-icon slot="icon-only" name="trash"></ion-icon>
+                </ion-button>
+              </ion-buttons>
+            </ion-item>
+          </ion-list>
+        </ion-accordion>
+      </ion-accordion-group>
   </section>
 </ion-content>

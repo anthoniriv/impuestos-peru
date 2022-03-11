@@ -1,8 +1,8 @@
-<ion-content>
-  <div style="display: flex;flex-direction: row;">
-    <ion-back-button text="" defaultHref="/cronograma"></ion-back-button>
+<ion-content class="main">
+  <div class="top" style="display: flex;flex-direction: row;">
+    <ion-back-button style="color: white;" text="" defaultHref="/cronograma"></ion-back-button>
     <ion-text *ngIf="dataLoaded==true">
-      <h1>{{rucNumber}}</h1>
+      <h1 class="ruc">{{rucNumber}}</h1>
     </ion-text>
   </div>
     <ion-list>
@@ -15,7 +15,7 @@
         <ion-label>{{ruc.FECHA}}</ion-label>
       </ion-item>
     </ion-list>
-      <ion-button *ngIf="savedRuc===false" expand="block" (click)="openModal()">
+      <ion-button class="boton" *ngIf="savedRuc===false" expand="block" (click)="openModal()">
         Guardar
       </ion-button>
 </ion-content>

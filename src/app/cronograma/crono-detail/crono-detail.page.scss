@@ -2,36 +2,49 @@
 @import '~@swimlane/ngx-datatable/themes/material.scss';
 @import '~@swimlane/ngx-datatable/assets/icons.css';
 
-ion-content {
+.main{
+    --background: url('https://i.imgur.com/Anx4yyR.jpg') 0 0/100% 100% no-repeat;
     --ion-background-color:#F9FBFC;
-    ion-text{
-        text-align: center;
-        h1{
+    .top{
+        padding-top: 100px;
+        padding-left: 20px;
+        padding-bottom: 80px;
+        .ruc{
+            padding: 0;
             margin: 0;
-            padding-top: 30px;
-            padding-left: 85px;
-            padding-bottom: 25px;
+            padding-left: 25px;
+            font-size: 40px;
+            text-align: center;
             font-family: 'Montserrat', sans-serif;
             font-weight: bold;
-            color: #203680;
+            color: #fff;
         }
     }
+    .boton{
+        margin: auto;
+        margin-top: 20px;
+        width: 80%;
+        --background: linear-gradient(90deg, #0D2B56, #005AA3) !important;
+    }
     ion-list{
+        background-color: rgba(255, 255, 255, 0);
         .titles{
             display: flex;
             flex-direction: row;
             text-align: center;
             justify-content: space-around;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 70px;
             font-size: 18px;
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
-            color: #203680;
+            color: #FFF;
         }
         ion-item{
+            --ion-background-color: rgba(255, 255, 255, 0);
             text-align: center;
             ion-label{
+                color: #203680;
                 font-family: 'Montserrat', sans-serif;
                 font-size: 16px;
             }

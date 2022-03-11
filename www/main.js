@@ -68,7 +68,23 @@ const routes = [
     },
     {
         path: 'calculadora-select',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_calculadora_calculadora-select_calculadora-select_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./calculadora/calculadora-select/calculadora-select.module */ 4529)).then(m => m.CalculadoraSelectPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_calculadora_calc-anual1_calc-anual1_page_ts"), __webpack_require__.e("default-src_app_calculadora_calc-cuarta_calc-cuarta_page_ts"), __webpack_require__.e("default-src_app_calculadora_calc-anual2_calc-anual2_page_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_calculadora_calculadora-select_calculadora-select_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./calculadora/calculadora-select/calculadora-select.module */ 4529)).then(m => m.CalculadoraSelectPageModule)
+    },
+    {
+        path: 'calc-unica',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_calculadora_calc-unica_calc-unica_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./calculadora/calc-unica/calc-unica.module */ 5666)).then(m => m.CalcUnicaPageModule)
+    },
+    {
+        path: 'calc-anual1',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_calculadora_calc-anual1_calc-anual1_page_ts"), __webpack_require__.e("src_app_calculadora_calc-anual1_calc-anual1_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./calculadora/calc-anual1/calc-anual1.module */ 8153)).then(m => m.CalcAnual1PageModule)
+    },
+    {
+        path: 'calc-anual2',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_calculadora_calc-anual2_calc-anual2_page_ts"), __webpack_require__.e("src_app_calculadora_calc-anual2_calc-anual2_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./calculadora/calc-anual2/calc-anual2.module */ 6623)).then(m => m.CalcAnual2PageModule)
+    },
+    {
+        path: 'calc-cuarta',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_calculadora_calc-cuarta_calc-cuarta_page_ts"), __webpack_require__.e("src_app_calculadora_calc-cuarta_calc-cuarta_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./calculadora/calc-cuarta/calc-cuarta.module */ 3137)).then(m => m.CalcCuartaPageModule)
     }
 ];
 let AppRoutingModule = class AppRoutingModule {
@@ -161,17 +177,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! tslib */ 4762);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 7716);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/platform-browser */ 9075);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/router */ 9895);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ 8583);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic/angular */ 476);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.component */ 5041);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-routing.module */ 158);
-/* harmony import */ var _ionic_storage_angular__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic/storage-angular */ 4925);
+/* harmony import */ var _ionic_storage_angular__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic/storage-angular */ 4925);
 /* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/storage */ 1628);
 /* harmony import */ var localforage_cordovasqlitedriver__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! localforage-cordovasqlitedriver */ 1222);
 /* harmony import */ var localforage_cordovasqlitedriver__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(localforage_cordovasqlitedriver__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/platform-browser/animations */ 5835);
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/platform-browser/animations */ 5835);
 /* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ 1524);
 /* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ 3494);
+
 
 
 
@@ -191,11 +209,11 @@ AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.NgModule)({
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
         entryComponents: [],
-        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__.BrowserModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.IonicModule.forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_1__.AppRoutingModule, _ionic_storage_angular__WEBPACK_IMPORTED_MODULE_10__.IonicStorageModule.forRoot({
+        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__.BrowserModule, _angular_common__WEBPACK_IMPORTED_MODULE_9__.CommonModule, _ionic_angular__WEBPACK_IMPORTED_MODULE_10__.IonicModule.forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_1__.AppRoutingModule, _ionic_storage_angular__WEBPACK_IMPORTED_MODULE_11__.IonicStorageModule.forRoot({
                 name: '__mydb',
                 driverOrder: [localforage_cordovasqlitedriver__WEBPACK_IMPORTED_MODULE_3__._driver, _ionic_storage__WEBPACK_IMPORTED_MODULE_2__.Drivers.IndexedDB, _ionic_storage__WEBPACK_IMPORTED_MODULE_2__.Drivers.LocalStorage]
-            }), _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_11__.BrowserAnimationsModule],
-        providers: [{ provide: _angular_router__WEBPACK_IMPORTED_MODULE_12__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_9__.IonicRouteStrategy }, _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_4__.SplashScreen, _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__.StatusBar],
+            }), _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__.BrowserAnimationsModule],
+        providers: [{ provide: _angular_router__WEBPACK_IMPORTED_MODULE_13__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_10__.IonicRouteStrategy }, _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_4__.SplashScreen, _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__.StatusBar],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
     })
 ], AppModule);

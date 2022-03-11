@@ -1,0 +1,23 @@
+ion-tab-bar  {
+    --color:#fff;
+    --color-selected: #3BD2DB !important;
+    background-color: #fff;
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    border: unset;
+  }
+  ion-tab-button {
+    background-color: #01305C;
+  }
+  
+  ion-tabs {
+    background-color: rgba(8, 27, 61, 0.164);
+  }
+  
+  #tab-button-tab1 {
+    border-top-left-radius: 45px;
+  }
+  
+  #tab-button-tab4 {
+    border-top-right-radius: 45px;
+  }

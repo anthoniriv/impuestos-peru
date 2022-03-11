@@ -5,6 +5,7 @@ import { CronoServiceService } from 'src/app/services/crono-service.service';
 import { ModalSavePage } from '../modal-save/modal-save.page';
 import { RUC } from '../ruc.model';
 import { SaveDataService } from 'src/app/services/save-data.service';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-crono-detail',
@@ -73,16 +74,26 @@ export class CronoDetailPage implements OnInit {
   ]
 
   constructor(
-   private activateRoute: ActivatedRoute,
-  //  private cronoService: CronoServiceService,
-   private modalController: ModalController,
-    private saveDataService: SaveDataService
+    private activateRoute: ActivatedRoute,
+    private modalController: ModalController,
+    private saveDataService: SaveDataService,
+    private loadingController: LoadingController
   ) {
    }
 
   ngOnInit() {
     this.savedRuc=false;
     this.mainFunction();
+    this.presentLoading();
+  }
+
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      cssClass: 'my-custom-class',
+      message: 'Porfavor espere...',
+      duration: 1500
+    });
+    await loading.present();
   }
 
   ionViewDidEnter(){
@@ -312,5 +323,6 @@ export class CronoDetailPage implements OnInit {
       this.fechas[10].FECHA=this.plusString('16', " de Diciembre");
       this.fechas[11].FECHA=this.plusString('16', " de Enero");
     }
+    //Aqui se detiene el loading
   }
 }

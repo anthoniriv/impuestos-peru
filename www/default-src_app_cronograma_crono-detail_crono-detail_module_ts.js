@@ -6848,16 +6848,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "CronoDetailPage": () => (/* binding */ CronoDetailPage)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 4762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 4762);
 /* harmony import */ var _raw_loader_crono_detail_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./crono-detail.page.html */ 5549);
 /* harmony import */ var _crono_detail_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crono-detail.page.scss */ 1090);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 7716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ 9895);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 476);
-/* harmony import */ var src_app_services_crono_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/crono-service.service */ 8232);
-/* harmony import */ var _modal_save_modal_save_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modal-save/modal-save.page */ 2951);
-/* harmony import */ var src_app_services_save_data_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/save-data.service */ 4355);
-
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 7716);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ 9895);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var _modal_save_modal_save_page__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modal-save/modal-save.page */ 2951);
+/* harmony import */ var src_app_services_save_data_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/save-data.service */ 4355);
 
 
 
@@ -6867,9 +6865,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let CronoDetailPage = class CronoDetailPage {
-    constructor(activateRoute, cronoService, modalController, saveDataService) {
+    constructor(activateRoute, 
+    //  private cronoService: CronoServiceService,
+    modalController, saveDataService) {
         this.activateRoute = activateRoute;
-        this.cronoService = cronoService;
         this.modalController = modalController;
         this.saveDataService = saveDataService;
         this.dataLoaded = false;
@@ -6889,7 +6888,7 @@ let CronoDetailPage = class CronoDetailPage {
             },
             {
                 "PERIODO": "ABRIL ",
-                "FECHA": " de Marzo"
+                "FECHA": " de Abril"
             },
             {
                 "PERIODO": "MAYO ",
@@ -6949,7 +6948,7 @@ let CronoDetailPage = class CronoDetailPage {
         }, 1000);
     }
     getSpecificRuc(id) {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
             this.rucHere = yield this.saveDataService.getItem(id);
             this.rucNumber = id;
             this.savedRuc = true;
@@ -6962,7 +6961,7 @@ let CronoDetailPage = class CronoDetailPage {
         });
     }
     mainFunction() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
             yield this.getRUCDetail();
             if (this.dataLoaded == true) {
                 yield this.editFechaAll();
@@ -6971,9 +6970,9 @@ let CronoDetailPage = class CronoDetailPage {
         });
     }
     openModal() {
-        return (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, function* () {
+        return (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__awaiter)(this, void 0, void 0, function* () {
             const modal = yield this.modalController.create({
-                component: _modal_save_modal_save_page__WEBPACK_IMPORTED_MODULE_3__.ModalSavePage,
+                component: _modal_save_modal_save_page__WEBPACK_IMPORTED_MODULE_2__.ModalSavePage,
                 cssClass: 'my-modal-class'
             });
             return yield modal.present();
@@ -7013,156 +7012,155 @@ let CronoDetailPage = class CronoDetailPage {
     //Function to us plusString function into all FECHA values of fechas array depending on the last digit of rucHERE.ruc
     editFechaAll() {
         this.getLastDigit();
-        if (this.getLastDigit() == "1") {
-            this.fechas[0].FECHA = this.plusString('16', " de Enero");
-            this.fechas[1].FECHA = this.plusString('15', " de Febrero");
-            this.fechas[2].FECHA = this.plusString('14', " de Marzo");
-            this.fechas[3].FECHA = this.plusString('13', " de Abril");
-            this.fechas[4].FECHA = this.plusString('12', " de Mayo");
-            this.fechas[5].FECHA = this.plusString('11', " de Junio");
-            this.fechas[6].FECHA = this.plusString('10', " de Julio");
-            this.fechas[7].FECHA = this.plusString('09', " de Agosto");
-            this.fechas[8].FECHA = this.plusString('08', " de Setiembre");
-            this.fechas[9].FECHA = this.plusString('07', " de Octubre");
-            this.fechas[10].FECHA = this.plusString('06', " de Noviembre");
-            this.fechas[11].FECHA = this.plusString('05', " de Diciembre");
+        if (this.getLastDigit() == "0") {
+            this.fechas[0].FECHA = this.plusString('14', " de Febrero");
+            this.fechas[1].FECHA = this.plusString('14', " de Marzo");
+            this.fechas[2].FECHA = this.plusString('18', " de Abril");
+            this.fechas[3].FECHA = this.plusString('13', " de Mayo");
+            this.fechas[4].FECHA = this.plusString('14', " de Junio");
+            this.fechas[5].FECHA = this.plusString('14', " de Julio");
+            this.fechas[6].FECHA = this.plusString('12', " de Agosto");
+            this.fechas[7].FECHA = this.plusString('14', " de Setiembre");
+            this.fechas[8].FECHA = this.plusString('14', " de Octubre");
+            this.fechas[9].FECHA = this.plusString('15', " de Noviembre");
+            this.fechas[10].FECHA = this.plusString('15', " de Diciembre");
+            this.fechas[11].FECHA = this.plusString('13', " de Enero");
         }
         else if (this.getLastDigit() == "2") {
-            this.fechas[0].FECHA = this.plusString('15', " de Enero");
-            this.fechas[1].FECHA = this.plusString('14', " de Febrero");
-            this.fechas[2].FECHA = this.plusString('13', " de Marzo");
-            this.fechas[3].FECHA = this.plusString('12', " de Abril");
-            this.fechas[4].FECHA = this.plusString('11', " de Mayo");
-            this.fechas[5].FECHA = this.plusString('10', " de Junio");
-            this.fechas[6].FECHA = this.plusString('09', " de Julio");
-            this.fechas[7].FECHA = this.plusString('08', " de Agosto");
-            this.fechas[8].FECHA = this.plusString('07', " de Setiembre");
-            this.fechas[9].FECHA = this.plusString('06', " de Octubre");
-            this.fechas[10].FECHA = this.plusString('05', " de Noviembre");
-            this.fechas[11].FECHA = this.plusString('04', " de Diciembre");
+            this.fechas[0].FECHA = this.plusString('16', " de Febrero");
+            this.fechas[1].FECHA = this.plusString('16', " de Marzo");
+            this.fechas[2].FECHA = this.plusString('20', " de Abril");
+            this.fechas[3].FECHA = this.plusString('17', " de Mayo");
+            this.fechas[4].FECHA = this.plusString('16', " de Junio");
+            this.fechas[5].FECHA = this.plusString('18', " de Julio");
+            this.fechas[6].FECHA = this.plusString('16', " de Agosto");
+            this.fechas[7].FECHA = this.plusString('16', " de Setiembre");
+            this.fechas[8].FECHA = this.plusString('18', " de Octubre");
+            this.fechas[9].FECHA = this.plusString('17', " de Noviembre");
+            this.fechas[10].FECHA = this.plusString('19', " de Diciembre");
+            this.fechas[11].FECHA = this.plusString('17', " de Enero");
         }
         else if (this.getLastDigit() == "3") {
-            this.fechas[0].FECHA = this.plusString('14', " de Enero");
-            this.fechas[1].FECHA = this.plusString('13', " de Febrero");
-            this.fechas[2].FECHA = this.plusString('12', " de Marzo");
-            this.fechas[3].FECHA = this.plusString('11', " de Abril");
-            this.fechas[4].FECHA = this.plusString('10', " de Mayo");
-            this.fechas[5].FECHA = this.plusString('09', " de Junio");
-            this.fechas[6].FECHA = this.plusString('08', " de Julio");
-            this.fechas[7].FECHA = this.plusString('07', " de Agosto");
-            this.fechas[8].FECHA = this.plusString('06', " de Setiembre");
-            this.fechas[9].FECHA = this.plusString('05', " de Octubre");
-            this.fechas[10].FECHA = this.plusString('04', " de Noviembre");
-            this.fechas[11].FECHA = this.plusString('03', " de Diciembre");
+            this.fechas[0].FECHA = this.plusString('16', " de Febrero");
+            this.fechas[1].FECHA = this.plusString('16', " de Marzo");
+            this.fechas[2].FECHA = this.plusString('20', " de Abril");
+            this.fechas[3].FECHA = this.plusString('17', " de Mayo");
+            this.fechas[4].FECHA = this.plusString('16', " de Junio");
+            this.fechas[5].FECHA = this.plusString('18', " de Julio");
+            this.fechas[6].FECHA = this.plusString('16', " de Agosto");
+            this.fechas[7].FECHA = this.plusString('16', " de Setiembre");
+            this.fechas[8].FECHA = this.plusString('18', " de Octubre");
+            this.fechas[9].FECHA = this.plusString('17', " de Noviembre");
+            this.fechas[10].FECHA = this.plusString('19', " de Diciembre");
+            this.fechas[11].FECHA = this.plusString('17', " de Enero");
         }
         else if (this.getLastDigit() == "4") {
-            this.fechas[0].FECHA = this.plusString('13', " de Enero");
-            this.fechas[1].FECHA = this.plusString('12', " de Febrero");
-            this.fechas[2].FECHA = this.plusString('11', " de Marzo");
-            this.fechas[3].FECHA = this.plusString('10', " de Abril");
-            this.fechas[4].FECHA = this.plusString('09', " de Mayo");
-            this.fechas[5].FECHA = this.plusString('08', " de Junio");
-            this.fechas[6].FECHA = this.plusString('07', " de Julio");
-            this.fechas[7].FECHA = this.plusString('06', " de Agosto");
-            this.fechas[8].FECHA = this.plusString('05', " de Setiembre");
-            this.fechas[9].FECHA = this.plusString('04', " de Octubre");
-            this.fechas[10].FECHA = this.plusString('03', " de Noviembre");
-            this.fechas[11].FECHA = this.plusString('02', " de Diciembre");
+            this.fechas[0].FECHA = this.plusString('17', " de Febrero");
+            this.fechas[1].FECHA = this.plusString('17', " de Marzo");
+            this.fechas[2].FECHA = this.plusString('21', " de Abril");
+            this.fechas[3].FECHA = this.plusString('18', " de Mayo");
+            this.fechas[4].FECHA = this.plusString('17', " de Junio");
+            this.fechas[5].FECHA = this.plusString('19', " de Julio");
+            this.fechas[6].FECHA = this.plusString('17', " de Agosto");
+            this.fechas[7].FECHA = this.plusString('19', " de Setiembre");
+            this.fechas[8].FECHA = this.plusString('19', " de Octubre");
+            this.fechas[9].FECHA = this.plusString('18', " de Noviembre");
+            this.fechas[10].FECHA = this.plusString('20', " de Diciembre");
+            this.fechas[11].FECHA = this.plusString('18', " de Enero");
         }
         else if (this.getLastDigit() == "5") {
-            this.fechas[0].FECHA = this.plusString('12', " de Enero");
-            this.fechas[1].FECHA = this.plusString('11', " de Febrero");
-            this.fechas[2].FECHA = this.plusString('10', " de Marzo");
-            this.fechas[3].FECHA = this.plusString('09', " de Abril");
-            this.fechas[4].FECHA = this.plusString('08', " de Mayo");
-            this.fechas[5].FECHA = this.plusString('07', " de Junio");
-            this.fechas[6].FECHA = this.plusString('06', " de Julio");
-            this.fechas[7].FECHA = this.plusString('05', " de Agosto");
-            this.fechas[8].FECHA = this.plusString('04', " de Setiembre");
-            this.fechas[9].FECHA = this.plusString('03', " de Octubre");
-            this.fechas[10].FECHA = this.plusString('02', " de Noviembre");
-            this.fechas[11].FECHA = this.plusString('01', " de Diciembre");
+            this.fechas[0].FECHA = this.plusString('17', " de Febrero");
+            this.fechas[1].FECHA = this.plusString('17', " de Marzo");
+            this.fechas[2].FECHA = this.plusString('21', " de Abril");
+            this.fechas[3].FECHA = this.plusString('18', " de Mayo");
+            this.fechas[4].FECHA = this.plusString('17', " de Junio");
+            this.fechas[5].FECHA = this.plusString('19', " de Julio");
+            this.fechas[6].FECHA = this.plusString('17', " de Agosto");
+            this.fechas[7].FECHA = this.plusString('19', " de Setiembre");
+            this.fechas[8].FECHA = this.plusString('19', " de Octubre");
+            this.fechas[9].FECHA = this.plusString('18', " de Noviembre");
+            this.fechas[10].FECHA = this.plusString('20', " de Diciembre");
+            this.fechas[11].FECHA = this.plusString('18', " de Enero");
         }
         else if (this.getLastDigit() == "6") {
-            this.fechas[0].FECHA = this.plusString('11', " de Enero");
-            this.fechas[1].FECHA = this.plusString('10', " de Febrero");
-            this.fechas[2].FECHA = this.plusString('09', " de Marzo");
-            this.fechas[3].FECHA = this.plusString('08', " de Abril");
-            this.fechas[4].FECHA = this.plusString('07', " de Mayo");
-            this.fechas[5].FECHA = this.plusString('06', " de Junio");
-            this.fechas[6].FECHA = this.plusString('05', " de Julio");
-            this.fechas[7].FECHA = this.plusString('04', " de Agosto");
-            this.fechas[8].FECHA = this.plusString('03', " de Setiembre");
-            this.fechas[9].FECHA = this.plusString('02', " de Octubre");
-            this.fechas[10].FECHA = this.plusString('01', " de Noviembre");
-            this.fechas[11].FECHA = this.plusString('00', " de Diciembre");
+            this.fechas[0].FECHA = this.plusString('18', " de Febrero");
+            this.fechas[1].FECHA = this.plusString('18', " de Marzo");
+            this.fechas[2].FECHA = this.plusString('22', " de Abril");
+            this.fechas[3].FECHA = this.plusString('19', " de Mayo");
+            this.fechas[4].FECHA = this.plusString('20', " de Junio");
+            this.fechas[5].FECHA = this.plusString('20', " de Julio");
+            this.fechas[6].FECHA = this.plusString('18', " de Agosto");
+            this.fechas[7].FECHA = this.plusString('20', " de Setiembre");
+            this.fechas[8].FECHA = this.plusString('20', " de Octubre");
+            this.fechas[9].FECHA = this.plusString('21', " de Noviembre");
+            this.fechas[10].FECHA = this.plusString('21', " de Diciembre");
+            this.fechas[11].FECHA = this.plusString('19', " de Enero");
         }
         else if (this.getLastDigit() == "7") {
-            this.fechas[0].FECHA = this.plusString('10', " de Enero");
-            this.fechas[1].FECHA = this.plusString('09', " de Febrero");
-            this.fechas[2].FECHA = this.plusString('08', " de Marzo");
-            this.fechas[3].FECHA = this.plusString('07', " de Abril");
-            this.fechas[4].FECHA = this.plusString('06', " de Mayo");
-            this.fechas[5].FECHA = this.plusString('05', " de Junio");
-            this.fechas[6].FECHA = this.plusString('04', " de Julio");
-            this.fechas[7].FECHA = this.plusString('03', " de Agosto");
-            this.fechas[8].FECHA = this.plusString('02', " de Setiembre");
-            this.fechas[9].FECHA = this.plusString('01', " de Octubre");
-            this.fechas[10].FECHA = this.plusString('00', " de Noviembre");
-            this.fechas[11].FECHA = this.plusString('99', " de Diciembre");
+            this.fechas[0].FECHA = this.plusString('18', " de Febrero");
+            this.fechas[1].FECHA = this.plusString('18', " de Marzo");
+            this.fechas[2].FECHA = this.plusString('22', " de Abril");
+            this.fechas[3].FECHA = this.plusString('19', " de Mayo");
+            this.fechas[4].FECHA = this.plusString('20', " de Junio");
+            this.fechas[5].FECHA = this.plusString('20', " de Julio");
+            this.fechas[6].FECHA = this.plusString('18', " de Agosto");
+            this.fechas[7].FECHA = this.plusString('20', " de Setiembre");
+            this.fechas[8].FECHA = this.plusString('20', " de Octubre");
+            this.fechas[9].FECHA = this.plusString('21', " de Noviembre");
+            this.fechas[10].FECHA = this.plusString('21', " de Diciembre");
+            this.fechas[11].FECHA = this.plusString('19', " de Enero");
         }
         else if (this.getLastDigit() == "8") {
-            this.fechas[0].FECHA = this.plusString('09', " de Enero");
-            this.fechas[1].FECHA = this.plusString('08', " de Febrero");
-            this.fechas[2].FECHA = this.plusString('07', " de Marzo");
-            this.fechas[3].FECHA = this.plusString('06', " de Abril");
-            this.fechas[4].FECHA = this.plusString('05', " de Mayo");
-            this.fechas[5].FECHA = this.plusString('04', " de Junio");
-            this.fechas[6].FECHA = this.plusString('03', " de Julio");
-            this.fechas[7].FECHA = this.plusString('02', " de Agosto");
-            this.fechas[8].FECHA = this.plusString('01', " de Setiembre");
-            this.fechas[9].FECHA = this.plusString('00', " de Octubre");
-            this.fechas[10].FECHA = this.plusString('99', " de Noviembre");
-            this.fechas[11].FECHA = this.plusString('98', " de Diciembre");
+            this.fechas[0].FECHA = this.plusString('21', " de Febrero");
+            this.fechas[1].FECHA = this.plusString('21', " de Marzo");
+            this.fechas[2].FECHA = this.plusString('25', " de Abril");
+            this.fechas[3].FECHA = this.plusString('20', " de Mayo");
+            this.fechas[4].FECHA = this.plusString('21', " de Junio");
+            this.fechas[5].FECHA = this.plusString('21', " de Julio");
+            this.fechas[6].FECHA = this.plusString('19', " de Agosto");
+            this.fechas[7].FECHA = this.plusString('21', " de Setiembre");
+            this.fechas[8].FECHA = this.plusString('21', " de Octubre");
+            this.fechas[9].FECHA = this.plusString('22', " de Noviembre");
+            this.fechas[10].FECHA = this.plusString('22', " de Diciembre");
+            this.fechas[11].FECHA = this.plusString('20', " de Enero");
         }
         else if (this.getLastDigit() == "9") {
-            this.fechas[0].FECHA = this.plusString('08', " de Enero");
-            this.fechas[1].FECHA = this.plusString('07', " de Febrero");
-            this.fechas[2].FECHA = this.plusString('06', " de Marzo");
-            this.fechas[3].FECHA = this.plusString('05', " de Abril");
-            this.fechas[4].FECHA = this.plusString('04', " de Mayo");
-            this.fechas[5].FECHA = this.plusString('03', " de Junio");
-            this.fechas[6].FECHA = this.plusString('02', " de Julio");
-            this.fechas[7].FECHA = this.plusString('01', " de Agosto");
-            this.fechas[8].FECHA = this.plusString('00', " de Setiembre");
-            this.fechas[9].FECHA = this.plusString('99', " de Octubre");
-            this.fechas[10].FECHA = this.plusString('98', " de Noviembre");
-            this.fechas[11].FECHA = this.plusString('97', " de Diciembre");
+            this.fechas[0].FECHA = this.plusString('21', " de Febrero");
+            this.fechas[1].FECHA = this.plusString('21', " de Marzo");
+            this.fechas[2].FECHA = this.plusString('25', " de Abril");
+            this.fechas[3].FECHA = this.plusString('20', " de Mayo");
+            this.fechas[4].FECHA = this.plusString('21', " de Junio");
+            this.fechas[5].FECHA = this.plusString('21', " de Julio");
+            this.fechas[6].FECHA = this.plusString('19', " de Agosto");
+            this.fechas[7].FECHA = this.plusString('21', " de Setiembre");
+            this.fechas[8].FECHA = this.plusString('21', " de Octubre");
+            this.fechas[9].FECHA = this.plusString('22', " de Noviembre");
+            this.fechas[10].FECHA = this.plusString('22', " de Diciembre");
+            this.fechas[11].FECHA = this.plusString('20', " de Enero");
         }
-        else if (this.getLastDigit() == "0") {
-            this.fechas[0].FECHA = this.plusString('07', " de Enero");
-            this.fechas[1].FECHA = this.plusString('06', " de Febrero");
-            this.fechas[2].FECHA = this.plusString('05', " de Marzo");
-            this.fechas[3].FECHA = this.plusString('04', " de Abril");
-            this.fechas[4].FECHA = this.plusString('03', " de Mayo");
-            this.fechas[5].FECHA = this.plusString('02', " de Junio");
-            this.fechas[6].FECHA = this.plusString('01', " de Julio");
-            this.fechas[7].FECHA = this.plusString('00', " de Agosto");
-            this.fechas[8].FECHA = this.plusString('99', " de Setiembre");
-            this.fechas[9].FECHA = this.plusString('98', " de Octubre");
-            this.fechas[10].FECHA = this.plusString('97', " de Noviembre");
-            this.fechas[11].FECHA = this.plusString('96', " de Diciembre");
+        else if (this.getLastDigit() == "1") {
+            this.fechas[0].FECHA = this.plusString('15', " de Febrero");
+            this.fechas[1].FECHA = this.plusString('15', " de Marzo");
+            this.fechas[2].FECHA = this.plusString('19', " de Abril");
+            this.fechas[3].FECHA = this.plusString('16', " de Mayo");
+            this.fechas[4].FECHA = this.plusString('15', " de Junio");
+            this.fechas[5].FECHA = this.plusString('15', " de Julio");
+            this.fechas[6].FECHA = this.plusString('15', " de Agosto");
+            this.fechas[7].FECHA = this.plusString('15', " de Setiembre");
+            this.fechas[8].FECHA = this.plusString('17', " de Octubre");
+            this.fechas[9].FECHA = this.plusString('16', " de Noviembre");
+            this.fechas[10].FECHA = this.plusString('16', " de Diciembre");
+            this.fechas[11].FECHA = this.plusString('16', " de Enero");
         }
     }
 };
 CronoDetailPage.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__.ActivatedRoute },
-    { type: src_app_services_crono_service_service__WEBPACK_IMPORTED_MODULE_2__.CronoServiceService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.ModalController },
-    { type: src_app_services_save_data_service__WEBPACK_IMPORTED_MODULE_4__.SaveDataService }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.ActivatedRoute },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.ModalController },
+    { type: src_app_services_save_data_service__WEBPACK_IMPORTED_MODULE_3__.SaveDataService }
 ];
-CronoDetailPage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
+CronoDetailPage = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
         selector: 'app-crono-detail',
         template: _raw_loader_crono_detail_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_crono_detail_page_scss__WEBPACK_IMPORTED_MODULE_1__.default]
@@ -7276,7 +7274,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("ion-content {\n  --background: #203680;\n  --padding-bottom: 32px;\n  --padding-top: 32px;\n}\nion-content .labels {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 26px;\n  font-weight: bold;\n  color: #fff;\n  margin-left: 80px;\n}\nion-content .inputs {\n  background: #fff;\n  max-width: 80% !important;\n  margin-left: auto;\n  margin-right: auto;\n  border-radius: 10px;\n  text-align: center;\n  font-size: 23px;\n  font-family: \"Montserrat\", sans-serif;\n}\nion-content .btn-save {\n  margin-top: 32px;\n  margin-left: 120px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1vZGFsLXNhdmUucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0kscUJBQUE7RUFDQSxzQkFBQTtFQUNBLG1CQUFBO0FBQ0o7QUFBSTtFQUNJLHFDQUFBO0VBQ0EsZUFBQTtFQUNBLGlCQUFBO0VBQ0EsV0FBQTtFQUNBLGlCQUFBO0FBRVI7QUFBSTtFQUNJLGdCQUFBO0VBQ0EseUJBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSxrQkFBQTtFQUNBLGVBQUE7RUFDQSxxQ0FBQTtBQUVSO0FBQUk7RUFDSSxnQkFBQTtFQUNBLGtCQUFBO0FBRVIiLCJmaWxlIjoibW9kYWwtc2F2ZS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tY29udGVudHtcclxuICAgIC0tYmFja2dyb3VuZDogIzIwMzY4MDtcclxuICAgIC0tcGFkZGluZy1ib3R0b206IDMycHg7XHJcbiAgICAtLXBhZGRpbmctdG9wOiAzMnB4O1xyXG4gICAgLmxhYmVsc3tcclxuICAgICAgICBmb250LWZhbWlseTogJ01vbnRzZXJyYXQnLCBzYW5zLXNlcmlmO1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMjZweDtcclxuICAgICAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgICAgICBjb2xvcjogI2ZmZjtcclxuICAgICAgICBtYXJnaW4tbGVmdDo4MHB4O1xyXG4gICAgfVxyXG4gICAgLmlucHV0c3tcclxuICAgICAgICBiYWNrZ3JvdW5kOiAjZmZmO1xyXG4gICAgICAgIG1heC13aWR0aDogODAlICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgbWFyZ2luLWxlZnQ6IGF1dG87XHJcbiAgICAgICAgbWFyZ2luLXJpZ2h0OiBhdXRvO1xyXG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgICAgIGZvbnQtc2l6ZTogMjNweDtcclxuICAgICAgICBmb250LWZhbWlseTogJ01vbnRzZXJyYXQnLCBzYW5zLXNlcmlmO1xyXG4gICAgfVxyXG4gICAgLmJ0bi1zYXZle1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDMycHg7XHJcbiAgICAgICAgbWFyZ2luLWxlZnQ6IDEyMHB4O1xyXG4gICAgfVxyXG59Il19 */");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("ion-content {\n  --background: #203680;\n  --padding-bottom: 24px;\n  --padding-top: 32px;\n}\nion-content .labels {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 26px;\n  font-weight: bold;\n  color: #fff;\n  margin-left: 60px;\n}\nion-content .inputs {\n  background: #fff;\n  max-width: 80% !important;\n  margin-left: auto;\n  margin-top: 10px;\n  margin-bottom: 10px;\n  margin-right: auto;\n  border-radius: 10px;\n  text-align: center;\n  font-size: 23px;\n  font-family: \"Montserrat\", sans-serif;\n}\nion-content .btn-save {\n  margin-top: 12px;\n  margin-left: 120px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1vZGFsLXNhdmUucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0kscUJBQUE7RUFDQSxzQkFBQTtFQUNBLG1CQUFBO0FBQ0o7QUFBSTtFQUNJLHFDQUFBO0VBQ0EsZUFBQTtFQUNBLGlCQUFBO0VBQ0EsV0FBQTtFQUNBLGlCQUFBO0FBRVI7QUFBSTtFQUNJLGdCQUFBO0VBQ0EseUJBQUE7RUFDQSxpQkFBQTtFQUNBLGdCQUFBO0VBQ0EsbUJBQUE7RUFDQSxrQkFBQTtFQUNBLG1CQUFBO0VBQ0Esa0JBQUE7RUFDQSxlQUFBO0VBQ0EscUNBQUE7QUFFUjtBQUFJO0VBQ0ksZ0JBQUE7RUFDQSxrQkFBQTtBQUVSIiwiZmlsZSI6Im1vZGFsLXNhdmUucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWNvbnRlbnR7XHJcbiAgICAtLWJhY2tncm91bmQ6ICMyMDM2ODA7XHJcbiAgICAtLXBhZGRpbmctYm90dG9tOiAyNHB4O1xyXG4gICAgLS1wYWRkaW5nLXRvcDogMzJweDtcclxuICAgIC5sYWJlbHN7XHJcbiAgICAgICAgZm9udC1mYW1pbHk6ICdNb250c2VycmF0Jywgc2Fucy1zZXJpZjtcclxuICAgICAgICBmb250LXNpemU6IDI2cHg7XHJcbiAgICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgICAgICAgY29sb3I6ICNmZmY7XHJcbiAgICAgICAgbWFyZ2luLWxlZnQ6NjBweDtcclxuICAgIH1cclxuICAgIC5pbnB1dHN7XHJcbiAgICAgICAgYmFja2dyb3VuZDogI2ZmZjtcclxuICAgICAgICBtYXgtd2lkdGg6IDgwJSAhaW1wb3J0YW50O1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiBhdXRvO1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDEwcHg7XHJcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogMTBweDtcclxuICAgICAgICBtYXJnaW4tcmlnaHQ6IGF1dG87XHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogMTBweDtcclxuICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAgICAgZm9udC1zaXplOiAyM3B4O1xyXG4gICAgICAgIGZvbnQtZmFtaWx5OiAnTW9udHNlcnJhdCcsIHNhbnMtc2VyaWY7XHJcbiAgICB9XHJcbiAgICAuYnRuLXNhdmV7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogMTJweDtcclxuICAgICAgICBtYXJnaW4tbGVmdDogMTIwcHg7XHJcbiAgICB9XHJcbn0iXX0= */");
 
 /***/ }),
 
@@ -7306,7 +7304,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\n  <ion-label position=\"stacked\" class=\"labels\">Stacked Label</ion-label>\n  <ion-input type=\"number\" placeholder=\"Numero RUC\" [(ngModel)]=\"rucNumber\" class=\"inputs\" id=\"rucNumber\"></ion-input>\n  <ion-label position=\"stacked\" class=\"labels\">Stacked Label</ion-label>\n  <ion-input type=\"text\" placeholder=\"Nombre de la Empresa\" class=\"inputs\" [(ngModel)]=\"rucName\" id=\"rucName\"></ion-input>\n  <ion-button (click)=\"addData()\" color=\"light\" class=\"btn-save\">Guardar</ion-button>\n</ion-content>\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\n  <ion-label position=\"stacked\" class=\"labels\">Numero de RUC</ion-label>\n  <ion-input type=\"number\" placeholder=\"Numero RUC\" [(ngModel)]=\"rucNumber\" class=\"inputs\" id=\"rucNumber\"></ion-input>\n  <ion-label position=\"stacked\" class=\"labels\">Nombre Empresa</ion-label>\n  <ion-input type=\"text\" placeholder=\"Nombre de la Empresa\" class=\"inputs\" [(ngModel)]=\"rucName\" id=\"rucName\"></ion-input>\n  <ion-button (click)=\"addData()\" color=\"light\" class=\"btn-save\">Guardar</ion-button>\n</ion-content>\n");
 
 /***/ })
 

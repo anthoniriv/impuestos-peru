@@ -1,46 +1,51 @@
-ion-content{
-  --ion-background-color:#F9FBFC;
-  --padding-top:46px;
-  ion-text{
+.main{
+  --background: url('https://i.imgur.com/1hN85kV.jpg') 0 0/100% 95% no-repeat;
+  background-size: cover;
+  --padding-top: 80px;
+  .content{
+    padding-left: 34px;
+    h2{
+      font-size:34px;
+      font-weight:400;
+      color:#fff;
+    }
     h1{
-      text-align: center;
-      font-size: 19px;
+      margin-top: 29px;
+      max-width: 82%;
+      font-size: 50px;
       font-weight: bold;
-      color: #22377D;
+      color: #41D1D9;
+      line-height: 58px;
       font-family: 'Montserrat', sans-serif;
     }
     p{
-      margin-top: 54px;
-      font-size: 19px;
-      padding-left: 20px;
-      font-weight: bold;
-      color: black;
+      max-width: 50%;
+      margin-top: 47px;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgb(255, 255, 255);
       font-family: 'Montserrat', sans-serif;
     }
-  }
-  ion-button{
-    margin-top: 20px;
-    margin-left: 20px;
-    font-size: 16px;
-    border-radius: 10px;
-    font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
-  }
-  .info-button{
-    --border-radius: 28px;
-  }
-  ion-text{
+    ion-button{
+      margin-top: 14px;
+      font-size: 16px;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .info-button{
+      --color:black;
+      --background: #fff;
+      --border-radius: 13px;
+    }
     .info{
-      margin-top: 2px;
-      margin-left: 12px;
+      color: #238BB5;
+      line-height: 16px;
+      max-width: 38%;
+      margin-top: 22px;
       font-size: 10px;
-      font-weight: bold;
+      font-weight: 500;
       font-family: 'Montserrat', sans-serif;
     }
   }
-  ion-img{
-    padding-top: 50px;
-    max-width: 90%;
-    float: right;
-  }
+
 }

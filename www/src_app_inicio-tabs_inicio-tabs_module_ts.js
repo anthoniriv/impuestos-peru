@@ -30,7 +30,7 @@ const routes = [
             },
             {
                 path: 'calculadora',
-                loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_calculadora_calculadora-select_calculadora-select_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ../calculadora/calculadora-select/calculadora-select.module */ 4529)).then(m => m.CalculadoraSelectPageModule)
+                loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_calculadora_calc-anual1_calc-anual1_page_ts"), __webpack_require__.e("default-src_app_calculadora_calc-cuarta_calc-cuarta_page_ts"), __webpack_require__.e("default-src_app_calculadora_calc-anual2_calc-anual2_page_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_calculadora_calculadora-select_calculadora-select_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ../calculadora/calculadora-select/calculadora-select.module */ 4529)).then(m => m.CalculadoraSelectPageModule)
             },
             {
                 path: 'cronograma',
