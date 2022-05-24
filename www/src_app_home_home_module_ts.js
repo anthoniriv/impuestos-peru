@@ -104,7 +104,7 @@ let HomePage = class HomePage {
     constructor() { }
     //go to google website
     contact() {
-        window.open('https://wa.link/dr6xxz', '_system', 'location=yes');
+        window.open('https://wa.link/wo5m8u', '_system', 'location=yes');
         return false;
     }
 };
