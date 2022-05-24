@@ -1,26 +1,25 @@
 .main{
-  --background: url('https://i.imgur.com/1hN85kV.jpg') 0 0/100% 95% no-repeat;
+  --background: url('./../../assets/png/1.png') 0 0/100% 95% no-repeat;
   background-size: cover;
   --padding-top: 80px;
   .content{
-    padding-left: 34px;
+    padding-left: 30px;
     h2{
       font-size:34px;
       font-weight:400;
-      color:#fff;
+      color:rgba(255, 255, 255, 0);
     }
     h1{
       margin-top: 29px;
       max-width: 82%;
       font-size: 50px;
       font-weight: bold;
-      color: #41D1D9;
-      line-height: 58px;
+      color: #41d1d900;
       font-family: 'Montserrat', sans-serif;
     }
     p{
+      margin-top: 30px;
       max-width: 50%;
-      margin-top: 47px;
       font-size: 13px;
       font-weight: 500;
       color: rgb(255, 255, 255);
@@ -38,7 +37,7 @@
       --border-radius: 13px;
     }
     .info{
-      color: #238BB5;
+      color: #238cb5;
       line-height: 16px;
       max-width: 38%;
       margin-top: 22px;

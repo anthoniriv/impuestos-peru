@@ -13,7 +13,7 @@ const routes: Routes = [
     loadChildren: () => import('./crono-detail/crono-detail.module').then( m => m.CronoDetailPageModule)
   },
   {
-    path: 'modal-save',
+    path: 'modal-save/:id',
     loadChildren: () => import('./modal-save/modal-save.module').then( m => m.ModalSavePageModule)
   }
 ];

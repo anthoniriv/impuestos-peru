@@ -141,7 +141,10 @@ export class CronoDetailPage implements OnInit {
   async openModal(){
     const modal = await this.modalController.create({
       component: ModalSavePage,
-      cssClass: 'my-modal-class'
+      cssClass: 'my-modal-class',
+      componentProps: {
+        'rucNumber': this.rucNumber,
+      }
     });
     return await modal.present();
   }

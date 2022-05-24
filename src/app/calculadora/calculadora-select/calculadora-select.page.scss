@@ -1,18 +1,19 @@
 ion-content{
-    --background: url('https://i.imgur.com/Ez2f3WC.jpg') 0 0/100% 100% no-repeat;
+    --background: url('./../../../assets/png/2.jpg') 0 0/100% 100% no-repeat;
     --ion-background-color: #f4f5f8;
     // --padding-top: 64px;
     .title{
         padding-top: 105px;
         color: #fff;
         text-align: center;
+        padding-bottom: 115px;
         font-size: 28px;
         font-weight: bold;
         font-family: 'Montserrat', sans-serif;
         text-transform: uppercase;
     }
     .sub_title{
-        padding-top: 210px;
+        padding-top: 30px;
         color: #03335e;
         text-align: center;
         font-size: 19px;

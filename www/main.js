@@ -68,11 +68,11 @@ const routes = [
     },
     {
         path: 'calculadora-select',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_calculadora_calc-anual1_calc-anual1_page_ts"), __webpack_require__.e("default-src_app_calculadora_calc-cuarta_calc-cuarta_page_ts"), __webpack_require__.e("default-src_app_calculadora_calc-anual2_calc-anual2_page_ts"), __webpack_require__.e("common"), __webpack_require__.e("src_app_calculadora_calculadora-select_calculadora-select_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./calculadora/calculadora-select/calculadora-select.module */ 4529)).then(m => m.CalculadoraSelectPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_calculadora_calc-anual1_calc-anual1_page_ts"), __webpack_require__.e("default-src_app_calculadora_calc-cuarta_calc-cuarta_page_ts"), __webpack_require__.e("default-src_app_calculadora_calc-unica_calc-unica_page_ts"), __webpack_require__.e("default-src_app_calculadora_calc-anual2_calc-anual2_page_ts"), __webpack_require__.e("src_app_calculadora_calculadora-select_calculadora-select_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./calculadora/calculadora-select/calculadora-select.module */ 4529)).then(m => m.CalculadoraSelectPageModule)
     },
     {
         path: 'calc-unica',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_calculadora_calc-unica_calc-unica_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./calculadora/calc-unica/calc-unica.module */ 5666)).then(m => m.CalcUnicaPageModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-src_app_calculadora_calc-unica_calc-unica_page_ts"), __webpack_require__.e("src_app_calculadora_calc-unica_calc-unica_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./calculadora/calc-unica/calc-unica.module */ 5666)).then(m => m.CalcUnicaPageModule)
     },
     {
         path: 'calc-anual1',
@@ -120,7 +120,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_save_data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/save-data.service */ 4355);
 /* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ 1524);
 /* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ 3494);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ 9122);
 
 
 
@@ -179,7 +179,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/platform-browser */ 9075);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/router */ 9895);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ 8583);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic/angular */ 476);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic/angular */ 9122);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app.component */ 5041);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-routing.module */ 158);
 /* harmony import */ var _ionic_storage_angular__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic/storage-angular */ 4925);
@@ -215,6 +215,9 @@ AppModule = (0,tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([
             }), _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__.BrowserAnimationsModule],
         providers: [{ provide: _angular_router__WEBPACK_IMPORTED_MODULE_13__.RouteReuseStrategy, useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_10__.IonicRouteStrategy }, _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_4__.SplashScreen, _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__.StatusBar],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_0__.AppComponent],
+        schemas: [
+            _angular_core__WEBPACK_IMPORTED_MODULE_7__.CUSTOM_ELEMENTS_SCHEMA
+        ]
     })
 ], AppModule);
 
@@ -359,6 +362,11 @@ if (_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.productio
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./ion-accordion_2.entry.js": [
+		8359,
+		"common",
+		"node_modules_ionic_core_dist_esm_ion-accordion_2_entry_js"
+	],
 	"./ion-action-sheet.entry.js": [
 		7321,
 		"common",
@@ -387,6 +395,11 @@ var map = {
 	"./ion-backdrop.entry.js": [
 		7757,
 		"node_modules_ionic_core_dist_esm_ion-backdrop_entry_js"
+	],
+	"./ion-breadcrumb_2.entry.js": [
+		5727,
+		"common",
+		"node_modules_ionic_core_dist_esm_ion-breadcrumb_2_entry_js"
 	],
 	"./ion-button_2.entry.js": [
 		392,
@@ -427,7 +440,7 @@ var map = {
 		"node_modules_ionic_core_dist_esm_ion-img_entry_js"
 	],
 	"./ion-infinite-scroll_2.entry.js": [
-		5931,
+		3087,
 		"node_modules_ionic_core_dist_esm_ion-infinite-scroll_2_entry_js"
 	],
 	"./ion-input.entry.js": [
@@ -464,6 +477,15 @@ var map = {
 		8708,
 		"common",
 		"node_modules_ionic_core_dist_esm_ion-nav_2_entry_js"
+	],
+	"./ion-picker-column-internal.entry.js": [
+		1349,
+		"common",
+		"node_modules_ionic_core_dist_esm_ion-picker-column-internal_entry_js"
+	],
+	"./ion-picker-internal.entry.js": [
+		7915,
+		"node_modules_ionic_core_dist_esm_ion-picker-internal_entry_js"
 	],
 	"./ion-popover.entry.js": [
 		3527,

@@ -11,6 +11,6 @@ export class HomePage {
 
   //go to google website
   contact(){
-    window.open('https://wa.link/irf3uh', '_blank');
+    window.open('https://wa.link/wo5m8u', '_system', 'location=yes'); return false;
   }
 }

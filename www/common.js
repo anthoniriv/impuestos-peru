@@ -1,8 +1,8 @@
 (self["webpackChunkcalculator_welquer_app"] = self["webpackChunkcalculator_welquer_app"] || []).push([["common"],{
 
-/***/ 8225:
+/***/ 6328:
 /*!*********************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/button-active-d4bd4f74.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm/button-active-80cd2e37.js ***!
   \*********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -11,9 +11,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "c": () => (/* binding */ createButtonActiveGesture)
 /* harmony export */ });
-/* harmony import */ var _index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-7a8b7a1c.js */ 3150);
-/* harmony import */ var _haptic_27b3f981_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./haptic-27b3f981.js */ 2954);
-/* harmony import */ var _index_34cb2743_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index-34cb2743.js */ 9461);
+/* harmony import */ var _index_b3eecb14_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-b3eecb14.js */ 8888);
+/* harmony import */ var _haptic_9a9aa7ec_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./haptic-9a9aa7ec.js */ 1240);
+/* harmony import */ var _index_41bf41f2_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index-41bf41f2.js */ 4751);
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 
 
 
@@ -41,7 +44,7 @@ const createButtonActiveGesture = (el, isButton) => {
       initialTouchedButton = currentTouchedButton;
     }
     const buttonToModify = currentTouchedButton;
-    (0,_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__.c)(() => buttonToModify.classList.add('ion-activated'));
+    (0,_index_b3eecb14_js__WEBPACK_IMPORTED_MODULE_0__.c)(() => buttonToModify.classList.add('ion-activated'));
     hapticFeedbackFn();
   };
   const clearActiveButton = (dispatchClick = false) => {
@@ -49,7 +52,7 @@ const createButtonActiveGesture = (el, isButton) => {
       return;
     }
     const buttonToModify = currentTouchedButton;
-    (0,_index_7a8b7a1c_js__WEBPACK_IMPORTED_MODULE_0__.c)(() => buttonToModify.classList.remove('ion-activated'));
+    (0,_index_b3eecb14_js__WEBPACK_IMPORTED_MODULE_0__.c)(() => buttonToModify.classList.remove('ion-activated'));
     /**
      * Clicking on one button, but releasing on another button
      * does not dispatch a click event in browsers, so we
@@ -63,15 +66,15 @@ const createButtonActiveGesture = (el, isButton) => {
     }
     currentTouchedButton = undefined;
   };
-  return (0,_index_34cb2743_js__WEBPACK_IMPORTED_MODULE_2__.createGesture)({
+  return (0,_index_41bf41f2_js__WEBPACK_IMPORTED_MODULE_2__.createGesture)({
     el,
     gestureName: 'buttonActiveDrag',
     threshold: 0,
-    onStart: ev => activateButtonAtPoint(ev.currentX, ev.currentY, _haptic_27b3f981_js__WEBPACK_IMPORTED_MODULE_1__.a),
-    onMove: ev => activateButtonAtPoint(ev.currentX, ev.currentY, _haptic_27b3f981_js__WEBPACK_IMPORTED_MODULE_1__.b),
+    onStart: ev => activateButtonAtPoint(ev.currentX, ev.currentY, _haptic_9a9aa7ec_js__WEBPACK_IMPORTED_MODULE_1__.a),
+    onMove: ev => activateButtonAtPoint(ev.currentX, ev.currentY, _haptic_9a9aa7ec_js__WEBPACK_IMPORTED_MODULE_1__.b),
     onEnd: () => {
       clearActiveButton(true);
-      (0,_haptic_27b3f981_js__WEBPACK_IMPORTED_MODULE_1__.h)();
+      (0,_haptic_9a9aa7ec_js__WEBPACK_IMPORTED_MODULE_1__.h)();
       initialTouchedButton = undefined;
     }
   });
@@ -82,26 +85,139 @@ const createButtonActiveGesture = (el, isButton) => {
 
 /***/ }),
 
-/***/ 7330:
+/***/ 5375:
+/*!***********************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm/dir-e8b767a8.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "i": () => (/* binding */ isRTL)
+/* harmony export */ });
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+/**
+ * Returns `true` if the document or host element
+ * has a `dir` set to `rtl`. The host value will always
+ * take priority over the root document value.
+ */
+const isRTL = (hostEl) => {
+  if (hostEl) {
+    if (hostEl.dir !== '') {
+      return hostEl.dir.toLowerCase() === 'rtl';
+    }
+  }
+  return (document === null || document === void 0 ? void 0 : document.dir.toLowerCase()) === 'rtl';
+};
+
+
+
+
+/***/ }),
+
+/***/ 3694:
+/*!*********************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm/focus-visible-02bf7a99.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "startFocusVisible": () => (/* binding */ startFocusVisible)
+/* harmony export */ });
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+const ION_FOCUSED = 'ion-focused';
+const ION_FOCUSABLE = 'ion-focusable';
+const FOCUS_KEYS = ['Tab', 'ArrowDown', 'Space', 'Escape', ' ', 'Shift', 'Enter', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'Home', 'End'];
+const startFocusVisible = (rootEl) => {
+  let currentFocus = [];
+  let keyboardMode = true;
+  const ref = (rootEl) ? rootEl.shadowRoot : document;
+  const root = (rootEl) ? rootEl : document.body;
+  const setFocus = (elements) => {
+    currentFocus.forEach(el => el.classList.remove(ION_FOCUSED));
+    elements.forEach(el => el.classList.add(ION_FOCUSED));
+    currentFocus = elements;
+  };
+  const pointerDown = () => {
+    keyboardMode = false;
+    setFocus([]);
+  };
+  const onKeydown = (ev) => {
+    keyboardMode = FOCUS_KEYS.includes(ev.key);
+    if (!keyboardMode) {
+      setFocus([]);
+    }
+  };
+  const onFocusin = (ev) => {
+    if (keyboardMode && ev.composedPath) {
+      const toFocus = ev.composedPath().filter((el) => {
+        if (el.classList) {
+          return el.classList.contains(ION_FOCUSABLE);
+        }
+        return false;
+      });
+      setFocus(toFocus);
+    }
+  };
+  const onFocusout = () => {
+    if (ref.activeElement === root) {
+      setFocus([]);
+    }
+  };
+  ref.addEventListener('keydown', onKeydown);
+  ref.addEventListener('focusin', onFocusin);
+  ref.addEventListener('focusout', onFocusout);
+  ref.addEventListener('touchstart', pointerDown);
+  ref.addEventListener('mousedown', pointerDown);
+  const destroy = () => {
+    ref.removeEventListener('keydown', onKeydown);
+    ref.removeEventListener('focusin', onFocusin);
+    ref.removeEventListener('focusout', onFocusout);
+    ref.removeEventListener('touchstart', pointerDown);
+    ref.removeEventListener('mousedown', pointerDown);
+  };
+  return {
+    destroy,
+    setFocus
+  };
+};
+
+
+
+
+/***/ }),
+
+/***/ 747:
 /*!**************************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/framework-delegate-4392cd63.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm/framework-delegate-0e9f0224.js ***!
   \**************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "C": () => (/* binding */ CoreDelegate),
 /* harmony export */   "a": () => (/* binding */ attachComponent),
 /* harmony export */   "d": () => (/* binding */ detachComponent)
 /* harmony export */ });
-/* harmony import */ var _helpers_dd7e4b7b_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers-dd7e4b7b.js */ 2377);
+/* harmony import */ var _helpers_6e1e5b65_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers-6e1e5b65.js */ 1074);
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 
 
-const attachComponent = async (delegate, container, component, cssClasses, componentProps) => {
+const attachComponent = async (delegate, container, component, cssClasses, componentProps, inline) => {
   if (delegate) {
     return delegate.attachViewToDom(container, component, componentProps, cssClasses);
   }
-  if (typeof component !== 'string' && !(component instanceof HTMLElement)) {
+  if (!inline && typeof component !== 'string' && !(component instanceof HTMLElement)) {
     throw new Error('framework delegate is missing');
   }
   const el = (typeof component === 'string')
@@ -114,7 +230,7 @@ const attachComponent = async (delegate, container, component, cssClasses, compo
     Object.assign(el, componentProps);
   }
   container.appendChild(el);
-  await new Promise(resolve => (0,_helpers_dd7e4b7b_js__WEBPACK_IMPORTED_MODULE_0__.c)(el, resolve));
+  await new Promise(resolve => (0,_helpers_6e1e5b65_js__WEBPACK_IMPORTED_MODULE_0__.c)(el, resolve));
   return el;
 };
 const detachComponent = (delegate, element) => {
@@ -127,15 +243,87 @@ const detachComponent = (delegate, element) => {
   }
   return Promise.resolve();
 };
+const CoreDelegate = () => {
+  let BaseComponent;
+  let Reference;
+  const attachViewToDom = async (parentElement, userComponent, userComponentProps = {}, cssClasses = []) => {
+    BaseComponent = parentElement;
+    /**
+     * If passing in a component via the `component` props
+     * we need to append it inside of our overlay component.
+     */
+    if (userComponent) {
+      /**
+       * If passing in the tag name, create
+       * the element otherwise just get a reference
+       * to the component.
+       */
+      const el = (typeof userComponent === 'string')
+        ? BaseComponent.ownerDocument && BaseComponent.ownerDocument.createElement(userComponent)
+        : userComponent;
+      /**
+       * Add any css classes passed in
+       * via the cssClasses prop on the overlay.
+       */
+      cssClasses.forEach(c => el.classList.add(c));
+      /**
+       * Add any props passed in
+       * via the componentProps prop on the overlay.
+       */
+      Object.assign(el, userComponentProps);
+      /**
+       * Finally, append the component
+       * inside of the overlay component.
+       */
+      BaseComponent.appendChild(el);
+      await new Promise(resolve => (0,_helpers_6e1e5b65_js__WEBPACK_IMPORTED_MODULE_0__.c)(el, resolve));
+    }
+    else if (BaseComponent.children.length > 0) {
+      // If there is no component, then we need to create a new parent
+      // element to apply the css classes to.
+      const el = BaseComponent.ownerDocument && BaseComponent.ownerDocument.createElement('div');
+      cssClasses.forEach(c => el.classList.add(c));
+      // Move each child from the original template to the new parent element.
+      el.append(...BaseComponent.children);
+      // Append the new parent element to the original parent element.
+      BaseComponent.appendChild(el);
+    }
+    /**
+     * Get the root of the app and
+     * add the overlay there.
+     */
+    const app = document.querySelector('ion-app') || document.body;
+    /**
+     * Create a placeholder comment so that
+     * we can return this component to where
+     * it was previously.
+     */
+    Reference = document.createComment('ionic teleport');
+    BaseComponent.parentNode.insertBefore(Reference, BaseComponent);
+    app.appendChild(BaseComponent);
+    return BaseComponent;
+  };
+  const removeViewFromDom = () => {
+    /**
+     * Return component to where it was previously in the DOM.
+     */
+    if (BaseComponent && Reference) {
+      Reference.parentNode.insertBefore(BaseComponent, Reference);
+      Reference.remove();
+    }
+    return Promise.resolve();
+  };
+  return { attachViewToDom, removeViewFromDom };
+};
 
 
 
 
 /***/ }),
 
-/***/ 2954:
+/***/ 1240:
 /*!**************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/haptic-27b3f981.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm/haptic-9a9aa7ec.js ***!
   \**************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -148,6 +336,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "d": () => (/* binding */ hapticImpact),
 /* harmony export */   "h": () => (/* binding */ hapticSelectionEnd)
 /* harmony export */ });
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 const HapticEngine = {
   getEngine() {
     const win = window;
@@ -258,9 +449,220 @@ const hapticImpact = (options) => {
 
 /***/ }),
 
-/***/ 408:
+/***/ 613:
+/*!*************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm/index-e3f61316.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "a": () => (/* binding */ arrowBackSharp),
+/* harmony export */   "b": () => (/* binding */ closeCircle),
+/* harmony export */   "c": () => (/* binding */ chevronBack),
+/* harmony export */   "d": () => (/* binding */ closeSharp),
+/* harmony export */   "e": () => (/* binding */ searchSharp),
+/* harmony export */   "f": () => (/* binding */ caretBackSharp),
+/* harmony export */   "g": () => (/* binding */ arrowDown),
+/* harmony export */   "h": () => (/* binding */ reorderTwoSharp),
+/* harmony export */   "i": () => (/* binding */ chevronDown),
+/* harmony export */   "j": () => (/* binding */ chevronForwardOutline),
+/* harmony export */   "k": () => (/* binding */ ellipsisHorizontal),
+/* harmony export */   "l": () => (/* binding */ chevronForward),
+/* harmony export */   "m": () => (/* binding */ caretUpSharp),
+/* harmony export */   "n": () => (/* binding */ caretDownSharp),
+/* harmony export */   "o": () => (/* binding */ close),
+/* harmony export */   "p": () => (/* binding */ menuOutline),
+/* harmony export */   "q": () => (/* binding */ menuSharp),
+/* harmony export */   "r": () => (/* binding */ reorderThreeOutline),
+/* harmony export */   "s": () => (/* binding */ searchOutline)
+/* harmony export */ });
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+/* Ionicons v6.0.0, ES Modules */
+const arrowBackSharp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Arrow Back</title><path stroke-linecap='square' stroke-miterlimit='10' stroke-width='48' d='M244 400L100 256l144-144M120 256h292' class='ionicon-fill-none'/></svg>";
+const arrowDown = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Arrow Down</title><path stroke-linecap='round' stroke-linejoin='round' stroke-width='48' d='M112 268l144 144 144-144M256 392V100' class='ionicon-fill-none'/></svg>";
+const caretBackSharp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Caret Back</title><path d='M368 64L144 256l224 192V64z'/></svg>";
+const caretDownSharp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Caret Down</title><path d='M64 144l192 224 192-224H64z'/></svg>";
+const caretUpSharp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Caret Up</title><path d='M448 368L256 144 64 368h384z'/></svg>";
+const chevronBack = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Chevron Back</title><path stroke-linecap='round' stroke-linejoin='round' stroke-width='48' d='M328 112L184 256l144 144' class='ionicon-fill-none'/></svg>";
+const chevronDown = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Chevron Down</title><path stroke-linecap='round' stroke-linejoin='round' stroke-width='48' d='M112 184l144 144 144-144' class='ionicon-fill-none'/></svg>";
+const chevronForward = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Chevron Forward</title><path stroke-linecap='round' stroke-linejoin='round' stroke-width='48' d='M184 112l144 144-144 144' class='ionicon-fill-none'/></svg>";
+const chevronForwardOutline = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Chevron Forward</title><path stroke-linecap='round' stroke-linejoin='round' stroke-width='48' d='M184 112l144 144-144 144' class='ionicon-fill-none'/></svg>";
+const close = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Close</title><path d='M289.94 256l95-95A24 24 0 00351 127l-95 95-95-95a24 24 0 00-34 34l95 95-95 95a24 24 0 1034 34l95-95 95 95a24 24 0 0034-34z'/></svg>";
+const closeCircle = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Close Circle</title><path d='M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm75.31 260.69a16 16 0 11-22.62 22.62L256 278.63l-52.69 52.68a16 16 0 01-22.62-22.62L233.37 256l-52.68-52.69a16 16 0 0122.62-22.62L256 233.37l52.69-52.68a16 16 0 0122.62 22.62L278.63 256z'/></svg>";
+const closeSharp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Close</title><path d='M400 145.49L366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49z'/></svg>";
+const ellipsisHorizontal = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Ellipsis Horizontal</title><circle cx='256' cy='256' r='48'/><circle cx='416' cy='256' r='48'/><circle cx='96' cy='256' r='48'/></svg>";
+const menuOutline = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Menu</title><path stroke-linecap='round' stroke-miterlimit='10' d='M80 160h352M80 256h352M80 352h352' class='ionicon-fill-none ionicon-stroke-width'/></svg>";
+const menuSharp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Menu</title><path d='M64 384h384v-42.67H64zm0-106.67h384v-42.66H64zM64 128v42.67h384V128z'/></svg>";
+const reorderThreeOutline = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Reorder Three</title><path stroke-linecap='round' stroke-linejoin='round' d='M96 256h320M96 176h320M96 336h320' class='ionicon-fill-none ionicon-stroke-width'/></svg>";
+const reorderTwoSharp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Reorder Two</title><path stroke-linecap='square' stroke-linejoin='round' stroke-width='44' d='M118 304h276M118 208h276' class='ionicon-fill-none'/></svg>";
+const searchOutline = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Search</title><path d='M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z' stroke-miterlimit='10' class='ionicon-fill-none ionicon-stroke-width'/><path stroke-linecap='round' stroke-miterlimit='10' d='M338.29 338.29L448 448' class='ionicon-fill-none ionicon-stroke-width'/></svg>";
+const searchSharp = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><title>Search</title><path d='M464 428L339.92 303.9a160.48 160.48 0 0030.72-94.58C370.64 120.37 298.27 48 209.32 48S48 120.37 48 209.32s72.37 161.32 161.32 161.32a160.48 160.48 0 0094.58-30.72L428 464zM209.32 319.69a110.38 110.38 0 11110.37-110.37 110.5 110.5 0 01-110.37 110.37z'/></svg>";
+
+
+
+
+/***/ }),
+
+/***/ 8802:
+/*!****************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm/keyboard-808e4e15.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "KEYBOARD_DID_CLOSE": () => (/* binding */ KEYBOARD_DID_CLOSE),
+/* harmony export */   "KEYBOARD_DID_OPEN": () => (/* binding */ KEYBOARD_DID_OPEN),
+/* harmony export */   "copyVisualViewport": () => (/* binding */ copyVisualViewport),
+/* harmony export */   "keyboardDidClose": () => (/* binding */ keyboardDidClose),
+/* harmony export */   "keyboardDidOpen": () => (/* binding */ keyboardDidOpen),
+/* harmony export */   "keyboardDidResize": () => (/* binding */ keyboardDidResize),
+/* harmony export */   "resetKeyboardAssist": () => (/* binding */ resetKeyboardAssist),
+/* harmony export */   "setKeyboardClose": () => (/* binding */ setKeyboardClose),
+/* harmony export */   "setKeyboardOpen": () => (/* binding */ setKeyboardOpen),
+/* harmony export */   "startKeyboardAssist": () => (/* binding */ startKeyboardAssist),
+/* harmony export */   "trackViewportChanges": () => (/* binding */ trackViewportChanges)
+/* harmony export */ });
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+const KEYBOARD_DID_OPEN = 'ionKeyboardDidShow';
+const KEYBOARD_DID_CLOSE = 'ionKeyboardDidHide';
+const KEYBOARD_THRESHOLD = 150;
+let previousVisualViewport = {};
+let currentVisualViewport = {};
+let keyboardOpen = false;
+/**
+ * This is only used for tests
+ */
+const resetKeyboardAssist = () => {
+  previousVisualViewport = {};
+  currentVisualViewport = {};
+  keyboardOpen = false;
+};
+const startKeyboardAssist = (win) => {
+  startNativeListeners(win);
+  if (!win.visualViewport) {
+    return;
+  }
+  currentVisualViewport = copyVisualViewport(win.visualViewport);
+  win.visualViewport.onresize = () => {
+    trackViewportChanges(win);
+    if (keyboardDidOpen() || keyboardDidResize(win)) {
+      setKeyboardOpen(win);
+    }
+    else if (keyboardDidClose(win)) {
+      setKeyboardClose(win);
+    }
+  };
+};
+/**
+ * Listen for events fired by native keyboard plugin
+ * in Capacitor/Cordova so devs only need to listen
+ * in one place.
+ */
+const startNativeListeners = (win) => {
+  win.addEventListener('keyboardDidShow', ev => setKeyboardOpen(win, ev));
+  win.addEventListener('keyboardDidHide', () => setKeyboardClose(win));
+};
+const setKeyboardOpen = (win, ev) => {
+  fireKeyboardOpenEvent(win, ev);
+  keyboardOpen = true;
+};
+const setKeyboardClose = (win) => {
+  fireKeyboardCloseEvent(win);
+  keyboardOpen = false;
+};
+/**
+ * Returns `true` if the `keyboardOpen` flag is not
+ * set, the previous visual viewport width equal the current
+ * visual viewport width, and if the scaled difference
+ * of the previous visual viewport height minus the current
+ * visual viewport height is greater than KEYBOARD_THRESHOLD
+ *
+ * We need to be able to accommodate users who have zooming
+ * enabled in their browser (or have zoomed in manually) which
+ * is why we take into account the current visual viewport's
+ * scale value.
+ */
+const keyboardDidOpen = () => {
+  const scaledHeightDifference = (previousVisualViewport.height - currentVisualViewport.height) * currentVisualViewport.scale;
+  return (!keyboardOpen &&
+    previousVisualViewport.width === currentVisualViewport.width &&
+    scaledHeightDifference > KEYBOARD_THRESHOLD);
+};
+/**
+ * Returns `true` if the keyboard is open,
+ * but the keyboard did not close
+ */
+const keyboardDidResize = (win) => {
+  return keyboardOpen && !keyboardDidClose(win);
+};
+/**
+ * Determine if the keyboard was closed
+ * Returns `true` if the `keyboardOpen` flag is set and
+ * the current visual viewport height equals the
+ * layout viewport height.
+ */
+const keyboardDidClose = (win) => {
+  return keyboardOpen && currentVisualViewport.height === win.innerHeight;
+};
+/**
+ * Dispatch a keyboard open event
+ */
+const fireKeyboardOpenEvent = (win, nativeEv) => {
+  const keyboardHeight = nativeEv ? nativeEv.keyboardHeight : win.innerHeight - currentVisualViewport.height;
+  const ev = new CustomEvent(KEYBOARD_DID_OPEN, {
+    detail: { keyboardHeight }
+  });
+  win.dispatchEvent(ev);
+};
+/**
+ * Dispatch a keyboard close event
+ */
+const fireKeyboardCloseEvent = (win) => {
+  const ev = new CustomEvent(KEYBOARD_DID_CLOSE);
+  win.dispatchEvent(ev);
+};
+/**
+ * Given a window object, create a copy of
+ * the current visual and layout viewport states
+ * while also preserving the previous visual and
+ * layout viewport states
+ */
+const trackViewportChanges = (win) => {
+  previousVisualViewport = Object.assign({}, currentVisualViewport);
+  currentVisualViewport = copyVisualViewport(win.visualViewport);
+};
+/**
+ * Creates a deep copy of the visual viewport
+ * at a given state
+ */
+const copyVisualViewport = (visualViewport) => {
+  return {
+    width: Math.round(visualViewport.width),
+    height: Math.round(visualViewport.height),
+    offsetTop: visualViewport.offsetTop,
+    offsetLeft: visualViewport.offsetLeft,
+    pageTop: visualViewport.pageTop,
+    pageLeft: visualViewport.pageLeft,
+    scale: visualViewport.scale
+  };
+};
+
+
+
+
+/***/ }),
+
+/***/ 2841:
 /*!***********************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/spinner-configs-cd7845af.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm/spinner-configs-163ed7fb.js ***!
   \***********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -269,6 +671,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "S": () => (/* binding */ SPINNERS)
 /* harmony export */ });
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 const spinners = {
   'bubbles': {
     dur: 1000,
@@ -345,6 +750,38 @@ const spinners = {
   },
   'lines': {
     dur: 1000,
+    lines: 8,
+    fn: (dur, index, total) => {
+      const transform = `rotate(${(360 / total) * index + (index < (total / 2) ? 180 : -180)}deg)`;
+      const animationDelay = `${(dur * index / total) - dur}ms`;
+      return {
+        y1: 14,
+        y2: 26,
+        style: {
+          'transform': transform,
+          'animation-delay': animationDelay,
+        }
+      };
+    }
+  },
+  'lines-small': {
+    dur: 1000,
+    lines: 8,
+    fn: (dur, index, total) => {
+      const transform = `rotate(${(360 / total) * index + (index < (total / 2) ? 180 : -180)}deg)`;
+      const animationDelay = `${(dur * index / total) - dur}ms`;
+      return {
+        y1: 12,
+        y2: 20,
+        style: {
+          'transform': transform,
+          'animation-delay': animationDelay,
+        }
+      };
+    }
+  },
+  'lines-sharp': {
+    dur: 1000,
     lines: 12,
     fn: (dur, index, total) => {
       const transform = `rotate(${30 * index + (index < 6 ? 180 : -180)}deg)`;
@@ -359,7 +796,7 @@ const spinners = {
       };
     }
   },
-  'lines-small': {
+  'lines-sharp-small': {
     dur: 1000,
     lines: 12,
     fn: (dur, index, total) => {
@@ -383,9 +820,102 @@ const SPINNERS = spinners;
 
 /***/ }),
 
-/***/ 1269:
+/***/ 6086:
+/*!******************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm/swipe-back-f65c5686.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "createSwipeBackGesture": () => (/* binding */ createSwipeBackGesture)
+/* harmony export */ });
+/* harmony import */ var _helpers_6e1e5b65_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers-6e1e5b65.js */ 1074);
+/* harmony import */ var _dir_e8b767a8_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dir-e8b767a8.js */ 5375);
+/* harmony import */ var _index_41bf41f2_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index-41bf41f2.js */ 4751);
+/* harmony import */ var _gesture_controller_68c023a4_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./gesture-controller-68c023a4.js */ 7286);
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
+
+
+
+
+
+const createSwipeBackGesture = (el, canStartHandler, onStartHandler, onMoveHandler, onEndHandler) => {
+  const win = el.ownerDocument.defaultView;
+  const rtl = (0,_dir_e8b767a8_js__WEBPACK_IMPORTED_MODULE_1__.i)(el);
+  /**
+   * Determine if a gesture is near the edge
+   * of the screen. If true, then the swipe
+   * to go back gesture should proceed.
+   */
+  const isAtEdge = (detail) => {
+    const threshold = 50;
+    const { startX } = detail;
+    if (rtl) {
+      return startX >= win.innerWidth - threshold;
+    }
+    return startX <= threshold;
+  };
+  const getDeltaX = (detail) => {
+    return rtl ? -detail.deltaX : detail.deltaX;
+  };
+  const getVelocityX = (detail) => {
+    return rtl ? -detail.velocityX : detail.velocityX;
+  };
+  const canStart = (detail) => {
+    return isAtEdge(detail) && canStartHandler();
+  };
+  const onMove = (detail) => {
+    // set the transition animation's progress
+    const delta = getDeltaX(detail);
+    const stepValue = delta / win.innerWidth;
+    onMoveHandler(stepValue);
+  };
+  const onEnd = (detail) => {
+    // the swipe back gesture has ended
+    const delta = getDeltaX(detail);
+    const width = win.innerWidth;
+    const stepValue = delta / width;
+    const velocity = getVelocityX(detail);
+    const z = width / 2.0;
+    const shouldComplete = velocity >= 0 && (velocity > 0.2 || delta > z);
+    const missing = shouldComplete ? 1 - stepValue : stepValue;
+    const missingDistance = missing * width;
+    let realDur = 0;
+    if (missingDistance > 5) {
+      const dur = missingDistance / Math.abs(velocity);
+      realDur = Math.min(dur, 540);
+    }
+    /**
+     * TODO: stepValue can sometimes return negative values
+     * or values greater than 1 which should not be possible.
+     * Need to investigate more to find where the issue is.
+     */
+    onEndHandler(shouldComplete, (stepValue <= 0) ? 0.01 : (0,_helpers_6e1e5b65_js__WEBPACK_IMPORTED_MODULE_0__.k)(0, stepValue, 0.9999), realDur);
+  };
+  return (0,_index_41bf41f2_js__WEBPACK_IMPORTED_MODULE_2__.createGesture)({
+    el,
+    gestureName: 'goback-swipe',
+    gesturePriority: 40,
+    threshold: 10,
+    canStart,
+    onStart: onStartHandler,
+    onMove,
+    onEnd
+  });
+};
+
+
+
+
+/***/ }),
+
+/***/ 7853:
 /*!*************************************************************!*\
-  !*** ./node_modules/@ionic/core/dist/esm/theme-ff3fc52f.js ***!
+  !*** ./node_modules/@ionic/core/dist/esm/theme-a24ff1ad.js ***!
   \*************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -397,6 +927,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "h": () => (/* binding */ hostContext),
 /* harmony export */   "o": () => (/* binding */ openURL)
 /* harmony export */ });
+/*!
+ * (C) Ionic http://ionicframework.com - MIT License
+ */
 const hostContext = (selector, el) => {
   return el.closest(selector) !== null;
 };
@@ -483,197 +1016,6 @@ class TakeUntilSubscriber extends _innerSubscribe__WEBPACK_IMPORTED_MODULE_0__.S
     }
 }
 //# sourceMappingURL=takeUntil.js.map
-
-/***/ }),
-
-/***/ 5378:
-/*!***********************************************************!*\
-  !*** ./src/app/calculadora/calc-unica/calc-unica.page.ts ***!
-  \***********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "CalcUnicaPage": () => (/* binding */ CalcUnicaPage)
-/* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 4762);
-/* harmony import */ var _raw_loader_calc_unica_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./calc-unica.page.html */ 8736);
-/* harmony import */ var _calc_unica_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./calc-unica.page.scss */ 6922);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 7716);
-
-
-
-
-let CalcUnicaPage = class CalcUnicaPage {
-    constructor() {
-        this.isTouchedVenta = false;
-        this.isTouchedIgv = false;
-        this.isTouchedTotal = false;
-    }
-    ngOnInit() {
-        this.clearAll();
-    }
-    //Use clearall function to clear all the values in the calculator
-    //Function to clear all the values
-    clearAll() {
-        this.venta = "";
-        this.igv = "";
-        this.total = "";
-    }
-    //Get Data Functions
-    getVenta(valor) {
-        if (this.isTouchedVenta = true) {
-            console.log("Estoy calculando en venta");
-            this.venta = parseFloat(valor);
-            this.calcIgv();
-            this.calcTotal();
-            //Conditional to check if venta is NaN
-            if (isNaN(this.venta)) {
-                this.igv = "";
-                this.total = "";
-                this.venta = "";
-            }
-            console.log(this.venta);
-        }
-    }
-    getIgv(valor) {
-        if (this.isTouchedIgv = true) {
-            console.log("Estoy calculando en igv");
-            this.igv = parseFloat(valor);
-            this.calcularValorBase2();
-            this.calcTotal();
-            //Conditional to check if venta is NaN
-            if (isNaN(this.igv)) {
-                this.venta = "";
-                this.total = "";
-                this.igv = "";
-            }
-            console.log(this.igv);
-        }
-    }
-    getTotal(valor) {
-        if (this.isTouchedTotal = true) {
-            console.log("Estoy calculando en total");
-            this.total = parseFloat(valor);
-            this.calcularValorBase();
-            this.calcIgv();
-            //Conditional to check if venta is NaN
-            if (isNaN(this.total)) {
-                this.venta = "";
-                this.igv = "";
-                this.total = "";
-            }
-            console.log(this.total);
-        }
-    }
-    //Change Color Functions
-    focusInputVenta(input) {
-        this.isTouchedIgv = false;
-        this.isTouchedTotal = false;
-        this.isTouchedVenta = true;
-        console.log(`${this.isTouchedVenta} es verdadero ahora`);
-        document.getElementById(`${input}`).style.border = "solid 2px #203680";
-    }
-    focusInputIgv(input) {
-        this.isTouchedIgv = true;
-        this.isTouchedTotal = false;
-        this.isTouchedVenta = false;
-        console.log(`${this.isTouchedIgv} es verdadero ahora`);
-        document.getElementById(`${input}`).style.border = "solid 2px #203680";
-    }
-    focusInputTotal(input) {
-        this.isTouchedTotal = true;
-        this.isTouchedVenta = false;
-        this.isTouchedIgv = false;
-        console.log(`${this.isTouchedTotal} es verdadero ahora`);
-        document.getElementById(`${input}`).style.border = "solid 2px #203680";
-    }
-    unfocusInputVenta(input) {
-        this.isTouchedVenta = false;
-        console.log(`${this.isTouchedVenta} es falso ahora`);
-        document.getElementById(`${input}`).style.border = "solid 1px #20368038";
-    }
-    unfocusInputIgv(input) {
-        this.isTouchedIgv = false;
-        console.log(`${this.isTouchedVenta} es falso ahora`);
-        document.getElementById(`${input}`).style.border = "solid 1px #20368038";
-    }
-    unfocusInputTotal(input) {
-        this.isTouchedTotal = false;
-        console.log(`${this.isTouchedVenta} es falso ahora`);
-        document.getElementById(`${input}`).style.border = "solid 1px #20368038";
-    }
-    //Calculator Functions
-    calcIgv() {
-        var igv = this.venta * 0.18;
-        igv = this.round(igv);
-        this.igv = igv;
-    }
-    calcTotal() {
-        var total = this.venta + this.igv;
-        this.total = total.toString();
-        // this.total = this.venta += this.igv;
-    }
-    calcularValorBase() {
-        var valorBase = this.total / 1.18;
-        valorBase = this.round(valorBase);
-        this.venta = valorBase.toString();
-    }
-    //Function to round the values witouth using toFixed
-    round(value) {
-        return Math.round(value * 100) / 100;
-    }
-    calcularValorBase2() {
-        var valorBase = 100 * this.igv / 18;
-        valorBase = this.round(valorBase);
-        this.venta = valorBase;
-    }
-    //Function to reset
-    reset() {
-        this.clearAll();
-    }
-};
-CalcUnicaPage.ctorParameters = () => [];
-CalcUnicaPage = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_3__.Component)({
-        selector: 'app-calc-unica',
-        template: _raw_loader_calc_unica_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
-        styles: [_calc_unica_page_scss__WEBPACK_IMPORTED_MODULE_1__.default]
-    })
-], CalcUnicaPage);
-
-
-
-/***/ }),
-
-/***/ 6922:
-/*!*************************************************************!*\
-  !*** ./src/app/calculadora/calc-unica/calc-unica.page.scss ***!
-  \*************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("ion-content {\n  --ion-background-color: #f4f5f8;\n  --padding-top: 64px;\n}\nion-content ion-text {\n  color: #203680;\n}\nion-content ion-text h1 {\n  margin: 0;\n  padding: 0;\n  padding-left: 26px;\n  font-size: 26px;\n  font-weight: bold;\n  font-family: \"Montserrat\", sans-serif;\n  text-transform: uppercase;\n}\nion-content ion-text h2 {\n  margin-top: 20px;\n  padding-left: 26px;\n  font-size: 15px;\n  font-weight: 500;\n  font-family: \"Montserrat\", sans-serif;\n  text-transform: uppercase;\n}\nion-content .main ion-input {\n  width: 80%;\n  --border-color: var(--ion-color-danger, #f1453d);\n  --background: white;\n  font-size: 23px;\n  color: #4D4D4D;\n  border-radius: 25px !important;\n  padding-left: 35px !important;\n  margin-left: -40px !important;\n  margin-bottom: 25px !important;\n  border: solid 2px #20368038;\n  z-index: 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNhbGMtdW5pY2EucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksK0JBQUE7RUFDQSxtQkFBQTtBQUNKO0FBQUk7RUFDSSxjQUFBO0FBRVI7QUFEUTtFQUNJLFNBQUE7RUFDQSxVQUFBO0VBQ0Esa0JBQUE7RUFDQSxlQUFBO0VBQ0EsaUJBQUE7RUFDQSxxQ0FBQTtFQUNBLHlCQUFBO0FBR1o7QUFEUTtFQUNJLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7RUFDQSxxQ0FBQTtFQUNBLHlCQUFBO0FBR1o7QUFDUTtFQUNJLFVBQUE7RUFDQSxnREFBQTtFQUNBLG1CQUFBO0VBRUEsZUFBQTtFQUNBLGNBQUE7RUFDQSw4QkFBQTtFQUNBLDZCQUFBO0VBQ0EsNkJBQUE7RUFDQSw4QkFBQTtFQUNBLDJCQUFBO0VBQ0EsVUFBQTtBQUFaIiwiZmlsZSI6ImNhbGMtdW5pY2EucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWNvbnRlbnR7XHJcbiAgICAtLWlvbi1iYWNrZ3JvdW5kLWNvbG9yOiAjZjRmNWY4O1xyXG4gICAgLS1wYWRkaW5nLXRvcDogNjRweDtcclxuICAgIGlvbi10ZXh0e1xyXG4gICAgICAgIGNvbG9yOiAjMjAzNjgwO1xyXG4gICAgICAgIGgxe1xyXG4gICAgICAgICAgICBtYXJnaW46IDA7XHJcbiAgICAgICAgICAgIHBhZGRpbmc6IDA7XHJcbiAgICAgICAgICAgIHBhZGRpbmctbGVmdDogMjZweDtcclxuICAgICAgICAgICAgZm9udC1zaXplOiAyNnB4O1xyXG4gICAgICAgICAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgICAgICAgICAgZm9udC1mYW1pbHk6ICdNb250c2VycmF0Jywgc2Fucy1zZXJpZjtcclxuICAgICAgICAgICAgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTtcclxuICAgICAgICB9XHJcbiAgICAgICAgaDJ7XHJcbiAgICAgICAgICAgIG1hcmdpbi10b3A6IDIwcHg7XHJcbiAgICAgICAgICAgIHBhZGRpbmctbGVmdDogMjZweDtcclxuICAgICAgICAgICAgZm9udC1zaXplOiAxNXB4O1xyXG4gICAgICAgICAgICBmb250LXdlaWdodDogNTAwO1xyXG4gICAgICAgICAgICBmb250LWZhbWlseTogJ01vbnRzZXJyYXQnLCBzYW5zLXNlcmlmO1xyXG4gICAgICAgICAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuICAgIC5tYWlue1xyXG4gICAgICAgIGlvbi1pbnB1dHtcclxuICAgICAgICAgICAgd2lkdGg6IDgwJTtcclxuICAgICAgICAgICAgLS1ib3JkZXItY29sb3I6IHZhcigtLWlvbi1jb2xvci1kYW5nZXIsICNmMTQ1M2QpO1xyXG4gICAgICAgICAgICAtLWJhY2tncm91bmQ6IHdoaXRlO1xyXG4gICAgICAgICAgICBcclxuICAgICAgICAgICAgZm9udC1zaXplOiAyM3B4O1xyXG4gICAgICAgICAgICBjb2xvcjogIzRENEQ0RDtcclxuICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMjVweCAhaW1wb3J0YW50O1xyXG4gICAgICAgICAgICBwYWRkaW5nLWxlZnQ6IDM1cHggIWltcG9ydGFudDtcclxuICAgICAgICAgICAgbWFyZ2luLWxlZnQ6IC00MHB4ICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgICAgIG1hcmdpbi1ib3R0b206IDI1cHggIWltcG9ydGFudDtcclxuICAgICAgICAgICAgYm9yZGVyIDogc29saWQgMnB4ICMyMDM2ODAzODtcclxuICAgICAgICAgICAgei1pbmRleDogMDtcclxuICAgICAgICB9XHJcbiAgICB9XHJcbn0iXX0= */");
-
-/***/ }),
-
-/***/ 8736:
-/*!***************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/calculadora/calc-unica/calc-unica.page.html ***!
-  \***************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\n  <ion-text>\n    <h1>CALCULADORA</h1>\n  </ion-text>\n  <ion-text>\n  </ion-text>\n  <div class=\"main\">\n    <ion-text>\n      <h2>Sub Total </h2>\n    </ion-text>\n    <ion-item lines=\"none\">\n      <ion-label\n      position=\"start\"\n      style=\"z-index: 1;margin-left: 1rem;margin-top: -11px;\"\n      >S/</ion-label>\n      <ion-input\n      position=\"floating\"\n      id=\"input-venta\"\n      (ionFocus)=\"focusInputVenta('input-venta')\" \n      (ionBlur)=\"unfocusInputVenta('input-venta')\"\n      (input)=\"getVenta($event.target.value)\"\n      [value]=\"venta\"\n      ></ion-input>\n    </ion-item>\n    <ion-text>\n      <h2>IGV</h2>\n    </ion-text>\n    <ion-item lines=\"none\">\n      <ion-label\n      position=\"start\"\n      style=\"z-index: 1;margin-left: 1rem;margin-top: -11px;\"\n      >S/</ion-label>\n      <ion-input \n      position=\"floating\"\n      id=\"input-igv\"\n      (ionFocus)=\"focusInputIgv('input-igv')\" \n      (ionBlur)=\"unfocusInputIgv('input-igv')\"\n      (input)='getIgv($event.target.value)'\n      [value]=\"igv\"\n      ></ion-input>\n    </ion-item>\n    <ion-text>\n      <h2>Total de Ventas</h2>\n    </ion-text>\n    <ion-item lines=\"none\">\n      <ion-label\n      position=\"start\"\n      style=\"z-index: 1;margin-left: 1rem;margin-top: -11px;\"\n      >S/</ion-label>\n      <ion-input \n      id=\"input-total\"\n      position=\"floating\"\n      (ionFocus)=\"focusInputTotal('input-total')\" \n      (ionBlur)=\"unfocusInputTotal('input-total')\"\n      (input)='getTotal($event.target.value)'\n      [value]=\"total\"\n      ></ion-input>\n    </ion-item>\n  </div>\n  <ion-button  expand=\"block\" (click)=\"reset()\">Reinicar</ion-button>\n</ion-content>\n");
 
 /***/ })
 

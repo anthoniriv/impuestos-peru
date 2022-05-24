@@ -5,17 +5,20 @@
       <h1 class="ruc">{{rucNumber}}</h1>
     </ion-text>
   </div>
+  <div class="titles">
+    <ion-text>PERIODO</ion-text>
+    <ion-text>FECHA</ion-text>
+  </div>
+  <ion-content style="height:50%;--background: rgba(255, 255, 255, 0);">
     <ion-list>
-      <div class="titles">
-        <ion-text>PERIODO</ion-text>
-        <ion-text>FECHA</ion-text>
-      </div>
       <ion-item lines="none" *ngFor="let ruc of rucs">
         <ion-label>{{ruc.PERIODO}}</ion-label>
         <ion-label>{{ruc.FECHA}}</ion-label>
       </ion-item>
     </ion-list>
-      <ion-button class="boton" *ngIf="savedRuc===false" expand="block" (click)="openModal()">
-        Guardar
-      </ion-button>
+  </ion-content>
+  <ion-button class="boton" *ngIf="savedRuc===false" expand="block" (click)="openModal()">
+    Guardar
+  </ion-button>
 </ion-content>
+  

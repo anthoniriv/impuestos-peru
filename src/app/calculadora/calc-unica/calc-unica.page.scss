@@ -1,5 +1,5 @@
 ion-content{
-    --background: url('https://i.imgur.com/9XtKthL.jpg') 0 0/100% 100% no-repeat;
+    --background: url('./../../../assets/png/3.jpg') 0 0/100% 100% no-repeat;
     --ion-background-color: #f4f5f8;
     ion-item{
         --background: rgba(32, 54, 128, 0);
@@ -8,7 +8,7 @@ ion-content{
     .title{
         color: #fff;
         padding-top: 105px;
-        padding-bottom: 210px;
+        padding-bottom: 115px;
         text-align: center;
         font-size: 30px;
         font-weight: bold;
@@ -25,6 +25,8 @@ ion-content{
         font-family: 'Montserrat', sans-serif;
     }
     .main{
+        height: 36%;
+        --background:rgba(255, 255, 255, 0);
         .labels{
             margin: 0;
             color: #03335e;
@@ -43,7 +45,7 @@ ion-content{
                 color: #4D4D4D;
                 border-radius: 18px !important;
                 padding-left: 35px !important;
-                margin-left: -40px !important;
+                margin-left: -30px !important;
                 // margin-bottom: 10px !important;
                 border : solid 2px #20368038;
                 z-index: 0;
@@ -52,6 +54,7 @@ ion-content{
     }
     .button{
         margin-top: 20px !important;
+        padding: auto;
         margin: auto;
         width: 80%;
         --background: linear-gradient(90deg, #0D2B56, #005AA3) !important;

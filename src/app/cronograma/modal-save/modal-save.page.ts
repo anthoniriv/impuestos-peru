@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { Router } from '@angular/router';
-
+import { Router,ActivatedRoute, Params } from '@angular/router';
 import { SaveDataService } from 'src/app/services/save-data.service';
 
 @Component({
@@ -10,7 +9,7 @@ import { SaveDataService } from 'src/app/services/save-data.service';
   styleUrls: ['./modal-save.page.scss'],
 })
 export class ModalSavePage implements OnInit {
-
+  
   rucNumber:string;
   rucName:string;
   savedRuc:string;

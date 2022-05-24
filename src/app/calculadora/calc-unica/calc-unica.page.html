@@ -1,7 +1,7 @@
 <ion-content>
   <h1 class="title">CALCULADORA</h1>
   <h2 class="sub_title">Calcula tus impuestos a pagar</h2>
-  <div class="main">
+  <ion-content class="main">
     <h2 class="labels">Sub Total </h2>
     <ion-item class="inputs" lines="none">
       <ion-label
@@ -9,6 +9,7 @@
       style="z-index: 1;margin-left: 1rem;"
       >S/</ion-label>
       <ion-input
+      inputmode="numeric"
       position="floating"
       id="input-venta"
       (ionFocus)="focusInputVenta('input-venta')" 
@@ -24,6 +25,7 @@
       style="z-index: 1;margin-left: 1rem;"
       >S/</ion-label>
       <ion-input 
+      inputmode="numeric"
       position="floating"
       id="input-igv"
       (ionFocus)="focusInputIgv('input-igv')" 
@@ -39,6 +41,7 @@
       style="z-index: 1;margin-left: 1rem;"
       >S/</ion-label>
       <ion-input 
+      inputmode="numeric"
       id="input-total"
       position="floating"
       (ionFocus)="focusInputTotal('input-total')" 
@@ -47,6 +50,6 @@
       [value]="total"
       ></ion-input>
     </ion-item>
-  </div>
-  <ion-button class="button"  expand="block" (click)="reset()">Reinicar</ion-button>
+  </ion-content>
+  <ion-button class="button"  expand="block" (click)="reset()">Reiniciar</ion-button>
 </ion-content>

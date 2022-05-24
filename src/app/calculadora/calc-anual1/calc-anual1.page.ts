@@ -53,7 +53,7 @@ export class CalcAnual1Page implements OnInit {
   ngOnInit() {
     this.clearAll();
   }
-  
+
   //
 
   clearAll(){
@@ -87,7 +87,7 @@ export class CalcAnual1Page implements OnInit {
     if(this.isTouchedCompras=true){
       console.log("Estoy calculando en compras");
       this.compras = parseFloat(valor);
-      this.calcCredito();
+      // this.calcCredito();
       this.calcTotalCompras();
       this.calcIgvPagar();
       //Conditional to check if venta is NaN
@@ -118,6 +118,7 @@ export class CalcAnual1Page implements OnInit {
     if(this.isTouchedCredt=true){
       console.log('Total numero mes anterior')
       var numTotal = (this.credito_mesanterior*100)/18;
+      numTotal = numTotal + this.credito_mesanterior;
       numTotal=this.round(numTotal);
       this.total_mesanteriorTot = numTotal;
       console.log(this.total_mesanteriorTot);
@@ -262,6 +263,7 @@ export class CalcAnual1Page implements OnInit {
   }
 
   calcCredito(){
+    console.log('❤❤❤')
     var credito = this.compras * 0.18;
     credito = this.round(credito);
     this.creditofiscal = credito;
@@ -274,11 +276,14 @@ export class CalcAnual1Page implements OnInit {
   }
 
   calcTotalCompras(){
-    var comprasTotal = this.compras - this.creditofiscal;
+    var comprasTotal = this.compras / 1.18;
+    var creditoFiscal1 = comprasTotal * 0.18;
+    this.creditofiscal = this.round(creditoFiscal1);
+    comprasTotal = this.round(comprasTotal);
     this.total_compras = comprasTotal.toString();
     // this.total = this.venta += this.igv;
   }
-  
+
   calcularValorBase(){
     var valorBase = this.total/1.18;
     valorBase = this.round(valorBase);
@@ -286,12 +291,12 @@ export class CalcAnual1Page implements OnInit {
   }
 
   calcIgvPagar(){
-    var igv_pagar= this.total-this.total_compras;
+    var igv_pagar= this.igv-this.creditofiscal;
     if(isNaN(this.credito_mesanterior)){
       igv_pagar = this.round(igv_pagar);
       this.igv_pagar = igv_pagar.toString();
     }else{
-      var igv_pagar = this.total-this.total_compras-this.credito_mesanterior;
+      var igv_pagar = this.igv-this.creditofiscal-this.credito_mesanterior;
       igv_pagar = this.round(igv_pagar);
       this.igv_pagar = igv_pagar.toString();
     }
