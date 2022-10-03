@@ -184,7 +184,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\n  <ion-label position=\"stacked\" class=\"labels\">Numero de RUC</ion-label>\n  <ion-input type=\"number\" placeholder=\"Numero RUC\" [(ngModel)]=\"rucNumber\" class=\"inputs\" id=\"rucNumber\"></ion-input>\n  <ion-label position=\"stacked\" class=\"labels\">Nombre Empresa</ion-label>\n  <ion-input type=\"text\" placeholder=\"Nombre de la Empresa\" class=\"inputs\" [(ngModel)]=\"rucName\" id=\"rucName\"></ion-input>\n  <ion-button (click)=\"addData()\" color=\"light\" class=\"btn-save\">Guardar</ion-button>\n</ion-content>\n");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <ion-label position=\"stacked\" class=\"labels\">Numero de RUC</ion-label>\r\n  <ion-input type=\"number\" placeholder=\"Numero RUC\" [(ngModel)]=\"rucNumber\" class=\"inputs\" id=\"rucNumber\"></ion-input>\r\n  <ion-label position=\"stacked\" class=\"labels\">Nombre Empresa</ion-label>\r\n  <ion-input type=\"text\" placeholder=\"Nombre de la Empresa\" class=\"inputs\" [(ngModel)]=\"rucName\" id=\"rucName\"></ion-input>\r\n  <ion-button (click)=\"addData()\" color=\"light\" class=\"btn-save\">Guardar</ion-button>\r\n</ion-content>\r\n");
 
 /***/ })
 

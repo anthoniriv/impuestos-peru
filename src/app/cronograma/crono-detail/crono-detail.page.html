@@ -1,7 +1,7 @@
 <ion-content class="main">
   <div class="top" style="display: flex;flex-direction: row;">
     <ion-back-button style="color: white;" text="" defaultHref="/cronograma"></ion-back-button>
-    <ion-text *ngIf="dataLoaded==true">
+    <ion-text *ngIf="dataLoaded===true">
       <h1 class="ruc">{{rucNumber}}</h1>
     </ion-text>
   </div>
@@ -21,4 +21,3 @@
     Guardar
   </ion-button>
 </ion-content>
-  

@@ -7,27 +7,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalcAnual1Page implements OnInit {
 
-  venta:any;
-  igv:any;
-  total:any;
+  venta: any;
+  igv: any;
+  total: any;
 
-  compras:any;
-  igv_compras:any;
-  creditofiscal:any;
-  total_compras:any;
+  compras: any;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  igv_compras: any;
+  creditofiscal: any;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  total_compras: any;
 
-  credito_mesanterior:any;
-  total_mesanteriorTot:any;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  credito_mesanterior: any;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  total_mesanteriorTot: any;
 
-  igv_pagar:any;
-  renta_factor:any;
-  detracion:any;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  igv_pagar: any;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  renta_factor: any;
+  detracion: any;
 
-  selected:any;
-  regimen:any;
-  RER:any;
-  RMT:any;
-  RG:any;
+  selected: any;
+  regimen: any;
+  RER: any;
+  RMT: any;
+  RG: any;
 
   isTouchedVenta:boolean = false;
   isTouchedIgv:boolean = false;

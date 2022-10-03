@@ -1,8 +1,13 @@
+<div class="top2">
+  <img src="./../../../assets/png/top2.png" alt="">
+</div>
 <ion-content class="main">
-  <h1 class="title">CALCULADORA</h1>
-  <h2 class="sub_title">Calcula tus impuestos a pagar</h2>
-<ion-content style="height: 40%;--background: rgba(255, 255, 255, 0);">
-    <h2 class="labels">Sub Total (Ventas)</h2>
+  <!-- <h1 class="title">CALCULADORA</h1> -->
+  <!-- <h2 class="sub_title">Calcula tus impuestos a pagar</h2> -->
+<!-- <ion-content class="main2" style="height: 40%;--background: rgba(255, 255, 255, 0);"> -->
+  <div class="main2">
+
+    <h2 class="labels">Total de Ventas</h2>
     <ion-item class="inputs" lines="none">
       <ion-label
       position="start"
@@ -10,11 +15,11 @@
       >S/</ion-label>
       <ion-input
       inputmode="numeric"
-      id="input-venta"
-      (ionFocus)="focusInputVenta('input-venta')"
-      (ionBlur)="unfocusInputVenta('input-venta')"
-      (input)="getVenta($event.target.value)"
-      [value]="venta"
+      id="input-total"
+      (ionFocus)="focusInputTotal('input-total')"
+      (ionBlur)="unfocusInputTotal('input-total')"
+      (input)='getTotal($event.target.value)'
+      [value]="total"
       ></ion-input>
     </ion-item>
     <h2 class="labels">IGV a Pagar (Ventas)</h2>
@@ -32,7 +37,7 @@
       [value]="igv"
       ></ion-input>
     </ion-item>
-    <h2 class="labels">Total de Ventas</h2>
+    <h2 class="labels">Sub Total (Ventas)</h2>
     <ion-item class="inputs" lines="none">
       <ion-label
       position="start"
@@ -40,11 +45,11 @@
       >S/</ion-label>
       <ion-input
       inputmode="numeric"
-      id="input-total"
-      (ionFocus)="focusInputTotal('input-total')"
-      (ionBlur)="unfocusInputTotal('input-total')"
-      (input)='getTotal($event.target.value)'
-      [value]="total"
+      id="input-venta"
+      (ionFocus)="focusInputVenta('input-venta')"
+      (ionBlur)="unfocusInputVenta('input-venta')"
+      (input)="getVenta($event.target.value)"
+      [value]="venta"
       ></ion-input>
     </ion-item>
     <h2 class="labels">Total de Compras</h2>
@@ -135,10 +140,10 @@
     disabled="true"
     ></ion-input>
     </ion-item>
-  </ion-content>
+  <!-- </ion-content> -->
 <div class="selector-tipo">
   <ion-label>Tipo de Regimen</ion-label>
-  <ion-select [value]="selected" interface="action-sheet" okText="Okay" cancelText="Dismiss" (ionChange)="regimenChange($event)">
+  <ion-select [value]="selected" interface="action-sheet" okText="Elegir" cancelText="Cancelar" (ionChange)="regimenChange($event)">
     <ion-select-option value="default"></ion-select-option>
     <ion-select-option value="RER">Régimen Especial de Renta</ion-select-option>
     <ion-select-option value="RMT">Régimen MYPE Tributario</ion-select-option>
@@ -148,5 +153,7 @@
 <ion-item style="padding-left: 30px;font-size: 24px;color: #03335e;" lines="none">
   <ion-label>{{regimen}}</ion-label>
 </ion-item>
+</div>
+
 <!-- <ion-button class="button"  expand="block" (click)="reiniciar()">Reiniciar</ion-button> -->
 </ion-content>

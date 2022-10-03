@@ -17,8 +17,15 @@
       color: #41d1d900;
       font-family: 'Montserrat', sans-serif;
     }
+    .divisor{
+      // a blue line with #3fd2da
+      margin-top: 50%;
+      width: 50px;
+      height: 5px;
+      background: #3fd2da;
+    }
     p{
-      margin-top: 100px;
+      margin-top: 20px;
       max-width: 50%;
       font-size: 13px;
       font-weight: 500;
@@ -26,7 +33,7 @@
       font-family: 'Montserrat', sans-serif;
     }
     ion-button{
-      margin-top: 14px;
+      margin-top: 10px;
       font-size: 16px;
       font-weight: bold;
       font-family: 'Montserrat', sans-serif;
@@ -36,11 +43,16 @@
       --background: #fff;
       --border-radius: 13px;
     }
+    .tiktok-button{
+      --color:#fff;
+      --background: #3fd2da;
+      --border-radius: 13px;
+    }
     .info{
       color: #238cb5;
       line-height: 16px;
       max-width: 38%;
-      margin-top: 22px;
+      margin-top: 10px;
       font-size: 10px;
       font-weight: 500;
       font-family: 'Montserrat', sans-serif;

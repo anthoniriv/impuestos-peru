@@ -168,7 +168,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-tabs>\n  <ion-tab-bar slot=\"bottom\">\n    <ion-tab-button tab=\"calculadora\">\n      <ion-icon name=\"calculator\"></ion-icon>\n      <ion-label>CALCULADORA</ion-label>\n    </ion-tab-button>\n    <ion-tab-button tab=\"home\">\n      <ion-icon name=\"home\"></ion-icon>\n      <ion-label>INICIO</ion-label>\n    </ion-tab-button>\n    <ion-tab-button tab=\"cronograma\">\n      <ion-icon name=\"calendar\"></ion-icon>\n      <ion-label>CRONOGRAMA</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n</ion-tabs>");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-tabs>\r\n  <ion-tab-bar slot=\"bottom\">\r\n    <ion-tab-button tab=\"calculadora\">\r\n      <ion-icon name=\"calculator\"></ion-icon>\r\n      <ion-label>CALCULADORA</ion-label>\r\n    </ion-tab-button>\r\n    <ion-tab-button tab=\"home\">\r\n      <ion-icon name=\"home\"></ion-icon>\r\n      <ion-label>INICIO</ion-label>\r\n    </ion-tab-button>\r\n    <ion-tab-button tab=\"cronograma\">\r\n      <ion-icon name=\"calendar\"></ion-icon>\r\n      <ion-label>CRONOGRAMA</ion-label>\r\n    </ion-tab-button>\r\n  </ion-tab-bar>\r\n</ion-tabs>");
 
 /***/ })
 

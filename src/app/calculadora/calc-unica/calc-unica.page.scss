@@ -1,5 +1,8 @@
+.top2{
+  background: #e4ecf7;
+}
 ion-content{
-    --background: url('./../../../assets/png/3.jpg') 0 0/100% 100% no-repeat;
+    --background: url('./../../../assets/png/base.png') 0 0/100% 100% no-repeat;
     --ion-background-color: #f4f5f8;
     ion-item{
         --background: rgba(32, 54, 128, 0);
@@ -25,7 +28,7 @@ ion-content{
         font-family: 'Montserrat', sans-serif;
     }
     .main{
-        height: 36%;
+        height: 80%;
         --background:rgba(255, 255, 255, 0);
         .labels{
             margin: 0;

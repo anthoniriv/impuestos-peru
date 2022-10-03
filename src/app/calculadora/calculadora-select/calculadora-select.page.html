@@ -1,32 +1,35 @@
+<div class="top1">
+  <img src="./../../../assets/png/top1.png" alt="">
+</div>
 <ion-content>
-  <h1 class="title">Calculadora</h1>
-  <h2 class="sub_title">Calcula tus impuestos a pagar</h2>
+  <!-- <h1 class="title">Calculadora</h1> -->
+  <!-- <h2 class="sub_title">Calcula tus impuestos a pagar</h2> -->
   <div class="selections">
     <div class="categoria">
       <ion-text><h3>Tercera<br>Categoría</h3></ion-text>
-      <ion-toggle 
+      <ion-toggle
       [disabled]="disabled"
       (ionChange)="categoria_cambiada($event)" [(ngModel)]="categorias" color="primary"></ion-toggle>
       <ion-text><h3>Cuarta<br>Categoría</h3></ion-text>
     </div>
   </div>
-  <div *ngIf="categorias==false" class="calculadoras-1">
-    <div *ngIf="categorias==false" class="calculadora-unica" [routerLink]="['calc-unic']">
+  <div *ngIf="categorias===false" class="calculadoras-1">
+    <div *ngIf="categorias===false" class="calculadora-unica" [routerLink]="['calc-unic']">
       <ion-icon name="calculator"></ion-icon>
       <ion-text><h3>Calculadora<br>Unica</h3></ion-text>
     </div>
-    <div *ngIf="tipotercera==false" class="calculadora-anual" [routerLink]="['calc-anual1']">
+    <div *ngIf="tipotercera===false" class="calculadora-anual" [routerLink]="['calc-anual1']">
       <ion-icon name="calculator"></ion-icon>
       <ion-text><h3>Calculadora<br>Mensual</h3></ion-text>
     </div>
   </div>
   <div class="calculadoras-1">
-    <div *ngIf="tipotercera==true" class="calculadora-anual" [routerLink]="['calc-anual2']">
+    <div *ngIf="tipotercera===true" class="calculadora-anual" [routerLink]="['calc-anual2']">
       <ion-icon name="calculator"></ion-icon>
       <ion-text><h3>Calculadora<br>Mensual</h3></ion-text>
     </div>
   </div>
-  <div *ngIf="categorias==true" class="calculadoras-1" [routerLink]="['calc-cuarta']">
+  <div *ngIf="categorias===true" class="calculadoras-1" [routerLink]="['calc-cuarta']">
     <div class="calculadora-unica">
       <ion-icon name="calculator"></ion-icon>
       <ion-text><h3>Calculadora<br>Unica</h3></ion-text>

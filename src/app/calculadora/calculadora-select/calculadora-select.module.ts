@@ -13,7 +13,7 @@ import { CalculadoraSelectPage } from './calculadora-select.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    CalculadoraSelectPageRoutingModule
+    CalculadoraSelectPageRoutingModule,
   ],
   declarations: [CalculadoraSelectPage]
 })

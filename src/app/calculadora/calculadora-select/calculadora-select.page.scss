@@ -1,6 +1,9 @@
+.top1{
+  background: #e4ecf7;
+}
 ion-content{
-    --background: url('./../../../assets/png/2.jpg') 0 0/100% 100% no-repeat;
-    --ion-background-color: #f4f5f8;
+    // --background: url('./../../../assets/png/2.jpg') 0 0/100% 100% no-repeat;
+    --ion-background-color: #e4ecf7;
     // --padding-top: 64px;
     .title{
         padding-top: 105px;
@@ -21,7 +24,7 @@ ion-content{
         font-family: 'Montserrat', sans-serif;
     }
     .selections{
-        padding-top: 20px;
+        padding-top: 10%;
         margin-left: -20px;
         padding-bottom: 50px;
         .categoria{

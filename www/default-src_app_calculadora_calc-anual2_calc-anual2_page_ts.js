@@ -31,52 +31,55 @@ let CalcAnual2Page = class CalcAnual2Page {
     //Use clearall function to clear all the values in the calculator
     //Function to clear all the values
     clearAll() {
-        this.venta = "";
-        this.igv = "";
-        this.total = "";
+        this.venta = '';
+        this.igv = '';
+        this.total = '';
     }
     //Get Data Functions
     getVenta(valor) {
+        // eslint-disable-next-line no-cond-assign
         if (this.isTouchedVenta = true) {
-            console.log("Estoy calculando en venta");
+            console.log('Estoy calculando en venta');
             this.venta = parseFloat(valor);
             this.calcIgv();
             this.calcTotal();
             //Conditional to check if venta is NaN
             if (isNaN(this.venta)) {
-                this.igv = "";
-                this.total = "";
-                this.venta = "";
+                this.igv = '';
+                this.total = '';
+                this.venta = '';
             }
             console.log(this.venta);
         }
     }
     getIgv(valor) {
+        // eslint-disable-next-line no-cond-assign
         if (this.isTouchedIgv = true) {
-            console.log("Estoy calculando en igv");
+            console.log('Estoy calculando en igv');
             this.igv = parseFloat(valor);
             this.calcularValorBase2();
             this.calcTotal();
             //Conditional to check if venta is NaN
             if (isNaN(this.igv)) {
-                this.venta = "";
-                this.total = "";
-                this.igv = "";
+                this.venta = '';
+                this.total = '';
+                this.igv = '';
             }
             console.log(this.igv);
         }
     }
     getTotal(valor) {
+        // eslint-disable-next-line no-cond-assign
         if (this.isTouchedTotal = true) {
-            console.log("Estoy calculando en total");
+            console.log('Estoy calculando en total');
             this.total = parseFloat(valor);
             this.calcularValorBase();
             this.calcIgv();
             //Conditional to check if venta is NaN
             if (isNaN(this.total)) {
-                this.venta = "";
-                this.igv = "";
-                this.total = "";
+                this.venta = '';
+                this.igv = '';
+                this.total = '';
             }
             console.log(this.total);
         }
@@ -87,50 +90,50 @@ let CalcAnual2Page = class CalcAnual2Page {
         this.isTouchedTotal = false;
         this.isTouchedVenta = true;
         console.log(`${this.isTouchedVenta} es verdadero ahora`);
-        document.getElementById(`${input}`).style.border = "solid 2px #203680";
+        document.getElementById(`${input}`).style.border = 'solid 2px #203680';
     }
     focusInputIgv(input) {
         this.isTouchedIgv = true;
         this.isTouchedTotal = false;
         this.isTouchedVenta = false;
         console.log(`${this.isTouchedIgv} es verdadero ahora`);
-        document.getElementById(`${input}`).style.border = "solid 2px #203680";
+        document.getElementById(`${input}`).style.border = 'solid 2px #203680';
     }
     focusInputTotal(input) {
         this.isTouchedTotal = true;
         this.isTouchedVenta = false;
         this.isTouchedIgv = false;
         console.log(`${this.isTouchedTotal} es verdadero ahora`);
-        document.getElementById(`${input}`).style.border = "solid 2px #203680";
+        document.getElementById(`${input}`).style.border = 'solid 2px #203680';
     }
     unfocusInputVenta(input) {
         this.isTouchedVenta = false;
         console.log(`${this.isTouchedVenta} es falso ahora`);
-        document.getElementById(`${input}`).style.border = "solid 1px #20368038";
+        document.getElementById(`${input}`).style.border = 'solid 1px #20368038';
     }
     unfocusInputIgv(input) {
         this.isTouchedIgv = false;
         console.log(`${this.isTouchedVenta} es falso ahora`);
-        document.getElementById(`${input}`).style.border = "solid 1px #20368038";
+        document.getElementById(`${input}`).style.border = 'solid 1px #20368038';
     }
     unfocusInputTotal(input) {
         this.isTouchedTotal = false;
         console.log(`${this.isTouchedVenta} es falso ahora`);
-        document.getElementById(`${input}`).style.border = "solid 1px #20368038";
+        document.getElementById(`${input}`).style.border = 'solid 1px #20368038';
     }
     //Calculator Functions
     calcIgv() {
-        var igv = this.venta * 0.18;
+        let igv = this.venta * 0.18;
         igv = this.round(igv);
         this.igv = igv;
     }
     calcTotal() {
-        var total = this.venta + this.igv;
+        const total = this.venta + this.igv;
         this.total = total.toString();
         // this.total = this.venta += this.igv;
     }
     calcularValorBase() {
-        var valorBase = this.total / 1.18;
+        let valorBase = this.total / 1.18;
         valorBase = this.round(valorBase);
         this.venta = valorBase.toString();
     }
@@ -139,7 +142,7 @@ let CalcAnual2Page = class CalcAnual2Page {
         return Math.round(value * 100) / 100;
     }
     calcularValorBase2() {
-        var valorBase = 100 * this.igv / 18;
+        let valorBase = 100 * this.igv / 18;
         valorBase = this.round(valorBase);
         this.venta = valorBase;
     }
@@ -183,7 +186,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\n  <ion-text>\n    <h1>CALCULADORA</h1>\n  </ion-text>\n  <ion-text>\n    <h2>Lorem Ipsum Lorem Ipsum Lorem Ipsum</h2>\n  </ion-text>\n  <div class=\"main\">\n      <ion-text>\n        <h2>Total de Ventas</h2>\n      </ion-text>\n      <ion-input\n      id=\"input-venta\"\n      (ionFocus)=\"focusInputVenta('input-venta')\" \n      (ionBlur)=\"unfocusInputVenta('input-venta')\"\n      (input)=\"getVenta($event.target.value)\"\n      placeholder=\"S/.0\"\n      [value]=\"venta\"\n      ></ion-input>\n      <ion-text>\n        <h2>IGV</h2>\n      </ion-text>\n      <ion-input \n      id=\"input-igv\"\n      (ionFocus)=\"focusInputIgv('input-igv')\" \n      (ionBlur)=\"unfocusInputIgv('input-igv')\"\n      (input)='getIgv($event.target.value)'\n      placeholder=\"S/.0\"\n      [value]=\"igv\"\n      ></ion-input>\n      <ion-text>\n        <h2>Sub Total</h2>\n      </ion-text>\n      <ion-input \n      id=\"input-total\"\n      (ionFocus)=\"focusInputTotal('input-total')\" \n      (ionBlur)=\"unfocusInputTotal('input-total')\"\n      (input)='getTotal($event.target.value)'\n      placeholder=\"S/.0\"\n      [value]=\"total\"\n      ></ion-input>\n  </div>\n  <div class=\"main2\">\n    <ion-text>\n      <h2>Total de Compras</h2>\n    </ion-text>\n    <ion-input\n    id=\"input-venta\"\n    (ionFocus)=\"focusInputVenta('input-venta')\" \n    (ionBlur)=\"unfocusInputVenta('input-venta')\"\n    (input)=\"getVenta($event.target.value)\"\n    placeholder=\"S/.0\"\n    [value]=\"venta\"\n    ></ion-input>\n    <ion-text>\n      <h2>IGV/CRED. Fiscal</h2>\n    </ion-text>\n    <ion-input \n    id=\"input-igv\"\n    (ionFocus)=\"focusInputIgv('input-igv')\" \n    (ionBlur)=\"unfocusInputIgv('input-igv')\"\n    (input)='getIgv($event.target.value)'\n    placeholder=\"S/.0\"\n    [value]=\"igv\"\n    ></ion-input>\n    <ion-text>\n      <h2>Sub Total</h2>\n    </ion-text>\n    <ion-input \n    id=\"input-total\"\n    (ionFocus)=\"focusInputTotal('input-total')\" \n    (ionBlur)=\"unfocusInputTotal('input-total')\"\n    (input)='getTotal($event.target.value)'\n    placeholder=\"S/.0\"\n    [value]=\"total\"\n    ></ion-input>\n  </div>\n</ion-content>");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("<ion-content>\r\n  <ion-text>\r\n    <h1>CALCULADORA</h1>\r\n  </ion-text>\r\n  <ion-text>\r\n    <h2>Lorem Ipsum Lorem Ipsum Lorem Ipsum</h2>\r\n  </ion-text>\r\n  <div class=\"main\">\r\n      <ion-text>\r\n        <h2>Total de Ventas</h2>\r\n      </ion-text>\r\n      <ion-input\r\n      id=\"input-venta\"\r\n      (ionFocus)=\"focusInputVenta('input-venta')\" \r\n      (ionBlur)=\"unfocusInputVenta('input-venta')\"\r\n      (input)=\"getVenta($event.target.value)\"\r\n      placeholder=\"S/.0\"\r\n      [value]=\"venta\"\r\n      ></ion-input>\r\n      <ion-text>\r\n        <h2>IGV</h2>\r\n      </ion-text>\r\n      <ion-input \r\n      id=\"input-igv\"\r\n      (ionFocus)=\"focusInputIgv('input-igv')\" \r\n      (ionBlur)=\"unfocusInputIgv('input-igv')\"\r\n      (input)='getIgv($event.target.value)'\r\n      placeholder=\"S/.0\"\r\n      [value]=\"igv\"\r\n      ></ion-input>\r\n      <ion-text>\r\n        <h2>Sub Total</h2>\r\n      </ion-text>\r\n      <ion-input \r\n      id=\"input-total\"\r\n      (ionFocus)=\"focusInputTotal('input-total')\" \r\n      (ionBlur)=\"unfocusInputTotal('input-total')\"\r\n      (input)='getTotal($event.target.value)'\r\n      placeholder=\"S/.0\"\r\n      [value]=\"total\"\r\n      ></ion-input>\r\n  </div>\r\n  <div class=\"main2\">\r\n    <ion-text>\r\n      <h2>Total de Compras</h2>\r\n    </ion-text>\r\n    <ion-input\r\n    id=\"input-venta\"\r\n    (ionFocus)=\"focusInputVenta('input-venta')\" \r\n    (ionBlur)=\"unfocusInputVenta('input-venta')\"\r\n    (input)=\"getVenta($event.target.value)\"\r\n    placeholder=\"S/.0\"\r\n    [value]=\"venta\"\r\n    ></ion-input>\r\n    <ion-text>\r\n      <h2>IGV/CRED. Fiscal</h2>\r\n    </ion-text>\r\n    <ion-input \r\n    id=\"input-igv\"\r\n    (ionFocus)=\"focusInputIgv('input-igv')\" \r\n    (ionBlur)=\"unfocusInputIgv('input-igv')\"\r\n    (input)='getIgv($event.target.value)'\r\n    placeholder=\"S/.0\"\r\n    [value]=\"igv\"\r\n    ></ion-input>\r\n    <ion-text>\r\n      <h2>Sub Total</h2>\r\n    </ion-text>\r\n    <ion-input \r\n    id=\"input-total\"\r\n    (ionFocus)=\"focusInputTotal('input-total')\" \r\n    (ionBlur)=\"unfocusInputTotal('input-total')\"\r\n    (input)='getTotal($event.target.value)'\r\n    placeholder=\"S/.0\"\r\n    [value]=\"total\"\r\n    ></ion-input>\r\n  </div>\r\n</ion-content>");
 
 /***/ })
 

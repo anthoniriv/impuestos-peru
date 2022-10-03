@@ -1,6 +1,8 @@
+<div class="top3">
+  <img src="./../../../assets/png/top3.png" alt="">
+</div>
 <ion-content>
   <section class="top">
-      <h1 class="title">CRONOGRAMA</h1>
     <ion-searchbar
         color="light"
         style="width: 80%;margin: auto;color: #203680;"
@@ -22,7 +24,7 @@
       <ion-item lines="none" *ngFor="let ruc of listRucs; let i=index" >
         <ion-label [routerLink]="['/cronograma', ruc.rucNumber]">{{ruc.rucName}}</ion-label>
         <ion-buttons slot="end">
-          <ion-button 
+          <ion-button
             (click)="removeItem(i)"
           >
             <ion-icon slot="icon-only" name="trash"></ion-icon>
@@ -35,12 +37,12 @@
           <ion-item slot="header">
             <ion-label style="color:#fff;">RUC GUARDADOS</ion-label>
           </ion-item>
-      
+
           <ion-list slot="content">
             <ion-item class="contenido" lines="none" *ngFor="let ruc of listRucs; let i=index">
               <ion-label [routerLink]="['/cronograma', ruc.rucNumber]">{{ruc.rucName}}</ion-label>
               <ion-buttons slot="end">
-                <ion-button 
+                <ion-button
                   (click)="removeItem(i)"
                 >
                   <ion-icon slot="icon-only" name="trash"></ion-icon>

@@ -6,7 +6,7 @@
     --background: url('./../../../assets/png/5.jpg') 0 0/100% 100% no-repeat;
     --ion-background-color:#F9FBFC;
     .top{
-        padding-top: 100px;
+        padding-top: 20px;
         padding-left: 20px;
         padding-bottom: 30px;
         .ruc{
@@ -37,6 +37,7 @@
         font-family: 'Montserrat', sans-serif;
         font-weight: bold;
         color: #FFF;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     }
     ion-list{
         background-color: rgba(255, 255, 255, 0);
