@@ -15,7 +15,11 @@ import {StatusBar} from '@ionic-native/status-bar/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule,CommonModule, IonicModule.forRoot(), AppRoutingModule,IonicStorageModule.forRoot({
+  imports: [
+    BrowserModule,
+    CommonModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,IonicStorageModule.forRoot({
     name: '__mydb',
     driverOrder: [CordovaSQLiteDriver._driver,Drivers.IndexedDB, Drivers.LocalStorage]
   }), BrowserAnimationsModule],
