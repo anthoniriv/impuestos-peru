@@ -1,11 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-calc-rentabilidad',
+  selector: 'app-calc-precio',
   templateUrl: './calc-rentabilidad.component.html',
   styleUrls: ['./calc-rentabilidad.component.scss'],
 })
 export class CalcRentabilidadComponent implements OnInit {
+  focusInputVenta(arg0: string) {
+    throw new Error('Method not implemented.');
+  }
+  unfocusInputVenta(arg0: string) {
+    throw new Error('Method not implemented.');
+  }
+  focusInputIgv(arg0: string) {
+    throw new Error('Method not implemented.');
+  }
+  unfocusInputIgv(arg0: string) {
+    throw new Error('Method not implemented.');
+  }
+  focusInputTotal(arg0: string) {
+    throw new Error('Method not implemented.');
+  }
+  unfocusInputTotal(arg0: string) {
+    throw new Error('Method not implemented.');
+  }
 
   venta: string = '';
   igv: string = '';
@@ -15,7 +33,7 @@ export class CalcRentabilidadComponent implements OnInit {
   isTouchedIgv = false;
   isTouchedTotal = false;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     this.clearAll();
@@ -63,7 +81,8 @@ export class CalcRentabilidadComponent implements OnInit {
   // Change Color Functions
   focusInput(inputId: string) {
     this.resetFocus();
-    this[`isTouched${inputId.charAt(0).toUpperCase() + inputId.slice(1)}`] = true;
+    this[`isTouched${inputId.charAt(0).toUpperCase() + inputId.slice(1)}`] =
+      true;
     document.getElementById(inputId).style.border = 'solid 2px #203680';
   }
 
@@ -103,7 +122,7 @@ export class CalcRentabilidadComponent implements OnInit {
   reset() {
     this.clearAll();
     this.resetFocus();
-    ['input-venta', 'input-igv', 'input-total'].forEach(id => {
+    ['input-venta', 'input-igv', 'input-total'].forEach((id) => {
       document.getElementById(id).style.border = 'solid 1px #20368038';
     });
   }

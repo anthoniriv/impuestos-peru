@@ -1,3 +1,102 @@
-<p>
-  calc-precio works!
-</p>
+<div class="top2">
+  <img src="./../../../assets/png/top2.png" alt="" />
+</div>
+<ion-content>
+  <!-- <h1 class="title">CALCULADORA</h1> -->
+  <!-- <h2 class="sub_title">Calcula tus impuestos a pagar</h2> -->
+  <ion-content class="main">
+    <h2 class="labels">Compras</h2>
+    <ion-item class="inputs" lines="none">
+      <ion-label position="start" style="z-index: 1; margin-left: 1rem"
+        >S/</ion-label
+      >
+      <ion-input
+        inputmode="numeric"
+        position="floating"
+        id="input-venta"
+        (ionFocus)="focusInputCompras('input-venta')"
+        (ionBlur)="unfocusInputCompras('input-venta')"
+        (input)="getCompras($event.target.value)"
+        [value]="compras"
+      ></ion-input>
+    </ion-item>
+    <h2 class="labels">Gastos</h2>
+    <ion-item class="inputs" lines="none">
+      <ion-label position="start" style="z-index: 1; margin-left: 1rem"
+        >S/</ion-label
+      >
+      <ion-input
+        inputmode="numeric"
+        position="floating"
+        id="input-igv"
+        (ionFocus)="focusInputGastos('input-igv')"
+        (ionBlur)="unfocusInputGastos('input-igv')"
+        (input)="getGastos($event.target.value)"
+        [value]="gastos"
+      ></ion-input>
+    </ion-item>
+    <h2 class="labels">Ganancia 1</h2>
+    <ion-item class="inputs" lines="none">
+      <ion-label position="start" style="z-index: 1; margin-left: 1rem"
+        >S/</ion-label
+      >
+      <ion-input
+        inputmode="numeric"
+        id="input-total"
+        position="floating"
+        (ionFocus)="focusInputGan1('input-total')"
+        (ionBlur)="unfocusInputGan1('input-total')"
+        (input)="getGan1($event.target.value)"
+        [value]="ganancia1"
+      ></ion-input>
+    </ion-item>
+    <h2 class="labels">IGV</h2>
+    <ion-item class="inputs" lines="none">
+      <ion-label position="start" style="z-index: 1; margin-left: 1rem"
+        >S/</ion-label
+      >
+      <ion-input
+        inputmode="numeric"
+        position="floating"
+        id="input-igv"
+        (ionFocus)="focusInputIgv('input-igv')"
+        (ionBlur)="unfocusInputIgv('input-igv')"
+        (input)="getIgv($event.target.value)"
+        [value]="igv"
+      ></ion-input>
+    </ion-item>
+    <h2 class="labels">Precio</h2>
+    <ion-item class="inputs" lines="none">
+      <ion-label position="start" style="z-index: 1; margin-left: 1rem"
+        >S/</ion-label
+      >
+      <ion-input
+        inputmode="numeric"
+        position="floating"
+        id="input-igv"
+        (ionFocus)="focusInputPrecio('input-igv')"
+        (ionBlur)="unfocusInputPrecio('input-igv')"
+        (input)="getPrecio($event.target.value)"
+        [value]="precio"
+      ></ion-input>
+    </ion-item>
+    <h2 class="labels">Ganancia 2</h2>
+    <ion-item class="inputs" lines="none">
+      <ion-label position="start" style="z-index: 1; margin-left: 1rem"
+        >S/</ion-label
+      >
+      <ion-input
+        inputmode="numeric"
+        position="floating"
+        id="input-igv"
+        (ionFocus)="focusInputGan2('input-igv')"
+        (ionBlur)="unfocusInputGan2('input-igv')"
+        (input)="getGan2($event.target.value)"
+        [value]="ganancia2"
+      ></ion-input>
+    </ion-item>
+  </ion-content>
+  <ion-button class="button" expand="block" (click)="reset()"
+    >Reiniciar</ion-button
+  >
+</ion-content>
