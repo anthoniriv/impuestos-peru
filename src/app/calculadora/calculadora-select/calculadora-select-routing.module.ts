@@ -6,6 +6,8 @@ import { CalcCuartaPage } from '../calc-cuarta/calc-cuarta.page';
 import { CalcUnicaPage } from '../calc-unica/calc-unica.page';
 
 import { CalculadoraSelectPage } from './calculadora-select.page';
+import { CalcRentabilidadComponent } from '../calc-rentabilidad/calc-rentabilidad.component';
+import { CalcPrecioComponent } from '../calc-precio/calc-precio.component';
 
 const routes: Routes = [
   {
@@ -27,6 +29,14 @@ const routes: Routes = [
   {
     path: 'calc-cuarta',
     component:CalcCuartaPage
+  },
+  {
+    path: 'calc-rentabilidad',
+    component: CalcRentabilidadComponent
+  },
+  {
+    path: 'calc-precio',
+    component:CalcPrecioComponent
   }
 ];
 

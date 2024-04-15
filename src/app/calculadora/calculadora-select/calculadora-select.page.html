@@ -23,6 +23,16 @@
       <ion-text><h3>Calculadora<br>Mensual</h3></ion-text>
     </div>
   </div>
+  <div *ngIf="categorias===false" class="calculadoras-2">
+    <div *ngIf="categorias===false" class="calculadora-unica" [routerLink]="['calc-rentabilidad']">
+      <ion-icon name="calculator"></ion-icon>
+      <ion-text><h3>Calculadora de<br>mi rentabilidad</h3></ion-text>
+    </div>
+    <div *ngIf="tipotercera===false" class="calculadora-anual" [routerLink]="['calc-precio']">
+      <ion-icon name="calculator"></ion-icon>
+      <ion-text><h3>Calculadora<br>mi precio</h3></ion-text>
+    </div>
+  </div>
   <div class="calculadoras-1">
     <div *ngIf="tipotercera===true" class="calculadora-anual" [routerLink]="['calc-anual2']">
       <ion-icon name="calculator"></ion-icon>

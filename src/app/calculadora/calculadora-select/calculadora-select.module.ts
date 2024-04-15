@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { CalculadoraSelectPageRoutingModule } from './calculadora-select-routing.module';
 
 import { CalculadoraSelectPage } from './calculadora-select.page';
+import { CalcRentabilidadComponent } from '../calc-rentabilidad/calc-rentabilidad.component';
 
 @NgModule({
   imports: [

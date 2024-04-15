@@ -1,0 +1,57 @@
+<div class="top2">
+  <img src="./../../../assets/png/top2.png" alt="" />
+</div>
+<ion-content>
+  <!-- <h1 class="title">CALCULADORA</h1> -->
+  <!-- <h2 class="sub_title">Calcula tus impuestos a pagar</h2> -->
+  <ion-content class="main">
+    <h2 class="labels">Mis Costos</h2>
+    <ion-item class="inputs" lines="none">
+      <ion-label position="start" style="z-index: 1; margin-left: 1rem"
+        >S/</ion-label
+      >
+      <ion-input
+        inputmode="numeric"
+        position="floating"
+        id="input-venta"
+        (ionFocus)="focusInputVenta('input-venta')"
+        (ionBlur)="unfocusInputVenta('input-venta')"
+        (input)="getVenta($event.target.value)"
+        [value]="venta"
+      ></ion-input>
+    </ion-item>
+    <h2 class="labels">Porcentaje que quiero ganar</h2>
+    <ion-item class="inputs" lines="none">
+      <ion-label position="start" style="z-index: 1; margin-left: 1rem"
+        >S/</ion-label
+      >
+      <ion-input
+        inputmode="numeric"
+        position="floating"
+        id="input-igv"
+        (ionFocus)="focusInputIgv('input-igv')"
+        (ionBlur)="unfocusInputIgv('input-igv')"
+        (input)="getIgv($event.target.value)"
+        [value]="igv"
+      ></ion-input>
+    </ion-item>
+    <h2 class="labels">Ganancia</h2>
+    <ion-item class="inputs" lines="none">
+      <ion-label position="start" style="z-index: 1; margin-left: 1rem"
+        >S/</ion-label
+      >
+      <ion-input
+        inputmode="numeric"
+        id="input-total"
+        position="floating"
+        (ionFocus)="focusInputTotal('input-total')"
+        (ionBlur)="unfocusInputTotal('input-total')"
+        (input)="getTotal($event.target.value)"
+        [value]="total"
+      ></ion-input>
+    </ion-item>
+  </ion-content>
+  <ion-button class="button" expand="block" (click)="reset()"
+    >Reiniciar</ion-button
+  >
+</ion-content>

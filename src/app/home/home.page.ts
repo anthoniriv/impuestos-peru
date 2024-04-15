@@ -11,7 +11,7 @@ export class HomePage {
 
   //go to google website
   contact(){
-    window.open('https://wa.link/wo5m8u', '_system', 'location=yes'); return false;
+    window.open('https://linktr.ee/welquerguzman', '_system', 'location=yes'); return false;
   }
   goToTiktok(){
     window.open('https://www.tiktok.com/@welguzcri6?_t=8W4rlMeXmYH&_r=1', '_system', 'location=yes'); return false;
